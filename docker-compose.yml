@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+    db:
+        image: postgres
+        environment: 
+            - POSTGRES_PASSWORD=1234678
+            - POSTGRES_USER=Igor
+            - POSTGRES_DB=nome_projeto
+        volumes:
+            - ./ignore:/var/lib/postgresql/data
+    web:
+        build: .
+        ports:
+            - 8000:8000
+        volumes:
+            - .:/code
+        
