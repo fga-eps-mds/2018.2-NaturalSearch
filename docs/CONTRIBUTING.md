@@ -34,6 +34,8 @@ Se o objetivo é adicionar e/ou modificar uma funcionalidade já existente, ent�
 
 * Mensagens curtas e significativas sobre o conteúdo do _commit_.
 
+* Apenas _commits_ que adicionem incrementos significativos, ou seja, nada de _commits_ apenas mudando nomes de variáveis, por exemplo.
+
 * Se estiver trabalhando em conjunto especifique os participantes no _commit_.
 
 Exemplo:
@@ -43,3 +45,5 @@ Exemplo:
     Adds project code of conduct file
 
     Co-authored-by: FilipeKN4 <filipekn4@gmail.com> (Assinatura do(s)participante(s))
+
+
