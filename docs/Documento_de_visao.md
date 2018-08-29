@@ -18,7 +18,10 @@ Esta introdução fornece uma visão geral de todo o documento de visão. Ela in
 O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, através dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural, visa encontar documentos correlacionados, tornando o resultado mais amplo, em forma de grafos, quando uma pesquisa for realizada pelo usuário.
 
 #### 1.2 Escopo
-Descreve brevemente o escopo deste documento de visão, incluindo a quais programas, projetos, aplicativos e processos de negócios o documento está associado. Inclui qualquer outra coisa que este documento afete ou influencie.
+Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes. 
+Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”. 
+Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada. 
+Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido,os dados apresentados são consultados em tempo real na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
 
 #### 1.3 Definições, acrônimos e abreviações
 
@@ -50,7 +53,7 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 | **Problema** |                  |
 | **Funçoes Afetadas**   |               |
 |**Efeito** |                |
-|**Solução**|    ||
+|**Solução**|    |
 
 
 #### 2.3 Instrução de Posição do Produto
@@ -61,7 +64,7 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 | **Carências**   |               |
 |**Solução** |                  |
 |**Descrição da Solução**|          |
-|**DIferenciais**|                  ||
+|**DIferenciais**|                  |
 
 ### 3:Descrição da Parte Interessada e do Usuário
 
@@ -70,13 +73,13 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 | Nome  | Descrição |Responsabilidade|
 | ------ | ------------- | ------------ |
 | Equipe  |      Composta por graduandos em Engenharia de Software 2°2018 pela Universidade de Brasília, no Campus Gama, discentes das disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software.           |                |
-| Clientes  |               |              ||
+| Clientes  |               |              |
 
 ### 3.2 Resumo do Usuário
 
 | Nome  | Descrição | Parte interessada |
 | ------ | ------------- | ------------ |
-| **  |               |              ||
+| **  |               |              |
 
 ### 3.3 Ambiente do Usuário
 
@@ -93,7 +96,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Responsabilidade** |                  |
 |**Critério de sucesso**|          |
 |**Envolvimento**|                  |
-|**Comentários ou Problemas**|                  ||
+|**Comentários ou Problemas**|                  |
 
 ### 3.5 Perfis dos Usuários
 
@@ -104,13 +107,13 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Responsabilidade** |                  |
 |**Critério de sucesso**|          |
 |**Envolvimento**|                  |
-|**Comentários ou Problemas**|                  ||
+|**Comentários ou Problemas**|                  |
 
 ### 3.6 Principais Necessidades da parte Interessada ou do usuário
 
 |           Necessidade     |        Prioridade        |       Interesse     |         Solução Atual     |      Solução Proposta     |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|:---------------:|
-|        |                   |               |               |                   ||
+|        |                   |               |               |                   |
 
 ### 3.7 Alternativas e Concorrência
 
