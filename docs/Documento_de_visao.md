@@ -48,7 +48,7 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 
 #### 2.2 Instrução do Problema
 
-||
+|
 | ------------- | ------------- |
 | **Problema** |                  |
 | **Funçoes Afetadas**   |               |
@@ -58,7 +58,7 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 
 #### 2.3 Instrução de Posição do Produto
 
-||
+|
 | ------------- | ------------- |
 | **Público Alvo** |                  |
 | **Carências**   |               |
@@ -89,7 +89,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ##### 3.4.1 Usuário do Serviço
 
-||
+|
 | ------------- | ------------- |
 | **Representantes** |                  |
 | **Descrição**   |               |
@@ -100,7 +100,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ### 3.5 Perfis dos Usuários
 
-||
+|
 | ------------- | ------------- |
 | **Representantes** |                  |
 | **Descrição**   |               |
