@@ -27,7 +27,7 @@ Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido,os dados apr
 
 |           Abreviação        |           Definição           |
 |:---------------------------:|:-----------------------------:|
-|                             |                               |
+|         LN                    |              Linguagem Natural                 |
 
 #### 1.4 Referências
 
@@ -41,30 +41,26 @@ Este documento está organizado de maneira a se compreender primeiramente as fun
 
 ### 2:Posicionamento
 
-
-
 #### 2.1 Oportunidade de negócios
-
+O NaturalSearch facilitará a procura de assuntos relevantes ao usuário por entregar sugestões inteligentes sobre o assunto pesquisado, proporcionando uma melhor experiência na navegação da plataforma e maior aprendizado.
+Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestões inteligentes ao usuário, mas não há registro de aplicações que funcionem para diversas APIs em sites de busca.
 
 #### 2.2 Instrução do Problema
 
-||
-| ------------- | ------------- |
-| **Problema** |                  |
-| **Funçoes Afetadas**   |               |
-|**Efeito** |                |
-|**Solução**|    |
+- Problema: As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes
+- Funçoes Afetadas: A entrega de um resultado de pesquisa não esperado e irrelevante     
+- Efeito: O usuário continua sem a informação correta         
+- Solução: Utilizar os princípios da linguagem natural para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados de busca 
 
 
 #### 2.3 Instrução de Posição do Produto
 
-||
-| ------------- | ------------- |
-| **Público Alvo** |                  |
-| **Carências**   |               |
-|**Solução** |                  |
-|**Descrição da Solução**|          |
-|**DIferenciais**|                  |
+
+- Público Alvo :Usuários do site de busca            
+- Carências: Resultados relevantes          
+- Solução: NaturalSearch          
+- Descrição da Solução: Através dos princípios da LN e grafos a aplicação será capaz de entregar um resultado de busca mais eficiente e intuitivo     
+- DIferenciais: Metodos de buscas mais inteligentes utilizando LN    
 
 ### 3:Descrição da Parte Interessada e do Usuário
 
@@ -118,4 +114,3 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 ### 3.7 Alternativas e Concorrência
 
 
-teste
