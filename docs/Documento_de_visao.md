@@ -9,6 +9,7 @@ layout: default
 |           Data          |         Versão         |       Descrição   |         Autores   |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|
 | 28/08/2018         |           0.1                | Abertura de documento |  Mikhaelle Bueno, Marcos Vinícius Rodrigues, Fabiana Luiza V.P.Ribas, Michel Camargo |
+| 29/08/2018         |           0.2                | Itens atualizados 3.1, 3.2, 3.4.2, 3.4.3, 3.7|  Gustavo Duarte Moreira |
 
 ### 1:Introdução
 -------------------
@@ -68,14 +69,14 @@ Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestõe
 
 | Nome  | Descrição |Responsabilidade|
 | ------ | ------------- | ------------ |
-| Equipe  |      Composta por graduandos em Engenharia de Software 2°2018 pela Universidade de Brasília, no Campus Gama, discentes das disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software.           |                |
-| Clientes  |               |              |
+| Equipe  |      Composta por graduandos em Engenharia de Software 2°2018 pela Universidade de Brasília, no Campus Gama, discentes das disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software.           | Desenvolver e gerir o software. |
+| Clientes  |        Interessados em realizar pesquisas de maneira mais eficientes de projetos culturais que recebem incentivos fiscais do Minstério da Cultura, por meio de visualização em grafos.       |              |
 
 ### 3.2 Resumo do Usuário
 
 | Nome  | Descrição | Parte interessada |
 | ------ | ------------- | ------------ |
-| **  |               |              |
+| Cidadão  | Pessoa interessada em visualizar informações de forma intuitiva e simples por meio de grafos              | Usuário             |
 
 ### 3.3 Ambiente do Usuário
 
@@ -83,22 +84,47 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ### 3.4 Perfis das Partes Interessadas
 
-##### 3.4.1 Usuário do Serviço
+#### 3.4.1 Usuário do Serviço
 
-|
-| ------------- | ------------- |
-| **Representantes** |                  |
-| **Descrição**   |               |
-|**Responsabilidade** |                  |
-|**Critério de sucesso**|          |
-|**Envolvimento**|                  |
-|**Comentários ou Problemas**|                  |
+|||  
+|----------|----------|          
+|**Representantes** |  |
+|**Descrição** |    |
+|**Tipo** | |
+|**Responsabilidades** |   |
+|**Critérios de Sucesso** | |
+|**Envolvimento** |  |
+|**Comentários ou Problemas**|  |
+
+#### 3.4.2 Equipe de desenvolvimento
+
+
+|||  
+|----------|----------|          
+|**Representantes** | [Adrielly Rodrigues de Jesus](https://github.com/drykette), [Fabiana Luiza V. P. Ribas](https://github.com/FabianaRibas), [Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira), [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle);|
+|**Descrição** | Desenvolvedores|
+|**Tipo** | Grupo de Estudadntes da Faculdade do Gama (FGA), matriculados na disciplina de Métodos de Desenvolvimento de Software (MDS)|
+|**Responsabilidades** | Elaborar documentação base sobre o contexto do projeto.Desenvolver o projeto.  |
+|**Critérios de Sucesso** | Aplicar metodologias ágeis ao longo do processo e obter um produto que satisfaça a necessidade do cliente.|
+|**Envolvimento** | Alto |
+|**Comentários ou Problemas**| ---    |             
+
+#### 3.4.3 Equipe de Gestão de Projetos 
+
+|||  
+|----------|----------|        
+|**Representantes** | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4), [Igor Araújo de Sousa](https://github.com/zero101010), [Lucas Midlhey Cardoso Naves](https://github.com/lucasmidlhey),  [Shermam Tácia da Costa Lima](https://github.com/tacia68); |
+|**Descrição** | Gerentes de Projeto|
+|**Tipo** | Grupo de Estudadntes da Faculdade do Gama (FGA), matriculados na disciplina de Engenharia de Produto de Software (EPS)|
+|**Responsabilidades** | Gerenciar, supervisionar e manter a equipe de desenvolvimento a fim de que as metodologias ágeis sejam aplicadas e o produto seja entregue ao cliente no final.|
+|**Critérios de Sucesso** | Aplicar metodologias ágeis ao longo do processo e obter um produto que satisfaça a necessidade do cliente.|
+|**Envolvimento** | Alto                 |
 
 ### 3.5 Perfis dos Usuários
 
-|
+|||
 | ------------- | ------------- |
-| **Representantes** |                  |
+| **Representantes** |                 |
 | **Descrição**   |               |
 |**Responsabilidade** |                  |
 |**Critério de sucesso**|          |
@@ -113,4 +139,5 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ### 3.7 Alternativas e Concorrência
 
+Não foram encontradas aplicações que realizem pesquisas por meio de LN e mostrem resultados por meio de grafos.
 
