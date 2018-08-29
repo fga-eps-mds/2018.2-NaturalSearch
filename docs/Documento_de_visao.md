@@ -85,7 +85,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ##### 3.4.1 Usuário do Serviço
 
-||
+|
 | ------------- | ------------- |
 | **Representantes** |                  |
 | **Descrição**   |               |
@@ -96,7 +96,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 ### 3.5 Perfis dos Usuários
 
-||
+|
 | ------------- | ------------- |
 | **Representantes** |                  |
 | **Descrição**   |               |
