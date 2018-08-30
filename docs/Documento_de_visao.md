@@ -13,11 +13,10 @@ layout: default
 | 29/08/2018         |           0.3                | Itens atualizados 3.1, 3.2, 3.4.2, 3.4.3, 3.7|  Gustavo Duarte Moreira |
 | 29/08/2018         |           0.4               | Itens atualizados 3.4.1, 3.5, 4.1, 4.2, 4.3|  Mikhaelle Bueno, Fabiana Luiza V.P.Ribas |
 | 30/08/2018         |           0.5               | Itens atualizados 3.6|  Michel Camargo |
-| 30/08/2018         |           0.6               | Itens atualizados 5.1|  Adrielly Rodrigues|
-| 30/08/2018         |           0.7               | Itens atualizados 6.1, 6.2, 6.3, 6.4 |  Adrielly Rodrigues|
-| 30/08/2018         |           0.8              | Itens atualizados 7 |  Adrielly Rodrigues|
-| 30/08/2018         |           0.9             | Adisão do sumário e Linkamento dos tópicos  |  Adrielly Rodrigues|
-
+| 30/08/2018         |           0.6               | Itens atualizados 5.1, 6.1, 6.2, 6.3, 6.4, 7|  Adrielly Rodrigues|
+| 30/08/2018         |           0.7             | Adisão do sumário e Linkamento dos tópicos  |  Adrielly Rodrigues|
+| 30/08/2018         |           0.8             | Itens atualizados 3.6  |  Michel Camargo |
+| 30/08/2018         |           0.9             | Itens atualizados 8, 9.1, 9.2  |  Mikhaelle Bueno |
 
 # Sumário
 1. [Introdução](#1)
@@ -53,18 +52,22 @@ layout: default
   * 6.3 [Restrições de Uso](#6.3)
   * 6.4 [Restrições de Implementação](#6.4)
 7. [Faixas de Qualidade](#7)
+8. [Precedência e Prioridade](#8)
+9. [Outros Requisitos do Produto](#9)
+  * 9.1 [Requisitos do Sistema](#9.1)
+  * 9.2 [Requisitos de Desempenho](#9.2)
 
 ## <a name="1"></a> 1:Introdução
 -------------------
 
 ### <a name="1.1"></a> 1.1 Propósito
-O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, através dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural, visa encontar documentos correlacionados, tornando o resultado mais amplo, em forma de grafos, quando uma pesquisa for realizada pelo usuário.
+O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, através dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural(LN), visa encontar documentos correlacionados, tornando o resultado mais amplo, em forma de grafos, quando uma pesquisa for realizada pelo usuário.
 
 ### <a name="1.2"></a> 1.2 Escopo
 Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes.
 Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”.
 Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada.
-Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados apresentados são consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API, para que eles sejam passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
+Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados apresentados são consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API, para que eles sejam tratados com LN e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
 
 ### <a name="1.3"></a> 1.3 Definições, acrônimos e abreviações
 
@@ -183,6 +186,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|:---------------:|
 | Realizar busca inteligente com resultados relevantes | Alta | Facilitar a busca de dados mais relevantes | Mecanismos de busca tradicional que buscam tags ou palavras-chave específicas | Utilizar os princípios da LN para realizar pesquisas relevantes |
 | Exibir resultados de pesquisa por relevância de forma intuitiva através de grafos | Alta | Facilitar a vizualização dos dados | Exibição dos resultados de forma linear | Através de grafos relacionar os resultados de forma a evidenciar os mais relevantes para a pesquisa |
+| Exibir nos resultados de pesquisa resultados semelhantes ao tema pesquisado | Alta | Linkar resultados da pesquisa de acordo com o tema pesquisado exibindo resultados correlatos | Resultados de pesquisa somente sobreo que foi pesquisado | Sistema de pesquisa com recomendação de resultados baseado em conteúdo |
 
 ### <a name="3.7"></a> 3.7 Alternativas e Concorrência
 
@@ -232,3 +236,16 @@ O sistema será desenvolvido utilizando a linguagem Python, HTML e Javascript.
 -------------
 
 A aplicação será via web, para maior eficiência, devido a maior parte dos usuários terem mais acessibilidade a um browser(ex: Google Chrome, Mozilla Firefox, Safari, etc.) do que um aparelho mobile. Contudo, o NaturalSearch também deve se adequar às telas de smartphones e tablets, para que não haja transtornos ao ser utilizado.
+
+## <a name="8"></a> 8: Precedência e Prioridade
+-------------
+A principal prioridade é utilizar a LN aplicada aos dados da API do [Versalic](http://versalic.cultura.gov.br/#/home) para construir o banco de dados do NaturalSearch o que permitirá um retorno do resultado de pesquisa rápido e na mesma prioridade há o retorno do resultado de pesquisa no site em forma de grafos que além de utilizar as palavras chaves também retornara projeto semelhantes aos pesquisados, em segundo plano fica o design do site que deverá ser bastante intuitivo.
+
+## <a name="9"></a> 9: Outros Requisitos do Produto
+--------------
+
+## <a name="9.1"></a> 9.1 Requisitos do Sistema
+O usuário deverá ter acesso a internet para acessar a página web do NaturalSearch
+
+## <a name="9.2"></a> 9.2 Requisitos de Desempenho
+O sistema será acessível a grande parte dos aparelhos que tem os requisitos do sistema e suprirá grande parte da necessidade de tráfego do site. Como o projeto contará com uma base de dados própria, o desempenho do aparelho não influênciará no retorno de resultados, porém influenciará na visualização dos resultados em forma de grafo 
