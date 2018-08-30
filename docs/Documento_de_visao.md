@@ -14,7 +14,7 @@ layout: default
 | 29/08/2018         |           0.4               | Itens atualizados 3.4.1, 3.5, 4.1, 4.2, 4.3|  Mikhaelle Bueno, Fabiana Luiza V.P.Ribas |
 | 30/08/2018         |           0.5               | Itens atualizados 3.6|  Michel Camargo |
 | 30/08/2018         |           0.6               | Itens atualizados 5.1|  Adrielly Rodrigues|
-
+| 30/08/2018         |           0.7               | Itens atualizados 6.1, 6.2, 6.3, 6.4 |  Adrielly Rodrigues|
 
 ## 1:Introdução
 -------------------
@@ -33,21 +33,21 @@ Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados ap
 |           Abreviação        |           Definição           |
 |:---------------------------:|:-----------------------------:|
 |         LN                    |              Linguagem Natural                 |
-
+|         SALIC                   |              Sistema de Apoio às Leis de Incentivo à Cultura                |
 ### 1.4 Referências
 
 [Versalic](http://versalic.cultura.gov.br/#/home)
 [IBM Knowledge Center](https://hangouts.google.com/_/elUi/chat-redirect?dest=https%3A%2F%2Fwww.ibm.com%2Fsupport%2Fknowledgecenter%2Fpt-br%2FSSWMEQ_4.0.6%2Fcom.ibm.rational.rrm.help.doc%2Ftopics%2Fr_vision_doc.html)
 [MIT License org.](https://hangouts.google.com/_/elUi/chat-redirect?dest=https%3A%2F%2Fmit-license.org%2F)
 
-### 1.5 Visão geral
+### 1.5 Visão Geral
 
 Este documento está organizado de maneira a se compreender primeiramente as funções e os objetivos do projeto, seguidos pelos perfis de usuário e equipe do projeto. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.
 
-## 2:Posicionamento
+## 2: Posicionamento
 --------------
 
-### 2.1 Oportunidade de negócios
+### 2.1 Oportunidade de Negócios
 O NaturalSearch facilitará a procura de assuntos relevantes ao usuário por entregar sugestões inteligentes sobre o assunto pesquisado, proporcionando uma melhor experiência na navegação da plataforma e maior aprendizado.
 Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestões inteligentes ao usuário, mas não há registro de aplicações que funcionem para diversas APIs em sites de busca.
 
@@ -68,7 +68,7 @@ Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestõe
 - Descrição da Solução: Através dos princípios da LN e grafos a aplicação será capaz de entregar um resultado de busca mais eficiente e intuitivo     
 - DIferenciais: Metodos de buscas mais inteligentes utilizando LN    
 
-## 3:Descrição da Parte Interessada e do Usuário
+## 3: Descrição da Parte Interessada e do Usuário
 ---------------
 
 ### 3.1 Resumo da Parte Interessada
@@ -102,7 +102,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Envolvimento** | Baixo - O usuário não está envolvido diretamente na execução do projeto. |
 |**Comentários ou Problemas**|A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma.|
 
-#### 3.4.2 Equipe de desenvolvimento
+#### 3.4.2 Equipe de Desenvolvimento
 
 
 |||  
@@ -139,7 +139,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Envolvimento**|        Baixo - O usuário não está envolvido diretamente na execução do projeto      |
 |**Comentários ou Problemas**|       A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma           |
 
-### 3.6 Principais Necessidades da parte Interessada ou do usuário
+### 3.6 Principais Necessidades da Parte Interessada ou do Usuário
 
 |           Necessidade     |        Prioridade        |       Interesse     |         Solução Atual     |      Solução Proposta     |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|:---------------:|
@@ -163,13 +163,28 @@ O sistema NaturalSearch tem a finalidade de retornar resultados relevantes e int
 | Satisfação com o resultado de busca obtido  |  Grafos  |              
 
 
-### 4.3 Licenciamento e instalação
+### 4.3 Licenciamento e Instalação
 A distribuição do software esta submetida a licença do [MIT](https://mit-license.org). A licença é aberta quanto a visualização, permissão para modificação e utilização do software.
 
 ## 5: Recursos do produto
 -------------
 
-
 ### 5.1 Facilidade na Obtenção das Informações Reunidas
 
 O NaturalSearch deve consultar os dados apresentados na API do SALIC, passando para o próprio banco de dados para então ser mostrado, de forma que os usuários possam efetuar suas pesquisas com rapidez e eficácia através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
+
+
+
+## 6: Restrições
+-------------
+
+### 6.1 Restrições de Design
+O sistema deve ter uma interface de fácil uso, que seja intuitiva de forma a não necessitar de conhecimento prévio para uso.
+### 6.2 Restrições de Escopo  
+O projeto faz parte de uma disciplina com vida útil de 4 meses do curso de Engenharia de Software da Universidade de Brasília, sendo assim a implementação dos principais requisitos tem um tempo limitado para serem realizados.
+
+### 6.3 Restrições de Uso
+Para a utilização do NaturalSearch o usuário deve estar em conexão com a internet, para que o sistema tenha acesso aos dados do banco necessários para a conclusão da pesquisa. Caso o usuário não tenha esse pré-requisito o sistema não será capaz de concluir a consulta.
+
+### 6.4 Restrições de Implementação
+O sistema será desenvolvido utilizando a linguagem Python, HTML e Javascript.  
