@@ -24,7 +24,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 ## MDS
 
 * [Documento de Visão](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_visao.html)
-* [Documento de Arquitetura]()
+* [Documento de Arquitetura](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_Arquitetura.html)
 * [Protótipo de Baixa Fidelidade]()
 * [Protótipo de Alta Fidelidade]()
 
