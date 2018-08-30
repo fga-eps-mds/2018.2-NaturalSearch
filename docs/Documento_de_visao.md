@@ -90,11 +90,12 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |||  
 |----------|----------|          
 |**Representantes** | Jornalistas, Produtores culturais e Público da [Lei Rouanet](http://rouanet.cultura.gov.br/). |
-|**Descrição** |  Usuários que irão desfrutar da interface e de suas informações.  |
-|**Responsabilidades** | Usar a interface de forma a otimizar a busca/pesquisa. Disponibilizando os resultados em forma de grafos. |
-|**Critérios de Sucesso** | Fornecer informações relacionadas entre si, para o usuário do NaturalSearch. |
-|**Envolvimento** | Baixo |
-|**Comentários ou Problemas**| - |
+|**Descrição** | Cidadão que deseja pesquisar sobre os projetos e suas informações.  |
+|**Tipo** | Usuário informal. |
+|**Responsabilidades** |Utilizar a aplicação e obter dados. Disponibilizados em forma de grafos. |
+|**Critérios de Sucesso** |Quando o usuário achar informações relevantes a sua pesquisa. |
+|**Envolvimento** | Baixo - O usuário não está envolvido diretamente na execução do projeto. |
+|**Comentários ou Problemas**|A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma.|
 
 #### 3.4.2 Equipe de desenvolvimento
 
