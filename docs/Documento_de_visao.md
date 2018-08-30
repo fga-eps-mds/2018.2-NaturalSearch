@@ -89,13 +89,12 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 |||  
 |----------|----------|          
-|**Representantes** |  |
-|**Descrição** |    |
-|**Tipo** | |
-|**Responsabilidades** |   |
-|**Critérios de Sucesso** | |
-|**Envolvimento** |  |
-|**Comentários ou Problemas**|  |
+|**Representantes** | Jornalistas, Produtores culturais e Público da [Lei Rouanet](http://rouanet.cultura.gov.br/). |
+|**Descrição** |  Usuários que irão desfrutar da interface e de suas informações.  |
+|**Responsabilidades** | Usar a interface de forma a otimizar a busca/pesquisa. Disponibilizando os resultados em forma de grafos. |
+|**Critérios de Sucesso** | Fornecer informações relacionadas entre si, para o usuário do NaturalSearch. |
+|**Envolvimento** | Baixo |
+|**Comentários ou Problemas**| - |
 
 #### 3.4.2 Equipe de desenvolvimento
 
