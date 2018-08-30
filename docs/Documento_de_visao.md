@@ -13,11 +13,9 @@ layout: default
 | 29/08/2018         |           0.3                | Itens atualizados 3.1, 3.2, 3.4.2, 3.4.3, 3.7|  Gustavo Duarte Moreira |
 | 29/08/2018         |           0.4               | Itens atualizados 3.4.1, 3.5, 4.1, 4.2, 4.3|  Mikhaelle Bueno, Fabiana Luiza V.P.Ribas |
 | 30/08/2018         |           0.5               | Itens atualizados 3.6|  Michel Camargo |
-| 30/08/2018         |           0.6               | Itens atualizados 5.1|  Adrielly Rodrigues|
-| 30/08/2018         |           0.7               | Itens atualizados 6.1, 6.2, 6.3, 6.4 |  Adrielly Rodrigues|
-| 30/08/2018         |           0.8              | Itens atualizados 7 |  Adrielly Rodrigues|
-| 30/08/2018         |           0.9             | Adisão do sumário e Linkamento dos tópicos  |  Adrielly Rodrigues|
-
+| 30/08/2018         |           0.6               | Itens atualizados 5.1, 6.1, 6.2, 6.3, 6.4, 7|  Adrielly Rodrigues|
+| 30/08/2018         |           0.7             | Adisão do sumário e Linkamento dos tópicos  |  Adrielly Rodrigues|
+| 30/08/2018         |           0.8             | Itens atualizados 3.6  |  Michel Camargo |
 
 # Sumário
 1. [Introdução](#1)
@@ -183,6 +181,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|:---------------:|
 | Realizar busca inteligente com resultados relevantes | Alta | Facilitar a busca de dados mais relevantes | Mecanismos de busca tradicional que buscam tags ou palavras-chave específicas | Utilizar os princípios da LN para realizar pesquisas relevantes |
 | Exibir resultados de pesquisa por relevância de forma intuitiva através de grafos | Alta | Facilitar a vizualização dos dados | Exibição dos resultados de forma linear | Através de grafos relacionar os resultados de forma a evidenciar os mais relevantes para a pesquisa |
+| Exibir nos resultados de pesquisa resultados semelhantes ao tema pesquisado | Alta | Linkar resultados da pesquisa de acordo com o tema pesquisado exibindo resultados correlatos | Resultados de pesquisa somente sobreo que foi pesquisado | Sistema de pesquisa com recomendação de resultados baseado em conteúdo |
 
 ### <a name="3.7"></a> 3.7 Alternativas e Concorrência
 
