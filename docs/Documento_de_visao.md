@@ -119,18 +119,27 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Tipo** | Grupo de Estudadntes da Faculdade do Gama (FGA), matriculados na disciplina de Engenharia de Produto de Software (EPS)|
 |**Responsabilidades** | Gerenciar, supervisionar e manter a equipe de desenvolvimento a fim de que as metodologias ágeis sejam aplicadas e o produto seja entregue ao cliente no final.|
 |**Critérios de Sucesso** | Aplicar metodologias ágeis ao longo do processo e obter um produto que satisfaça a necessidade do cliente.|
-|**Envolvimento** | Alto                 |
+|**Envolvimento** | Alto                 ||||
+| ------------- | ------------- |
+| **Representantes** |      Usuário           |
+| **Descrição**   |      Cidadão que deseja alguma informação sobre os projetos da Lei Rouanet        |
+| Tipo  |      Usuário informal        |
+|**Responsabilidade** |         Utilizar a aplicação e obter dados da Lei Rouanet         |
+|**Critério de sucesso**|     Quando o usuário achar informações relevantes a sua pesquisa     |
+|**Envolvimento**|        Baixo - O usuário não está envolvido diretamente na execução do projeto      |
+|**Comentários ou Problemas**|       A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma           |
 
 ### 3.5 Perfis dos Usuários
 
 |||
 | ------------- | ------------- |
-| **Representantes** |                 |
-| **Descrição**   |               |
-|**Responsabilidade** |                  |
-|**Critério de sucesso**|          |
-|**Envolvimento**|                  |
-|**Comentários ou Problemas**|                  |
+| **Representantes** |      Usuário           |
+| **Descrição**   |      Cidadão que deseja alguma informação sobre os projetos da Lei Rouanet        |
+| Tipo  |      Usuário informal        |
+|**Responsabilidade** |         Utilizar a aplicação e obter dados da Lei Rouanet         |
+|**Critério de sucesso**|     Quando o usuário achar informações relevantes a sua pesquisa     |
+|**Envolvimento**|        Baixo - O usuário não está envolvido diretamente na execução do projeto      |
+|**Comentários ou Problemas**|       A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma           |
 
 ### 3.6 Principais Necessidades da parte Interessada ou do usuário
 
