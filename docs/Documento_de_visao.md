@@ -26,7 +26,7 @@ O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, através 
 Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes.
 Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”.
 Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada.
-Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido,os dados apresentados são consultados em tempo real na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
+Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados apresentados são consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API, para que eles sejam passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
 
 ### 1.3 Definições, acrônimos e abreviações
 
@@ -169,6 +169,7 @@ A distribuição do software esta submetida a licença do [MIT](https://mit-lice
 ## 5: Recursos do produto
 -------------
 
+
 ### 5.1 Facilidade na Obtenção das Informações Reunidas
 
-O NaturalSearch deve consultar em tempo real os dados apresentados na API do SALIC, de forma que os usuários possam efetuar suas pesquisas com rapidez através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
+O NaturalSearch deve consultar os dados apresentados na API do SALIC, passando para o próprio banco de dados para então ser mostrado, de forma que os usuários possam efetuar suas pesquisas com rapidez e eficácia através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
