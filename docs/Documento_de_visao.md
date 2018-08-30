@@ -12,6 +12,7 @@ layout: default
 |28/08/2018 | 0.2      | Itens atualizados 1.1, 1.2, 1.3, 1.4, 1.5, 2.1, 2.2, 2.3|Mikhaelle Bueno, Marcos Vinícius Rodrigues, Fabiana Luiza V.P.Ribas |
 | 29/08/2018         |           0.3                | Itens atualizados 3.1, 3.2, 3.4.2, 3.4.3, 3.7|  Gustavo Duarte Moreira |
 | 29/08/2018         |           0.4               | Itens atualizados 3.4.1, 3.5, 4.1, 4.2, 4.3|  Mikhaelle Bueno, Fabiana Luiza V.P.Ribas |
+| 30/08/2018         |           0.5               | Itens atualizados 3.6|  Michel Camargo |
 
 ## 1:Introdução
 -------------------
@@ -140,7 +141,8 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 |           Necessidade     |        Prioridade        |       Interesse     |         Solução Atual     |      Solução Proposta     |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|:---------------:|
-|        |                   |               |               |                   |
+| Realizar busca inteligente com resultados relevantes | Alta | Facilitar a busca de dados mais relevantes | Mecanismos de busca tradicional que buscam tags ou palavras-chave específicas | Utilizar os princípios da LN para realizar pesquisas relevantes |
+| Exibir resultados de pesquisa por relevância de forma intuitiva através de grafos | Alta | Facilitar a vizualização dos dados | Exibição dos resultados de forma linear | Através de grafos relacionar os resultados de forma a evidenciar os mais relevantes para a pesquisa |
 
 ### 3.7 Alternativas e Concorrência
 
