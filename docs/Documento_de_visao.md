@@ -4,7 +4,7 @@ layout: default
 
 # Documento de Visão
 
-## Histórico de Revisão 
+## Histórico de Revisão
 
 |           Data          |         Versão         |       Descrição   |         Autores   |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|
@@ -13,6 +13,8 @@ layout: default
 | 29/08/2018         |           0.3                | Itens atualizados 3.1, 3.2, 3.4.2, 3.4.3, 3.7|  Gustavo Duarte Moreira |
 | 29/08/2018         |           0.4               | Itens atualizados 3.4.1, 3.5, 4.1, 4.2, 4.3|  Mikhaelle Bueno, Fabiana Luiza V.P.Ribas |
 | 30/08/2018         |           0.5               | Itens atualizados 3.6|  Michel Camargo |
+| 30/08/2018         |           0.6               | Itens atualizados 5.1|  Adrielly Rodrigues|
+
 
 ## 1:Introdução
 -------------------
@@ -21,9 +23,9 @@ layout: default
 O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, através dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural, visa encontar documentos correlacionados, tornando o resultado mais amplo, em forma de grafos, quando uma pesquisa for realizada pelo usuário.
 
 ### 1.2 Escopo
-Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes. 
-Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”. 
-Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada. 
+Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes.
+Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”.
+Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada.
 Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido,os dados apresentados são consultados em tempo real na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
 
 ### 1.3 Definições, acrônimos e abreviações
@@ -54,7 +56,7 @@ Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestõe
 - Problema: As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes
 - Funçoes Afetadas: A entrega de um resultado de pesquisa não esperado e irrelevante     
 - Efeito: O usuário continua sem a informação correta         
-- Solução: Utilizar os princípios da linguagem natural para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados de busca 
+- Solução: Utilizar os princípios da linguagem natural para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados de busca
 
 
 ### 2.3 Instrução de Posição do Produto
@@ -113,7 +115,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Envolvimento** | Alto |
 |**Comentários ou Problemas**| ---    |             
 
-#### 3.4.3 Equipe de Gestão de Projetos 
+#### 3.4.3 Equipe de Gestão de Projetos
 
 |||  
 |----------|----------|        
@@ -156,12 +158,17 @@ O sistema NaturalSearch tem a finalidade de retornar resultados relevantes e int
 
 ### 4.2 Resumo das Capacidades
 | Benefício para o cliente  | Recursos de Suporte |
-| ------ | ------------- | 
-| Rápido retorno do resultado de busca  |    Pesquisa no banco de dados do NaturalSearch   | 
+| ------ | ------------- |
+| Rápido retorno do resultado de busca  |    Pesquisa no banco de dados do NaturalSearch   |
 | Satisfação com o resultado de busca obtido  |  Grafos  |              
 
 
 ### 4.3 Licenciamento e instalação
-A distribuição do software esta submetida a licença do [MIT](https://mit-license.org).  A licença é aberta quanto a visualização, permissão para modificação e utilização do software.
+A distribuição do software esta submetida a licença do [MIT](https://mit-license.org). A licença é aberta quanto a visualização, permissão para modificação e utilização do software.
 
+## 5: Recursos do produto
+-------------
 
+### 5.1 Facilidade na Obtenção das Informações Reunidas
+
+O NaturalSearch deve consultar em tempo real os dados apresentados na API do SALIC, de forma que os usuários possam efetuar suas pesquisas com rapidez através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
