@@ -121,13 +121,6 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Critérios de Sucesso** | Aplicar metodologias ágeis ao longo do processo e obter um produto que satisfaça a necessidade do cliente.|
 |**Envolvimento** | Alto                 ||||
 | ------------- | ------------- |
-| **Representantes** |      Usuário           |
-| **Descrição**   |      Cidadão que deseja alguma informação sobre os projetos da Lei Rouanet        |
-| Tipo  |      Usuário informal        |
-|**Responsabilidade** |         Utilizar a aplicação e obter dados da Lei Rouanet         |
-|**Critério de sucesso**|     Quando o usuário achar informações relevantes a sua pesquisa     |
-|**Envolvimento**|        Baixo - O usuário não está envolvido diretamente na execução do projeto      |
-|**Comentários ou Problemas**|       A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma           |
 
 ### 3.5 Perfis dos Usuários
 
