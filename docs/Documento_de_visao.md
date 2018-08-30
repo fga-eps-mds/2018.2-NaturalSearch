@@ -15,6 +15,7 @@ layout: default
 | 30/08/2018         |           0.5               | Itens atualizados 3.6|  Michel Camargo |
 | 30/08/2018         |           0.6               | Itens atualizados 5.1|  Adrielly Rodrigues|
 | 30/08/2018         |           0.7               | Itens atualizados 6.1, 6.2, 6.3, 6.4 |  Adrielly Rodrigues|
+| 30/08/2018         |           0.8              | Itens atualizados 7 |  Adrielly Rodrigues|
 
 ## 1:Introdução
 -------------------
@@ -188,3 +189,9 @@ Para a utilização do NaturalSearch o usuário deve estar em conexão com a int
 
 ### 6.4 Restrições de Implementação
 O sistema será desenvolvido utilizando a linguagem Python, HTML e Javascript.  
+
+
+## 7: Faixas de qualidade
+-------------
+
+A aplicação será via web, para maior eficiência, devido a maior parte dos usuários terem mais acessibilidade a um browser(ex: Google Chrome, Mozilla Firefox, Safari, etc.) do que um aparelho mobile. Contudo, o NaturalSearch também deve se adequar às telas de smartphones e tablets, para que não haja transtornos ao ser utilizado.
