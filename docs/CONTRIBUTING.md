@@ -48,7 +48,7 @@ Exemplo:
 
 ## Política de _branches_
 
-Visando padronizar a criação de _branchs_ e facilitar a identificação do objetivo de criação de cada uma delas a equipe adota uma política de _branches_ que deve ser seguida completamente para qualquer um que visa contribuir com este projeto. A política segue o fluxo de trabalho da ferramenta _git flow_, sendo assim, recomenda-se fortemente a instalação e utilização dela. Os tipos de branch são utilizados são:
+Visando padronizar a criação de _branchs_ e facilitar a identificação do objetivo de criação de cada uma delas a equipe adota uma política de _branches_ que deve ser seguida completamente para qualquer um que visa contribuir com este projeto. A política segue o fluxo de trabalho da ferramenta [_git flow_](https://github.com/nvie/gitflow), sendo assim, recomenda-se fortemente a instalação e utilização dela. Os tipos de branch são utilizados são:
 
 * **master** - é a _branch_ principal do repositório e realiza o papel de ambiente de produção. Nela só é aceito código devidamente testado e validado, de modo que todas as inserções nela feitas serão as _releases_ do projeto.
 
@@ -61,3 +61,40 @@ Visando padronizar a criação de _branchs_ e facilitar a identificação do obj
 * **hotfix/** - _branch_ utilizada para corrigir _bugs_ de alta urgências que foram passados para a **master**. O nome deve ser a descrição do _bug_. Ex: "hotfix/ descricao"
 
 * **release/** - _branch_ utilizada para a homologação do sistema e correções finais, caso sejam necessárias. O nome deve ser o  número da versão da nova _release_. Ex: "release/ v1.0"
+
+### Usando o _git flow_
+
+Para seguir o fluxo do _git flow_ no projeto da melhor forma abra o terminal do Linux e configure-o da seguinte forma. 
+
+1 - Clone o repositório para sua máquina com o comando:
+
+    git clone https://github.com/fga-eps-mds/2018.2-NaturalSearch.git
+
+2 - Vá até a pasta do projeto e utilize:
+
+    git flow init
+
+Responda as perguntas exatamente da seguinte forma:
+
+    Which branch should be used for bringing forth production releases?
+        - development
+        - gh-pages
+        - master
+    Branch name for production releases: [master]         
+
+    Which branch should be used for integration of the "next release"?
+        - development
+        - gh-pages
+    Branch name for "next release" development: [] development         
+
+    How to name your supporting branch prefixes?
+    Feature branches? [feature/] 
+    Bugfix branches? [bugfix/] 
+    Release branches? [release/] 
+    Hotfix branches? [hotfix/] 
+    Support branches? [support/] 
+    Version tag prefix? [] v
+
+Para a pergunta "Hooks and filters directory?" apenas pressine ENTER.
+
+Agora que o _git flow_ foi configurado na sua máquina basta utilizá-lo. 
