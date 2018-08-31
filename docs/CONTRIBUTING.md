@@ -46,4 +46,18 @@ Exemplo:
 
     Co-authored-by: FilipeKN4 <filipekn4@gmail.com> (Assinatura do(s)participante(s))
 
+## Política de _branches_
 
+Visando padronizar a criação de _branchs_ e facilitar a identificação do objetivo de criação de cada uma delas a equipe adota uma política de _branches_ que deve ser seguida completamente para qualquer um que visa contribuir com este projeto. A política segue o fluxo de trabalho da ferramenta _git flow_, sendo assim, recomenda-se fortemente a instalação e utilização dela. Os tipos de branch são utilizados são:
+
+* **master** - é a _branch_ principal do repositório e realiza o papel de ambiente de produção. Nela só é aceito código devidamente testado e validado, de modo que todas as inserções nela feitas serão as _releases_ do projeto.
+
+* **development** - é a _branch_ que concentrará todas as novas funcionalidades do projeto, onde realizará o papel de concentrar o trabalho do ambiente de desenvolvimento, correção de bugs e finalização de testes.   
+
+* **feature/** - tipo de _branch_ utlizada para o desenvolvimento de uma nova _feature_ do projeto, de modo que o nome do deve ser "US - " e o número da história de usuário que essa _feature_ representa. Ex: "feature/ US - 01"
+
+* **bugfix/** - _branch_ utilizada para corrigir _bugs_ de baixa ou média urgências e não estão presentes na **master**. O nome deve ser a descrição do _bug_. Ex: "bugfix/ descricao"
+
+* **hotfix/** - _branch_ utilizada para corrigir _bugs_ de alta urgências que foram passados para a **master**. O nome deve ser a descrição do _bug_. Ex: "hotfix/ descricao"
+
+* **release/** - _branch_ utilizada para a homologação do sistema e correções finais, caso sejam necessárias. O nome deve ser o  número da versão da nova _release_. Ex: "release/ v1.0"
