@@ -73,8 +73,9 @@ Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados ap
 
 |           Abreviação        |           Definição           |
 |:---------------------------:|:-----------------------------:|
-|         LN                    |              Linguagem Natural                 |
-|         SALIC                   |              Sistema de Apoio às Leis de Incentivo à Cultura                |
+|  LN    |     Linguagem Natural     |
+|    SALIC    |   Sistema de Apoio às Leis de Incentivo à Cultura    |
+
 ### <a name="1.4"></a> 1.4 Referências
 
 [Versalic](http://versalic.cultura.gov.br/#/home)
@@ -199,8 +200,9 @@ Não foram encontradas aplicações que realizem pesquisas por meio de LN e most
 O sistema NaturalSearch tem a finalidade de retornar resultados relevantes e inteligentes a pesquisa feita pelo usuário sobre projetos da [Lei Rouanet](http://rouanet.cultura.gov.br). Para o cumprimento do propósito do sistema, ele deverá acessar os dados da API do site [Versalic](http://versalic.cultura.gov.br/#/home) obtendo os dados que contém informações como, tipo, valor solicitado, valor aprovado, municípo, ano, situação do projeto, além dos detalhes das etapas, objetivos, sinopse, entre outras informações sobre o projeto, que possibilitará o processamento de LN e o retorno da pesquisa em forma de grafos.
 
 ### <a name="4.2"></a> 4.2 Resumo das Capacidades
+
 | Benefício para o cliente  | Recursos de Suporte |
-| ------ | ------------- |
+|:------:|:-------------:|
 | Rápido retorno do resultado de busca  |    Pesquisa no banco de dados do NaturalSearch   |
 | Satisfação com o resultado de busca obtido  |  Grafos  |              
 

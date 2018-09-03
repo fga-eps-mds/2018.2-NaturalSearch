@@ -9,7 +9,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 ## Software Livre
 
 * [Contribuição](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CONTRIBUTING.html)
-* [Código de Conduta]()
+* [Código de Conduta](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CODE_OF_CONDUCT.html)
 
 ## EPS
 
