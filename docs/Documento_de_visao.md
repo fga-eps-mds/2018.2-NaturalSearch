@@ -17,6 +17,7 @@ layout: default
 | 30/08/2018         |           0.7             | Adisão do sumário e Linkamento dos tópicos  |  Adrielly Rodrigues|
 | 30/08/2018         |           0.8             | Itens atualizados 3.6  |  Michel Camargo |
 | 30/08/2018         |           0.9             | Itens atualizados 8, 9.1, 9.2  |  Mikhaelle Bueno |
+| 04/09/2018         |           1.0             | Itens atualizados 1.1, 1.2, 1.5, 2.1, 4.1  |  Mikhaelle Bueno |
 
 # Sumário
 1. [Introdução](#1)
@@ -61,13 +62,13 @@ layout: default
 -------------------
 
 ### <a name="1.1"></a> 1.1 Propósito
-O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, através dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural(LN), visa encontar documentos correlacionados, tornando o resultado mais amplo, em forma de grafos, quando uma pesquisa for realizada pelo usuário.
+O **NaturalSearch** é uma ferramenta para navegação e pesquisa com sistema de recomendação que, através dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural(LN), visa encontar documentos correlacionados. Quando uma pesquisa é realizada o resultado dos projetos e propostas similares serão retornando em forma de grafos.
 
 ### <a name="1.2"></a> 1.2 Escopo
 Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes.
 Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”.
 Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada.
-Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados apresentados são consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API, para que eles sejam tratados com LN e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e disponibilizados, através de grafos, tornando a pesquisa mais interessante e eficiente.
+Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, haverá um sistema de recomendação de conteúdos similares. Os dados serão consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), através de sua API, para que eles sejam tratados com LN e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e retornados, através de grafos, tornando a pesquisa mais interessante e eficiente. O grafo irá permitir uma visualização mais intuitiva das correlações entre os dados
 
 ### <a name="1.3"></a> 1.3 Definições, acrônimos e abreviações
 
@@ -78,37 +79,41 @@ Entretanto com o NaturalSearch, que é o projeto a ser desenvolvido, os dados ap
 
 ### <a name="1.4"></a> 1.4 Referências
 
-[Versalic](http://versalic.cultura.gov.br/#/home)
-[IBM Knowledge Center](https://hangouts.google.com/_/elUi/chat-redirect?dest=https%3A%2F%2Fwww.ibm.com%2Fsupport%2Fknowledgecenter%2Fpt-br%2FSSWMEQ_4.0.6%2Fcom.ibm.rational.rrm.help.doc%2Ftopics%2Fr_vision_doc.html)
-[MIT License org.](https://hangouts.google.com/_/elUi/chat-redirect?dest=https%3A%2F%2Fmit-license.org%2F)
+- [Versalic](http://versalic.cultura.gov.br/#/home)
+- [IBM Knowledge Center](https://hangouts.google.com/_/elUi/chat-redirect?dest=https%3A%2F%2Fwww.ibm.com%2Fsupport%2Fknowledgecenter%2Fpt-br%2FSSWMEQ_4.0.6%2Fcom.ibm.rational.rrm.help.doc%2Ftopics%2Fr_vision_doc.html)
+- [MIT License org.](https://hangouts.google.com/_/elUi/chat-redirect?dest=https%3A%2F%2Fmit-license.org%2F)
 
 ### <a name="1.5"></a> 1.5 Visão Geral
 
-Este documento está organizado de maneira a se compreender primeiramente as funções e os objetivos do projeto, seguidos pelos perfis de usuário e equipe do projeto. Por fim, são descritas as características técnicas da aplicação. Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.
+Neste documento está descrito as funções, os objetivos do projeto, perfis de usuário, equipe do projeto e características técnicas da aplicação.
+Está organizado em: posicionamento, descrição da parte interessada e do usuário, visão geral e recursos do produto, restrições, faixas de qualidade, procedência e prioridade, requisitos e documentação do produto e apêndice.
 
 ## <a name="2"></a> 2: Posicionamento
 --------------
 
 ### <a name="2.1"></a> 2.1 Oportunidade de Negócios
-O NaturalSearch facilitará a procura de assuntos relevantes ao usuário por entregar sugestões inteligentes sobre o assunto pesquisado, proporcionando uma melhor experiência na navegação da plataforma e maior aprendizado.
+O NaturalSearch facilitará a procura de projetos da Lei Rouanet por entregar sugestões inteligentes e visualização de forma mais clara dos projetos que se assemelham, proporcionando uma melhor experiência na navegação da plataforma por dispor as informações mais relevantes de forma inteligente.
 Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestões inteligentes ao usuário, mas não há registro de aplicações que funcionem para diversas APIs em sites de busca.
 
 ### <a name="2.2"></a> 2.2 Instrução do Problema
-
-- Problema: As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes
-- Funçoes Afetadas: A entrega de um resultado de pesquisa não esperado e irrelevante     
-- Efeito: O usuário continua sem a informação correta         
-- Solução: Utilizar os princípios da linguagem natural para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados de busca
+|||  
+|----------|----------|          
+|**Problema** |As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes |
+|**Funçoes Afetadas** | A entrega de um resultado de pesquisa não esperado e irrelevante     |
+|**Efeito** | O usuário continua sem a informação correta. |
+|**Solução** |Utilizar os princípios da linguagem natural para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados  mais relevantes e correlacionados. |
 
 
 ### <a name="2.3"></a> 2.3 Instrução de Posição do Produto
 
-
-- Público Alvo :Usuários do site de busca            
-- Carências: Resultados relevantes          
-- Solução: NaturalSearch          
-- Descrição da Solução: Através dos princípios da LN e grafos a aplicação será capaz de entregar um resultado de busca mais eficiente e intuitivo     
-- DIferenciais: Metodos de buscas mais inteligentes utilizando LN    
+|||  
+|----------|----------|          
+|**Público Alvo** |Usuários do site de busca. |
+|**Carências** | Resultados relevantes.    |
+|**Solução** | NaturalSearch. |
+|**Descrição da Solução** |Através dos princípios da LN e grafos a aplicação será capaz de entregar um resultado de busca mais eficiente e intuitivo. |
+|**Diferenciais** | Metodos de buscas mais inteligentes utilizando LN e retorno de resultados correlacionados em forma de grafo. |
+   
 
 ## <a name="3"></a> 3: Descrição da Parte Interessada e do Usuário
 ---------------
@@ -197,7 +202,7 @@ Não foram encontradas aplicações que realizem pesquisas por meio de LN e most
 -------------
 
 ### <a name="4.1"></a> 4.1 Perspectiva do produto
-O sistema NaturalSearch tem a finalidade de retornar resultados relevantes e inteligentes a pesquisa feita pelo usuário sobre projetos da [Lei Rouanet](http://rouanet.cultura.gov.br). Para o cumprimento do propósito do sistema, ele deverá acessar os dados da API do site [Versalic](http://versalic.cultura.gov.br/#/home) obtendo os dados que contém informações como, tipo, valor solicitado, valor aprovado, municípo, ano, situação do projeto, além dos detalhes das etapas, objetivos, sinopse, entre outras informações sobre o projeto, que possibilitará o processamento de LN e o retorno da pesquisa em forma de grafos.
+O sistema NaturalSearch tem a finalidade de retornar os resultados mais relevantes, com recomendações que se assemelham, a pesquisa feita pelo usuário sobre projetos da [Lei Rouanet](http://rouanet.cultura.gov.br). Para o cumprimento do propósito do sistema, ele deverá acessar os dados da API do site [Versalic](http://versalic.cultura.gov.br/#/home) obtendo os dados que contém informações como, tipo, valor solicitado, valor aprovado, municípo, ano, situação do projeto, além dos detalhes das etapas, objetivos, sinopse, entre outras informações sobre o projeto, que possibilitará o processamento de LN e retornar recomendações, em forma de grafo, que se assemelham ao que foi pesquisado.
 
 ### <a name="4.2"></a> 4.2 Resumo das Capacidades
 
