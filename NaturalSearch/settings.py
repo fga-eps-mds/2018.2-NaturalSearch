@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'nome_projeto',
         'USER': 'Igor',
         'PASSWORD': '1234678', 
-        'HOST': 'db'
+        'HOST': os.environ.get('POSTGRES_HOST')
     }
 }
 
