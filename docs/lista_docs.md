@@ -30,6 +30,18 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 ## _Sprints_
 
+### _Semana_ 1
+
+* [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_semana_1.html)
+* [Resultados]()
+* [Riscos]()
+
+### _Semana_ 2
+
+* [Planejamento]()
+* [Resultados]()
+* [Riscos]()
+
 ### _Sprint_ 0
 
 * [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_sprint_0.html)
