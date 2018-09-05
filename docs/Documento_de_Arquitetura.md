@@ -10,6 +10,7 @@ layout: default
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|
 | 30/08/2018         |           0.1                | Abertura de documento | [Adrielly Rodrigues de Jesus](https://github.com/drykette), [Fabiana Luiza V. P. Ribas](https://github.com/FabianaRibas), [Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira), [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle); |
 | 05/09/2018 | 0.2 | Definição de metas e restrições de arquitetura |[Michel Martins de Camargo](https://github.com/micheldcamargo) |
+| 05/09/2018 | 0.3 | Definição dos itens 1.1.3, 1.1.4 / Criação do item 2, Adição de referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 
 ## Sumário
 
@@ -61,12 +62,21 @@ Este documento foi construído sobre a visão da arquitetura utilizada na implem
 
 ### <a name="1.1"></a>1.3 Visão Geral
 
+O projeto **NaturalSearch** tem o objetivo de construir uma ferramenta de navegação e pesquisa que, utilizando Linguagem Natural (LN) visando entregar correlações entre documentos. Utilizando o modelo de grafos para exibir os resultados.
+
 ### <a name="1.1"></a>1.4 Definições, acrônimos e abreviações
+
+* API - Application Programming Interface
+* MVT - Model-View-Template
+* MVC - Model-View-Controller.
+* LN - Linguagem Natural 
 
 ## <a name="1"></a>2. Representação da Arquitetura
 
+Para o projeto será adotada a arquitetura baseada em componentes. Nesta abordagem o foco está na decomposição dos sistemas possibilitando a reusabilidade, substituição, encapsulamento, independência. O *Django Application* é o conceito responsável por dar flexibilidade e grande reaproveitamento de componentes ao **Django**.
+
 ## <a name="1"></a>3. Metas e Restrições de Arquitetura       
-Descreve as principais ferramentas a serem utilizadas no projeto e caso necessário define as versões mínimas das mesmas para o ambiente de desenvolvimento. 
+Descreve as principais ferramentas a serem utilizadas no projeto e caso necessário define as versões mínimas das mesmas para o ambiente de desenvolvimento.
 
 ### <a name="1"></a>3.1 Ambiente e Ferramentas de Desenvolvimento
 
@@ -103,3 +113,8 @@ Descreve as principais ferramentas a serem utilizadas no projeto e caso necessá
 ## <a name="1"></a>9. Qualidade                 
 
 ## <a name="1"></a>10. Referências
+ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm. Acesso em: 04 de Setembro de 2018.
+
+WIKIPEDIA: Engenharia de software baseada em componentes. Disponível em: https://pt.wikipedia.org/wiki/Engenharia_de_software_baseada_em_componentes.  Acesso em: 04 de Setembro de 2018.
+
+DJANGO: DOCUMENTAÇÃO DO DJANGO: https://docs.djangoproject.com/pt-br/2.1/. Acesso em: 05 de Setembro de 2018.
