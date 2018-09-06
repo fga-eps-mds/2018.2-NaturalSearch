@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Planejamento Semana 1
+# Planejamento da Primeira Semana
 
 ## 1. Dados da Primeira Semana
 
@@ -10,27 +10,33 @@ layout: default
 |----------|----------|
 |Data Fim    | 18/09/2018 |
 
+### Duração: 5 dias
+### Pontos Planejados: 0 pontos
+### Membros Presentes: 10 mebros
 
 ## 2. Papéis  
-### Scrum master:<p> Lucas Midlhey Cardoso Naves	
-### Product Owner: <p> Shermam Tácia da Costa Lima
-### Devops:<p> Igor Araujo
-### Arquiteto: <p> Filipe Barcelos
+### Scrum master:
+#### Lucas Midlhey Cardoso Naves	
+### Product Owner: 
+#### Shermam Tácia da Costa Lima
+### Devops: 
+#### Igor Araujo
+### Arquiteto: 
+#### Filipe Barcelos
 ### Desenvolvedores:
-### Mikhaelle de Carvalho Bueno	
-### Adrielly Rodrigues de Jesus	
-### Marcos Vinícius Rodrigues da Conceição	
-### Fabiana Luiza V. P. Ribas	
-### Gustavo Duarte Moreira	
-### Michel Martins de Camargo
+#### Mikhaelle de Carvalho Bueno	
+#### Adrielly Rodrigues de Jesus	
+#### Marcos Vinícius Rodrigues da Conceição	
+#### Fabiana Luiza V. P. Ribas	
+#### Gustavo Duarte Moreira	
+#### Michel Martins de Camargo
 
 
-## 3. Motivação
-Nessa primeira semana de projeto definiremos a equipe, tanto de MDS quanto de EPS, para que o projeto consiga ser executado de acordo com as especificações da matéria,além disso, teremos o primeiro contato com os possíveis projetos que teremos que desenvolver.
-Definiremos 4 treinamentos para que MDS tenham contato com as ferramentas básicas, de uso cotidiano,  independentemente do projeto selecionado.
+## 3. Planejamento da primeira semana 
 
+No momento em que planejamos essa primeira semana tínhamos pouco conhecimento sobre qual projeto iriamos ter que desenvolver,tanto na parte de tecnologias que seriam utilizadas quanto sobre qual projeto executaremos,foi então que decidimos dar treinamentos relacionados a ferramentas e conceitos básicos para qualquer desenvolvedor.
 
-## 4. Objetivos da primeira Semana
+## 4. Objetivos da primeira semana
 
 * Conhecer Todos os integrantes do grupo
 * [Dar treinamento de Banco](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/3)

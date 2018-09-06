@@ -39,7 +39,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 ### _Semana_ 2
 
-* [Planejamento]()
+* [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_semana_2.html)
 * [Resultados]()
 * [Riscos]()
 

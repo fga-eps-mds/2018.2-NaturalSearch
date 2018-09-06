@@ -10,7 +10,7 @@ layout: default
 
 ## Motivação
 
-Nesta Primeira Sprint foram definidas algumas tecnologias que serão estudadas e aplicadas no projeto, tais como as linguagens Python, JavaScript e CSS. Devido a facilidade de construção Web com estas linguagens, usaremos tambem framework Django.
+Nesta Primeira Sprint foram definidas algumas tecnologias que serão estudadas e aplicadas no projeto, tais como as linguagens Python, JavaScript e CSS. Devido a facilidade de construção Web com estas linguagens, usaremos também framework Django.
 
 Um dos fatores que motivou a utilizar o framework Django, foi por ser uma tecnologia facilitadora para construção de sistema web, sendo a linguagem Python de fácil aprendizado.
 
@@ -31,7 +31,7 @@ Esta Sprint inicial tem como foco o estudo das tecnologias que serão trabalhada
 * Estudos de linguagem natural e Visualização em grafo
 * Mapear requisitos
 
-## Como Alcançao esses Objetivos
+## Como Alcançar esses Objetivos
 
 * No estudo de linguagens e frameworks foram feitos dojos e entregues conteúdos para o time de desenvolvimento entender mais a fundo o projeto.
 * Através de uma reunião presencial semanalmente conseguiremos cobertura suficiente para finalizar a Sprint, assim como levantamento de requisitos e stories, papéis, definição de pronto, backlog e roadmap do produto.
