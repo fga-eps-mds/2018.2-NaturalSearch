@@ -41,11 +41,11 @@ Planejamos definir o projeto que iremos desenvolver durante o semestre e entrar 
 
 ## 4. Objetivos da Segunda Semana
 
-*  Definição de projeto
-* Explicar sobre Documento de visão
+* [Definição de projeto](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/12)
+* [Explicar sobre Documento de visão](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/13)
 * Explicitar possíveis tecnologias que serão utilizadas
 * Elicitar requisitos funcionais e não funcionais 
-* Desenvolver Documentação de software Livre como [Lincensa](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/9),Código de conduta,Contribuição e Descrição.
+* Desenvolver Documentação de software Livre como [Lincensa](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/9),Código de conduta,[Contribuição](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/10) e Descrição.
 
 ## 5. Como Alcançar esses Objetivos
 Para alcançar esses objetivos é necessário que seja definido o projeto que iremos executar e que tenhamos uma reunião com o nosso cliente,para conseguirmos utilizar algumas técnicas de elicitação de requisitos,para termos uma visão do produto que será entregue ao final do semestre.

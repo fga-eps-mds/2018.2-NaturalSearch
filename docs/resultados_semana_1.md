@@ -4,7 +4,7 @@
 
 __Pontos concluídos__: 0 pontos,pois ainda não havíamos definidos histórias de usuários
 
-- Histórias entregues:
+- Resultados:
    - Conhecer Todos os integrantes do grupo
    - [Dar treinamento de Banco](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/3)
    - [Dar treinamento de Docker](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/2)
