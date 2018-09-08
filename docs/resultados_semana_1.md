@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Resultados da primeira semana
 
 ## 1. Resumo da Primeira Semana
@@ -25,7 +29,11 @@ Comunicação entre MDS e EPS foi feita de forma rápida e fluida | - | - |
 
 ## 3. Quadro de Conhecimento
 
-![imagem do quadro de conhecimentos]()
+![imagem do quadro de conhecimentos](images/habilidades_semana1.png)
+
+![imagem do quadro de conhecimentos](images/duplas_semana1.png)
+
+![imagem do quadro de conhecimentos](images/legenda_semana1.png)
 
 Este é o quadro inicial sobre o conhecimento de cada um dos integrantes,como não sabemos como ou qual será o nosso projeto,definimos de forma mais geral tecnologias,metodologias e frameworks que podem ser úteis ao desenvolver um projeto desse porte.
 A partir desse quadro será feito o pareamento das primeiras sprints,pois para que não aja uma grande disparidade entre as duplas o membro com a maior porcentagem de conhecimento irá parear com a que possui menor.A tendência é que com o passar do tempo e a melhor delimitação do que será necessário utilizar no projeto esse quadro vá melhorando.

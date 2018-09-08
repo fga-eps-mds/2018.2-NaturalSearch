@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Definição da Metodologia 
 
 ## Introdução
