@@ -1,3 +1,10 @@
+| Data| Versão | Descrição |Autor(a)|
+| -------- | ------ | ------ | ------ |
+|09/09/2018|1.0|Abertura do Dcumento| Shermam Tácia da Costa Lima|
+
+
+
+
 # Termo de Abertura do Projeto
    
 ## 1. Introdução
@@ -15,7 +22,7 @@ Desenvolvimento de um sistema de visualização de dados, para auxiliar o sistem
 ## 6. Restrições
 A proposta desse projeto envolve a utilização de certos recursos:
 ·         O usuário deve dispor de internet
-·         O usuário deve dispor de um navegador, podendo ser Chrome, Firefox 
+·         O usuário deve dispor de um navegador, podendo ser Chrome, Firefox e entre os demais navegadores similiares.
 ## 7. Riscos Iniciais
 Os principais riscos do desenvolvimento do NaturalSearch e suas medidas preventivas são:
 #### 7.1 Riscos Negativos
@@ -34,18 +41,20 @@ Os principais riscos do desenvolvimento do NaturalSearch e suas medidas preventi
 | -------- | ------ |
 |Design agradável| Satisfação dos usuários
 |Terceiros colaborarem com o projeto| Maior visibilidade da plataforma e mais funcionalidades
-# 8. Cronogramas e Marcos
+## 8. Cronogramas e Marcos
 O projeto tem como base dois principais marcos, que representam entregas do produto, são eles: Release 01 e Release 02.
 O cronograma do projeto é baseado nas datas pré-determinadas nas disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software. As principais datas e as mais importantes atividades serão descritas na tabela abaixo:
+
 | Marco | Data |Atividade|
 | -------- | ------ | ------ |
-|Início do Projeto|14/07/2018|Começo do Projeto
+|Início do Projeto|14/07/2018|Começo do Projeto|
 |Release 01|02/10/2018|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.
 |Release 02|27/11/2018|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.
-# 9. Custo Estimado
+## 9. Custo Estimado
 Foram postos na base do cálculo todos os insumos dos processos necessários para a realização do projeto, portanto, gastos com pessoal, aquisições e ferramentas foram contabilizados.
 #### 9.1 Aquisição
 Os recursos físicos necessários para o desenvolvimento do projeto é que cada um dos envolvidos com o projeto tenha seu próprio notebook, a equipe de desenvolvimento necessita de máquinas que sejam capazes de suportar o seu ambiente de desenvolvimento com pelo menos os requisitos mínimos para desenvolver aplicativos na plataforma.
+
 | Recurso | Quant. |Preço Unitário| Mensal |Meses|Sub Total|
 | -------- | ------ | ------ | ------ |------ |------ |
 |Notebook|10|R$ 2.800,00|Não |-|R$ 28.000,00|
@@ -56,8 +65,9 @@ Portanto, com os recursos de notebook, internet e Energia Elétrica, o custo tot
 #### 9.2 Recursos Humanos
 O custo dos recursos humanos para o software pode ser estimado baseando-se na quantidade de horas trabalhadas por semana e o custo médio do valor/hora da equipe que irá trabalhar no produto.  A equipe é composta por 4 gerentes de projetos e 6 desenvolvedores.
 Estima-se que cada integrante da equipe de desenvolvimento trabalhe 15 horas semanais e a cada membro da  equipe de gerência trabalhe 12 horas semanais. Considerando o valor em relação ao mercado de Desenvolvedores e Gerente, o valor definido para os Desenvolvedores é de R$ 32,00 a hora e dos Gerentes R$39,67. Levando em consideração os 4 meses, sendo estes composto de 15 semanas.
+
 |  | Gerente do Projeto |Desenvolvedores|
-| -------- | ------ | ------ | 
+| -------- | ------ | ------ |
 |Quantidade de Membros|4|6
 |Horas Trabalhadas na semana|12|15
 |Valor da Hora|39,67|32,00
@@ -102,7 +112,7 @@ Por tanto, o custo do total dos Recursos Humanos:
 |Ferramentas|R$ 0,00|
 |Total|R$ 101.002,50|
 
-# 10. Stakeholders
+## 10. Stakeholders
 
 Os Gerentes do projeto NaturalSearch é definido por 4 discentes da Disciplina de Engenharia de Produto de Software:
 
@@ -126,8 +136,9 @@ Os Desenvolvedores são composto por 6 discentes da disciplina de Metodos e Tecn
 |Michel Martins de Camargo|Desenvolvedor|michel.dcamargo@gmail.com| @micheldcamargo|
 
 
-# Referências
+### Referências
 Rank de tarifas. ANEEL Agência Nacional de Energia Elétrica. Disponível em http://www.aneel.gov.br/ranking-das-tarifas. Acesso em 02 de setembro de 2018
+
 Link do Sistema Versalic http://versalic.cultura.gov.br/#/home. Acesso em 02 de setembro de 2018
 
 
