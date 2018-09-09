@@ -13,7 +13,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 ## EPS
 
-* [TAP]()
+* [Termo de Abertura do Projeto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/TAP.html)
 * [EVM]()
 * [EAP]()
 * [Definição de Pronto]()
