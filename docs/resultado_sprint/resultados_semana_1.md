@@ -36,10 +36,9 @@ Comunicação entre MDS e EPS foi feita de forma rápida e fluida | - | - |
 ![Legenda do quadro de conhecimento](images_resultado/legenda_semana1.png)
 
 ### Duplas de pareamento: 
-![Duplas de pareamento](images_resultado/duplas_sprint1.png)
+![Duplas de pareamento](images_resultado/duplas_semana1.png)
 
-Este é o quadro inicial sobre o conhecimento de cada um dos integrantes,como não sabemos como ou qual será o nosso projeto,definimos de forma mais geral tecnologias,metodologias e frameworks que podem ser úteis ao desenvolver um projeto desse porte.
-A partir desse quadro será feito o pareamento das primeiras sprints,pois para que não aja uma grande disparidade entre as duplas o membro com a maior porcentagem de conhecimento irá parear com a que possui menor.A tendência é que com o passar do tempo e a melhor delimitação do que será necessário utilizar no projeto esse quadro vá melhorando.
+
 
 ## 4. Análise do Scrum Master
 
