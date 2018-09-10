@@ -21,7 +21,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Plano de Comunicação](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Plano_de_comunicacao.html)
 * [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
 * [Mapa de Requisitos](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Mapa_de_requisitos.html)
-* [Histórias de Usuário](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Historias_de_usuarios.html)
+* [Histórias de Usuário](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Historias_de_usuario.html)
 
 ## MDS
 
@@ -58,6 +58,6 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 ### _Sprint_ 2
 
-* [Planejamento]()
+* [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_sprint/planejamento_sprint_2.html)
 * [Resultados]()
 * [Riscos]()

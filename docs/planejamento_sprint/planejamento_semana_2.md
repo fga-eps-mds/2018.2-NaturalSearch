@@ -13,7 +13,7 @@ layout: default
 
 ### Duração: 5 dias
 ### Pontos Planejados: 0 pontos
-### Membros Presentes: 10 mebros
+### Membros Presentes: 10 membros
 
 ## 2. Papéis  
 ### Scrum master:

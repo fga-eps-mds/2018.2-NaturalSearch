@@ -6,13 +6,13 @@ layout: default
 
 ## 1. Dados da Primeira Semana
 
-|Data Início | 13/08/2018 |
+|Data Início | 13/09/2018 |
 |----------|----------|
 |Data Fim    | 18/09/2018 |
 
 ### Duração: 5 dias
-### Pontos Planejados: 0 pontos
-### Membros Presentes: 10 mebros
+### Pontos Planejados:0 pontos
+### Membros Presentes: 10 membros
 
 ## 2. Papéis  
 ### Scrum master:
