@@ -20,7 +20,8 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Definição da Metodologia](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definicao_da_Metodologia.html)
 * [Plano de Comunicação](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Plano_de_comunicacao.html)
 * [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
-* [Mapa de Requisitos]()
+* [Mapa de Requisitos](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Mapa_de_requisitos.html)
+* [Histórias de Usuário](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Historias_de_usuarios.html)
 
 ## MDS
 
