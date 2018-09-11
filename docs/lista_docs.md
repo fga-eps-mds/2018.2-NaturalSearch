@@ -15,7 +15,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 * [Termo de Abertura do Projeto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/TAP.html)
 * [EVM]()
-* [EAP]()
+* [EAP](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/EAP.html)
 * [Definição de Pronto]()
 * [Definição da Metodologia](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definicao_da_Metodologia.html)
 * [Plano de Comunicação](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Plano_de_comunicacao.html)
