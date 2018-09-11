@@ -11,6 +11,7 @@ layout: default
 | 30/08/2018         |           0.1                | Abertura de documento | [Adrielly Rodrigues de Jesus](https://github.com/drykette), [Fabiana Luiza V. P. Ribas](https://github.com/FabianaRibas), [Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira), [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle); |
 | 05/09/2018 | 0.2 | Definição de metas e restrições de arquitetura |[Michel Martins de Camargo](https://github.com/micheldcamargo) |
 | 05/09/2018 | 0.3 | Definição dos itens 1.1.3, 1.1.4 / Criação do item 2, Adição de referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
+| 11/09/2018 | 0.3 | Criação do item 3, Correção dos links das referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 
 ## Sumário
 
@@ -95,10 +96,14 @@ Os modelos(Models) são classes que representam os dados das tabela do banco de 
 A View é responsável por receber a requisição web e retornar uma resposta web. Ela se comunica com a Model e a Template com lógicas arbritárias necessárias para retornar uma resposta, como por exemplo quando um usuário tenta fazer login, a view pega a requisição, confere com a model se os dados estão certos e pega com o template a forma visual que deve ser retornado caso o acesso de certo ou errado.
 
 #### <a name="2.1.3"></a>2.1.3 Template
-A Template é a camada que faz o retorno visual ao usuário. Ela é composta por HTML, CSS, javascript e etc.
+A Template é a camada mais externa e visual do software, que faz o retorno visual ao usuário. Ela é composta por HTML, CSS, javascript e etc.
 
 ## <a name="3"></a>3. Metas e Restrições de Arquitetura       
-Descreve as principais ferramentas a serem utilizadas no projeto e caso necessário define as versões mínimas das mesmas para o ambiente de desenvolvimento.
+
+O projeto **NaturalSearch** possui as seguintes metas:
+
+* Funcionar nos  principais browsers utilizados atualmente: Mozilla Firefox, Google Chrome e Internet Explorer.
+* O código deve ser modularizado facilitando a manutenção e com baixo acoplamento.
 
 ### <a name="3.1"></a>3.1 Ambiente e Ferramentas de Desenvolvimento
 
@@ -135,15 +140,14 @@ Descreve as principais ferramentas a serem utilizadas no projeto e caso necessá
 ## <a name="9"></a>9. Qualidade                 
 
 ## <a name="10"></a>10. Referências
-ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm. Acesso em: 04 de Setembro de 2018.
+ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: <http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm>. Acesso em: 04 de Setembro de 2018.
 
-WIKIPEDIA: Engenharia de software baseada em componentes. Disponível em: https://pt.wikipedia.org/wiki/Engenharia_de_software_baseada_em_componentes.  Acesso em: 04 de Setembro de 2018.
+WIKIPEDIA: Engenharia de software baseada em componentes. Disponível em: <https://pt.wikipedia.org/wiki/Engenharia_de_software_baseada_em_componentes>.  Acesso em: 04 de Setembro de 2018.
 
-DJANGO: DOCUMENTAÇÃO DO DJANGO: https://docs.djangoproject.com/pt-br/2.1/. Acesso em: 05 de Setembro de 2018.
+DJANGO: DOCUMENTAÇÃO DO DJANGO: <https://docs.djangoproject.com/pt-br/2.1/>. Acesso em: 05 de Setembro de 2018.
 
-PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Disponível em: https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django. Acesso em: 09 de Setembro de 2018.
+PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Disponível em: <https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django>. Acesso em: 09 de Setembro de 2018.
 
-DJANGO MODELS. Disponível em:
-https://django-portuguese.readthedocs.io/en/1.0/topics/db/models.html. Acesso em: 09 de Setembro de 2018
+DJANGO MODELS. Disponível em: <https://django-portuguese.readthedocs.io/en/1.0/topics/db/models.html>. Acesso em: 09 de Setembro de 2018
 
 
