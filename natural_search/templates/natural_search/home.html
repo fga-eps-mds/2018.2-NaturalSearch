@@ -10,7 +10,10 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <style>
+
   body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
@@ -42,7 +45,7 @@
   }
   .logo {
       color: #fff;
-      font-size: 200px;
+      font-size: 20px;
   }
   .thumbnail {
       padding: 0 0 15px 0;
@@ -82,58 +85,27 @@
   .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
-  .panel-footer .btn:hover {
-      border: 1px solid #f4511e;
-      background-color: #fff !important;
-      color: #f4511e;
-  }
-  .panel-heading {
-      color: #fff !important;
-      background-color: #f4511e !important;
-      padding: 25px;
-      border-bottom: 1px solid transparent;
-      border-top-left-radius: 0px;
-      border-top-right-radius: 0px;
-      border-bottom-left-radius: 0px;
-      border-bottom-right-radius: 0px;
-  }
-  .panel-footer {
-      background-color: white !important;
-  }
-  .panel-footer h3 {
-      font-size: 32px;
-  }
-  .panel-footer h4 {
-      color: #aaa;
-      font-size: 14px;
-  }
-  .panel-footer .btn {
-      margin: 15px 0;
-      background-color: #f4511e;
-      color: #fff;
-  }
+  /*nav-design*/ 
   .navbar {
-      margin-bottom: 0;
-      background-color: #f4511e;
+      margin-bottom: 10;
+      /*background-color: black;*/
       z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
+      border: 100px;
+      font-size: 14px !important;
       line-height: 1.42857143 !important;
       letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
+      border-radius: 4px;
+      text-transform: uppercase;
   }
   .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
   }
   .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #f4511e !important;
+      color: black !important;
       background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }
+      border-radius: 4px;
+    }
+
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
@@ -167,41 +139,38 @@
       -webkit-transform: translateY(0%);
     }
   }
-  @media screen and (max-width: 768px) {
-    .col-sm-4 {
-      text-align: center;
-      margin: 25px 0;
-    }
-    .btn-lg {
-        width: 100%;
-        margin-bottom: 35px;
-    }
-  }
+
 
 
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
+<!--Navbar-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-
-      <a class="navbar-brand" href="#myPage">Logo</a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">NaturalSearch</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#services">SERVICES</a></li>
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#contact">Pesquisar</a></li>
+        <li><a class="fas fa-users-cog" href="#search">QUEM SOMOS</a></li>
+        <li><a class="fas fa-laptop-code" href="#portfolio">COMO USAR</a></li>
+        <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
+
 <div class="bg-search text-center">
     <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <input type="seach" class="form-control" size="50" placeholder="Email Address" required>
       <div class="input-group-btn">
         <button type="button" class="btn btn-danger">Subscribe</button>
       </div>
