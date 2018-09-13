@@ -1,3 +1,4 @@
 from django.contrib import admin
+from natural_search.models import ProjetoList
 
-# Register your models here.
+admin.site.register(ProjetoList)
