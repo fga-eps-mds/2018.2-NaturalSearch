@@ -1,8 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Bootstrap Theme Company Page</title>
+  <title>Natural Search</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,7 +13,18 @@
   <!--Font awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <style>
-
+  #inputGroup-sizing-lg {
+      width: 80%; /* Full-width */
+      font-size: 16px; /* Increase font-size */
+      padding: 12px 20px 12px 40px; /* Add some padding */
+      border: 2px solid #7B68EE; /* Add a grey border */
+      margin-bottom: 2px; /* Add some space below the input */
+      border-radius: 10px;
+      background-color: #fff;
+    
+    }
+  
+  
   body {
       font: 400 15px Lato, sans-serif;
       line-height: 1.8;
@@ -35,9 +46,11 @@
   } 
   /*background de search*/ 
   .bg-search {
-      background-color: blue;
-      color: #fff;
-      padding: 100px 25px;
+      background-image: url('{% static "natural_search/graph.jpg"%}');
+      background-repeat: no-repeat;
+      background-size:100%;
+      color: #000;
+      padding: 300px 150px;
       font-family: Montserrat, sans-serif;
   }
   .container-fluid {
@@ -58,7 +71,7 @@
       margin-bottom: 10px;
   }
   .carousel-control.right, .carousel-control.left {
-      background-image: none;
+      
       color: #f4511e;
   }
   .carousel-indicators li {
@@ -89,6 +102,7 @@
   .navbar {
       margin-bottom: 10;
       background:url('http://thecodeplayer.com/u/m/b1.png');
+      background-color: #000;
       z-index: 9999;
       border: 100px;
       font-size: 14px !important;
@@ -169,26 +183,21 @@
 
 
 <div class="bg-search text-center">
-    <div class="input-group">
-      <input type="seach" class="form-control" size="50" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
-      </div>
-    </div>
-  </form>
+  <input id="inputGroup-sizing-lg" type="search" placeholder="Digite aqui.." >
+  <br><button class="btn btn-default btn-lg">Pesquisar</button>
 </div>
 
-<!-- Container (About Section) -->
+<!-- Como usar  -->
 <div id="about" class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Company Page</h2><br>
+      <h2>Como usar</h2><br>
       <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+      
     </div>
     <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
+      <img src="graph.jpg" width="100%" height="100%" alt="grafo">
     </div>
   </div>
 </div>
