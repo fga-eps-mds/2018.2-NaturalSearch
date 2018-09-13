@@ -38,16 +38,16 @@ Os principais riscos do desenvolvimento do NaturalSearch e suas medidas preventi
 |Perda ou defeito de equipamentos|Atraso na entrega do projeto|Manutenir os equipamentos periodicamente a fim de evitar maiores problemas
 
 #### 7.2 Riscos Positivos
-| Riscos | Impacto |
-|:--------:|:------:|
-| Design agradável | Satisfação dos usuários
+| Riscos| Impacto |
+| -------- | ------ |
+| Design agradável | Satisfação dos usuários |
 |Terceiros colaborarem com o projeto| Maior visibilidade da plataforma e mais funcionalidades
 ## 8. Cronogramas e Marcos
 O projeto tem como base dois principais marcos, que representam entregas do produto, são eles: Release 01 e Release 02.
 O cronograma do projeto é baseado nas datas pré-determinadas nas disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software. As principais datas e as mais importantes atividades serão descritas na tabela abaixo:
 
-| Marco | Data |Atividade|
-|:--------:|:------:|:------:|
+| Marco | Data | Atividade |
+| -------- | ------ | ------ |
 |Início do Projeto|14/07/2018|Começo do Projeto|
 |Release 01|02/10/2018|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.
 |Release 02|27/11/2018|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.
@@ -93,8 +93,8 @@ Por tanto, o custo do total dos Recursos Humanos:
 	R$ 28.562,50 Gerente + R$ 43.200,00 Desenvolvedores = R$ 71.762,50
 ```
 #### 9.3 Ferramentas
-|  Ferramentas| Finalidade |  Preço  |
-|:--------:|:------:|:---------:|
+| Ferramentas| Finalidade | Preço |
+| -------- | ------ | ------ |
 |Sistema Operacional Linux| Ambiente de Desenvolvimento|R$ 0,00|
 |Google Drive|Armazenamento e edição colaborativa dos artefatos e documentos do projeto|R$ 0,00|
 |Git e GitHub|Controle de versão do código|R$ 0,00|
@@ -106,8 +106,8 @@ Por tanto, o custo do total dos Recursos Humanos:
 |Editores de Texto|Editor de Texto / Código|R$ 0,00|
 
 #### 9.4 Total
-|  Tipo de Recurso| Custo|
-|:--------:|:------:|
+| Tipo de Recurso| Custo |
+| -------- | ------ |
 |Recursos Humanos|R$ 71.762,50|
 |Equipamentos e Serviços|R$ 29.240,00|
 |Ferramentas|R$ 0,00|
