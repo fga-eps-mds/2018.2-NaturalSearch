@@ -21,6 +21,18 @@ class ProjetoList (models.Model):
     valor_proposta =  models.DecimalField(max_digits=8, decimal_places=2)
     valor_solicitado =  models.DecimalField(max_digits=8, decimal_places=2)
     valor_aprovado = models.DecimalField(max_digits=8, decimal_places=2)
+    
+    def __str__(self):
+        return self.nome
+
+class Proposition(models.Model):
+    id = models.AutoField(primary_key=True)
+    nome = models.CharField(max_length=200)
+    mecanismo = models.CharField(max_length=20)
+    data_aceite = models.CharField(max_length=10)
+    data_inicio = models.CharField(max_length=10)
+    data_termino = models.CharField(max_length=10)
+    data_arquivamento = models.CharField(max_length=10)
     acessibilidade = models.TextField()
     objetivos = models.TextField()
     justificativa = models.TextField()
