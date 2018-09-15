@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'natural_search',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'nome_projeto',
         'USER': 'Igor',
-        'PASSWORD': '1234678', 
+        'PASSWORD': '1234678',
         'HOST': os.environ.get('POSTGRES_HOST')
     }
 }
