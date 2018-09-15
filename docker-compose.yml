@@ -3,14 +3,14 @@ version: '2'
 services:
     db:
         image: postgres
-        environment: 
+        environment:
             - POSTGRES_PASSWORD=1234678
             - POSTGRES_USER=Igor
             - POSTGRES_DB=nome_projeto
         volumes:
             - ./ignore:/var/lib/postgresql/data
     web:
-        environment: 
+        environment:
             - POSTGRES_HOST=db
         build: .
         ports:
