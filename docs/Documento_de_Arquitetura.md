@@ -13,7 +13,7 @@ layout: default
 | 05/09/2018 | 0.3 | Definição dos itens 1.1.3, 1.1.4 / Criação do item 2, Adição de referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 | 09/09/2018 | 0.4 | Definição dos itens 2.1, 2.1.1, 2.1.2, 2.1.3 |[Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle)|
 | 11/09/2018 | 0.5 | Criação do item 3, Correção dos links das referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
-| 11/09/2018 | 0.6 | Atualizando do documento |[Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle)|
+| 15/09/2018 | 0.6 | Atualizando do layout, descrição dos tópicos 2.2,2.3,2.4,2.5, atualização do item 3.1 |[Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle)|
 
 ## Sumário
 
@@ -21,7 +21,7 @@ layout: default
     * 1.1 [Finalidade](#1.1)
     * 1.2 [Escopo](#1.2)   
     * 1.3 [Definições, acrônimos e abreviações](#1.3)
-    * 1.4 [Visão Geral](#1.5)
+    * 1.4 [Visão Geral](#1.4)
 
 2. [Representação da Arquitetura](#2)
     * 2.1 [Django](#2.1)
@@ -96,13 +96,16 @@ A View é responsável por receber a requisição web e retornar uma resposta we
 A Template é a camada mais externa e visual do software, que faz o retorno visual ao usuário. Ela é composta por HTML, CSS, javascript e etc.
 
 ### <a name="2.2"></a>2.2. Salic API
+A API utilizada para popular o nosso banco de dados será a [API Salic](http://api.salic.cultura.gov.br/doc/). Essa API acessa os dados do portal [Salic](http://rouanet.cultura.gov.br/), que é um sistema que reúne dados de propostas e projetos do Ministério da Cultura relacionados a Lei Rouanet. Serão usados os dados de projetos e propostas que serão exportados no formato *HAL+JSON* (ou XML ou CSV). Haverá uma integração continua do banco de dados com a API do salic, fazendo atualizações diárias.
 
 ### <a name="2.3"></a>2.3. TensorFlow
-
+O TensorFlow é uma biblioteca open source de _machine learning(ML)_ para pesquisa e produção que será utilizada no projeto para relacionamentos de similaridade e aplicação de Linguagem Natural. Isso será necessário para o tratamento do banco de dados, o que permitirá o retorno das relações entre os projetos e propostas em forma de grafos para o usuário.
 
 ### <a name="2.4"></a>2.4. Arbor.js
+O Arbor.js é um bliblioteca JavaScript para visualização de grafos. Ela proporcionará um algoritmo de layout e abstrações para a organização do gráfico e visualização na tela. As bibliotecas são adicionadas no Template do projeto Django.
 
-### <a name="2.6"></a>2.6 Banco de Dados Orientado à Grafos    
+### <a name="2.5"></a>2.5 Banco de Dados Orientado à Grafos  
+O bando de dados orientado à grafos difere dos bancos de dados relacionais por utilizar o **NoSQL**. No NoSQL a recuperação de dados de grafos se dá de uma forma mais rápida por causa da relação mais natural feita entre os vértices e aresta. O vértice é a unidade de dados, um conjunto de propriedade do tipo chave valor que representam uma entidade. As arestas são os relacionamentos que ligam os vértices por uma rede semântica. 
 
 ## <a name="3"></a>3. Metas e Restrições de Arquitetura       
 
@@ -121,6 +124,8 @@ O projeto **NaturalSearch** possui as seguintes metas:
 |Virtualização| Docker | 18.03.1-ce | O Docker fornece uma camada adicional de abstração e automação de virtualização de nível de sistema operacional. |
 |Virtualização| Docker-compose | 1.22.0 |  Ferramenta para a criação e execução de múltiplos containers de aplicação da Docker. |
 |Base de dados| API Salic | -- | API aberta para acesso aos dados do portal SALIC. |
+|LN| TensorFlow | r1.10 | Biblioteca para aplicação de Linguagem Natural. |
+|Visualização de grafos| Arbor.js | -- | Biblioteca de visualização de grafos. |
 
 ## <a name="4"></a>4. Visão Geral    
 
@@ -147,3 +152,6 @@ PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Disponível em: <htt
 
 DJANGO MODELS. Disponível em: <https://django-portuguese.readthedocs.io/en/1.0/topics/db/models.html>. Acesso em: 09 de Setembro de 2018
 
+TENSORFLOW: AN OP MACHINE LEARNING LIBRARY. Disponível em : <https://www.tensorflow.org/?hl=pt-br>. Acesso em: 14 de Setembro de 2018
+
+ARBOR.JS: INTRODUCTION. Disponível em : <http://arborjs.org/introduction>. Acesso em 14 de Setembro de 2018
