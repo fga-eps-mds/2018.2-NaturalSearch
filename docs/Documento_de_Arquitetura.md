@@ -14,6 +14,8 @@ layout: default
 | 09/09/2018 | 0.4 | Definição dos itens 2.1, 2.1.1, 2.1.2, 2.1.3 |[Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle)|
 | 11/09/2018 | 0.5 | Criação do item 3, Correção dos links das referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 | 15/09/2018 | 0.6 | Atualizando do layout, descrição dos tópicos 2.2,2.3,2.4,2.5, atualização do item 3.1 |[Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle)|
+| 11/09/2018 | 0.7 | Adição das restrições do projeto, Atualização dos tópicos 1.1, 1.2, 1.4  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
+
 
 ## Sumário
 
@@ -36,7 +38,7 @@ layout: default
 3. [Metas e Restrições de Arquitetura](#3)        
     * 3.1 [Ambiente e Ferramentas de Desenvolvimento](#3.1)
 
-4. [Visão Geral](#4)    
+4. [Visão Lógica](#4)    
     * 4.1 [Diagrama de pacotes](#4.1)    
     * 4.2 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura]($4.2)
 
@@ -46,7 +48,7 @@ layout: default
 
 6. [Visão de Dados](#6)                  
 
-7. [Referências](#10)
+7. [Referências](#7)
 
 
 
@@ -56,22 +58,23 @@ layout: default
 
 ### <a name="1.1"></a>1.1 Finalidade
 
-O objetivo deste documento é fornecer uma visão arquitetural do sistema **NaturalSearch** . Ele deve mostrar de forma clara e objetiva as decisões arquiteturais que foram tomadas em relação ao projeto, fornecendo as informações necessárias para desenvolvedores e demais envolvidos em termos de estrutura da aplicação e tecnologias utilizadas.
+O objetivo deste documento é fornecer uma visão geral e abrangente arquitetural do sistema **NaturalSearch** . Ele deve mostrar de forma clara e objetiva as decisões arquiteturais que foram tomadas em relação ao projeto, fornecendo as informações necessárias para desenvolvedores e demais envolvidos em termos de estrutura da aplicação e tecnologias utilizadas.
 
 ### <a name="1.2"></a>1.2 Escopo   
 
-Este documento foi construído sobre a visão da arquitetura utilizada na implementação do sistema **NaturalSearch**, de forma a explicitar as decisões estabelecidas.
+Este documento foi construído sobre a visão da arquitetura utilizada na implementação do sistema **NaturalSearch**, de forma a explicitar as decisões estabelecidas. Nele serão descritos os padrões arquiteturais adotados, _frameworks_ escolhidos para o desenvolvimento do projeto. Com o objetivo de fornecer novas formas de vizualização das propostas e projetos culturais que recebem incentivos fiscais do Ministério da Cultura por meio da Lei Rouanet.
 
 ### <a name="1.3"></a>1.3 Definições, acrônimos e abreviações
 
-* API - Application Programming Interface
-* MVT - Model-View-Template
-* MVC - Model-View-Controller.
-* LN - Linguagem Natural
+* API - Application Programming Interface;
+* MVT - Model-View-Template;
+* MVC - Model-View-Controller;
+* LN - Linguagem Natural;
+* SALIC - Sistema de Apoio às Leis de Incentivo à Cultura.
 
 ### <a name="1.4"></a>1.4 Visão Geral
 
-O projeto **NaturalSearch** tem o objetivo de construir uma ferramenta de navegação e pesquisa que, utilizando Linguagem Natural (LN), visa entregar correlações entre resultados de busca através de grafos.
+Este documento traz o detalhamento, a descrição e as principais características da arquitetura adotada pela equipe de desenvolvimento visando oferecer o melhor desempenho para o projeto **NaturalSearch**. Nele estará presente: Representação da Arquitetura, Metas e Restrições de Arquitetura, Visão Lógica, Visão de Lógica, Visão de Processos, Visão de Implantação, Visão de Implementação, Visão de Dados, Tamanho e Desempenho, Qualidade e Referências bibliográficas.
 
 ## <a name="2"></a>2. Representação da Arquitetura
 
@@ -82,10 +85,12 @@ O NaturalSearch será uma aplicação web desenvolvida a partir do framework Dja
 
 A arquitetura do Django segue basicamente o fluxograma da imagem abaixo. Quando o usuário faz uma requisição ao servidor web pela URL, ela é passada na urlresolver do Django e quando encontrada é feita a requisição a View. A View se comunica com o Template e a Model, que por sua vez se comunica com o banco de dados, e vice e versa. Depois o resultado dessa interação é retornado ao usuário.
 <center>
-<img src="https://naditya.azurewebsites.net/wp-content/uploads/2017/03/Django-Template-214x300.png">
+<img src="https://naditya.azurewebsites.net/wp-content/uploads/2017/03/Django-Template-214x300.png" class ="responsive-img">
 </center>
 
-
+<center>
+Fonte: https://naditya.azurewebsites.net/wp-content/uploads/2017/03/Django-Template-214x300.png>
+</center>
 #### <a name="2.1.1"></a>2.1.1. Model
 Os modelos(Models) são classes que representam os dados das tabela do banco de dados, sendo cada model uma tabela uníca. Com essa interação o Django dá uma API de acesso ao banco de dados gerada automaticamente, facilitando o desenvolvimento da aplicação.
 
@@ -114,6 +119,13 @@ O projeto **NaturalSearch** possui as seguintes metas:
 * Funcionar nos  principais browsers utilizados atualmente: Mozilla Firefox, Google Chrome e Internet Explorer.
 * O código deve ser modularizado facilitando a manutenção e com baixo acoplamento.
 
+**Restrições**
+
+* Conexão com a internet;
+* Utilização de banco de dados orientado a Grafos;
+* Utilização do SALIC API;
+* Os dados aprenstados são consultados apenas na base do Sistema de Apoio às Leis de Incentivo à Cultura - SALIC;
+
 ### <a name="3.1"></a>3.1. Ambiente e Ferramentas de Desenvolvimento
 
 | Requisito | Ferramenta/Solução | Versão | Descrição |
@@ -127,7 +139,7 @@ O projeto **NaturalSearch** possui as seguintes metas:
 |LN| TensorFlow | r1.10 | Biblioteca para aplicação de Linguagem Natural. |
 |Visualização de grafos| Arbor.js | -- | Biblioteca de visualização de grafos. |
 
-## <a name="4"></a>4. Visão Geral    
+## <a name="4"></a>4. Visão Lógica    
 
 ### <a name="4.1"></a>4.1. Diagrama de pacotes
 
@@ -141,7 +153,7 @@ O projeto **NaturalSearch** possui as seguintes metas:
 
 ## <a name="6"></a>6. Visão de Dados
 
-## <a name="7"></a>10. Referências
+## <a name="7"></a>7. Referências
 ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: <http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm>. Acesso em: 04 de Setembro de 2018.
 
 WIKIPEDIA: Engenharia de software baseada em componentes. Disponível em: <https://pt.wikipedia.org/wiki/Engenharia_de_software_baseada_em_componentes>.  Acesso em: 04 de Setembro de 2018.
