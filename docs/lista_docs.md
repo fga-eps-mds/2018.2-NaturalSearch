@@ -21,6 +21,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Definição da Metodologia](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definicao_da_Metodologia.html)
 * [Plano de Comunicação](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Plano_de_comunicacao.html)
 * [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
+* [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ScrumMaster.html)
 * [Mapa de Requisitos](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Mapa_de_requisitos.html)
 * [Histórias de Usuário](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Historias_de_usuario.html)
 
@@ -67,4 +68,9 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 * [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_sprint/planejamento_sprint_3.html)
 * [Resultados](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/resultados_sprint_3.html)
+
+### _Sprint_ 4
+
+* [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_sprint/planejamento_sprint_4.html)
+* [Resultados]()
 

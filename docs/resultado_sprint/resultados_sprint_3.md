@@ -46,14 +46,17 @@ layout: default
 | 85 | US01-Eu, como usuário, desejo realizar uma pesquisa com qualquer palavra, frase, ou número que interessar | 13 | Concluída | - |
 | 86 | US05-Eu, como desenvolvedor, desejo criar a tela de visualização dos resultados da pesquisa por meio de grafos | 13 | Pendente | Devido a mudança no escopo do projeto |
 
-### Pareamento
-| nome | nome |
+
+## Pareamento 
+
+| Membro | Membro |
 |----|----|
-| Felipe | Shermam |
-| Igor | Adriely |
-| Lucas | Mikhaelle |
-| Michel | Fabiana |
+| Shermam | Felipe |
+| Igor | Adrielly |
+| Fabiana | Michel |
 | Gustavo | Marcos |
+| Mikhaelle | Lucas |
+
 
 ## Monitoramento e Controle da Sprint 
 
@@ -93,35 +96,63 @@ Melhorias
 ### Quadro de Conhecimento
 
 Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quadro apresentado abaixo e sua Legenda:
+
+<br>
+<br>
+
 ![Legenda](images/Legenda.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
+
+<br>
+<br>
 
 
 ![Habilidade_Sprint_2](images/Habilidade_Sprint_2.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_2.png)
 
+<br>
+<br>
+
 No final da Sprint, foi realizado as alteraações, com base no conhecimento de cada um, e foi obtido como resultado da Sprint o quadro abaixo:
+
+<br>
+<br>
+
 
 ![Habilidade_Sprint_3](images/Habilidade_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
+<br>
+<br>
+
 ### Velocity
 
 O velocity desta semana é apresentado :
+
+<br>
+<br>
 
 ![velocity_Sprint_3](images/velocity_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/velocity_Sprint_3.png)
 
+<br>
+<br>
+
 ### Pareamentos
 A imagem mostra a quantidade de pareamentos e com qual membro da equipe:
+<br>
+<br>
 
 ![Pareamento_3](images/Pareamento_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Pareamento_3.png)
+
+<br>
+<br>
 
 
 
