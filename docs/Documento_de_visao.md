@@ -220,7 +220,7 @@ A distribuição do software esta submetida a licença do [MIT](https://mit-lice
 
 ### <a name="5.1"></a> 5.1 Facilidade na Obtenção das Informações Reunidas
 
-O NaturalSearch deve consultar os dados apresentados na API do SALIC, passando para o próprio banco de dados para então ser mostrado, de forma que os usuários possam efetuar suas pesquisas com rapidez e eficácia através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
+O NaturalSearch deve consultar os dados apresentados na API do SALIC, passando para o próprio banco de dados orientado a grafos para então ser mostrado, de forma que os usuários possam efetuar suas pesquisas com rapidez e eficácia através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
 
 
 

@@ -15,7 +15,7 @@ layout: default
 | 11/09/2018 | 0.5 | Criação do item 3, Correção dos links das referências  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 | 15/09/2018 | 0.6 | Atualizando do layout, descrição dos tópicos 2.2,2.3,2.4,2.5, atualização do item 3.1 |[Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle)|
 | 11/09/2018 | 0.7 | Adição das restrições do projeto, Atualização dos tópicos 1.1, 1.2, 1.4  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
-
+| 27/09/2018 | 0.8 | Alteração da representação da arquitetura, Atualização dos tópicos 2, 2.1 |[Michel Martins de Camargo](https://github.com/micheldcamargo)|
 
 ## Sumário
 
@@ -26,10 +26,7 @@ layout: default
     * 1.4 [Visão Geral](#1.4)
 
 2. [Representação da Arquitetura](#2)
-    * 2.1 [Django](#2.1)
-        * 2.1.1 [Model](#2.1.1)
-        * 2.1.2 [View](#2.1.2)
-        * 2.1.3 [Template](#2.1.3)
+    * 2.1 [Django Rest](#2.1)
     * 2.2 [Salic API](#2.2)
     * 2.3 [TensorFlow](#2.3)
     * 2.4 [Arbor.js](#2.4)
@@ -78,27 +75,34 @@ Este documento traz o detalhamento, a descrição e as principais característic
 
 ## <a name="2"></a>2. Representação da Arquitetura
 
-Para o projeto será adotada a arquitetura baseada em componentes. Nesta abordagem o foco está na decomposição dos sistemas possibilitando a reusabilidade, substituição, encapsulamento, independência. O *Django Application* é o conceito responsável por dar flexibilidade e grande reaproveitamento de componentes ao **Django**.
+Para o projeto será adotada a arquitetura baseada em componentes. Nesta abordagem o foco está na decomposição dos sistemas possibilitando a reusabilidade, substituição, encapsulamento, independência. O projeto será dividido em duas partes, a primeira consta em uma API rest desenvolvida com base no framework Django Rest que deve tratar os dados recebidos da API SALIC e armazená-los em uma base de dados orientada a grafos(Neo4j). A segunda parte trata do front-end e da exibição destes dados e utiliza as ferramentas NodeJs e D3 para tratar e exibir os dados recuperados do banco de dados orientado a grafos.<!--O *Django Application* é o conceito responsável por dar flexibilidade e grande reaproveitamento de componentes ao **Django**.-->
 
-### <a name="2.1"></a>2.1. Django
-O NaturalSearch será uma aplicação web desenvolvida a partir do framework Django, utilizando linguagem python para o *back-end* e HTML e Javascript para o *front-end*. Um framework já contém um conjunto de componentes que são normalmente utilizados pela maioria dos desenvolvedores o que ajuda a desenvolver um site de forma mais rápida. O padrão arquitetural que é utilizado pelo Django é o MVT(Model, View, Template) que é uma derivação do MVC(Model, View, Controller) e será melhor explicado nos tópicos abaixo.
+### <a name="2.1"></a>2.1. Django REST
+A API NaturalSearch será uma aplicação desenvolvida a partir do framework Django REST, utilizando linguagem python. Um framework já contém um conjunto de componentes que são normalmente utilizados pela maioria dos desenvolvedores o que ajuda a desenvolver uma aplicação de forma mais rápida, eficiente e organizada. <!--O padrão arquitetural que é utilizado pelo Django é o MVT(Model, View, Template) que é uma derivação do MVC(Model, View, Controller) e será melhor explicado nos tópicos abaixo.-->
 
-A arquitetura do Django segue basicamente o fluxograma da imagem abaixo. Quando o usuário faz uma requisição ao servidor web pela URL, ela é passada na urlresolver do Django e quando encontrada é feita a requisição a View. A View se comunica com o Template e a Model, que por sua vez se comunica com o banco de dados, e vice e versa. Depois o resultado dessa interação é retornado ao usuário.
-<center>
-<img src="https://naditya.azurewebsites.net/wp-content/uploads/2017/03/Django-Template-214x300.png" class ="responsive-img">
+A arquiteura do Django REST é baseada no modelo arquitetural REST(Representational State Transfer) que utiliza os métodos do protocolo HTTP de requisitção e resposta onde o foco são os recursos. O modelo REST entrega alta performance e escalabilidade e ainda pode ser utilizado por praticamente qualquer cliente imprimindo interoperabilidade, o que é um recurso importante para o projeto.
+
+A API rest recebe requisições HTTP de um cliente e executa o que a requisição solicita. A API então envia uma resposta ao cliente, normalmente através dos formatos XML ou JSON. Esta dinâmica é demonstrada na imagem a seguir.
+
+<img src="https://tutorialedge.net/uploads/rest-api.png" class ="responsive-img">
 </center>
 
+<!--A arquitetura do Django segue basicamente o fluxograma da imagem abaixo. Quando o usuário faz uma requisição ao servidor web pela URL, ela é passada na urlresolver do Django e quando encontrada é feita a requisição a View. A View se comunica com o Template e a Model, que por sua vez se comunica com o banco de dados, e vice e versa. Depois o resultado dessa interação é retornado ao usuário.
 <center>
-Fonte: https://naditya.azurewebsites.net/wp-content/uploads/2017/03/Django-Template-214x300.png>
+-->
+
+<center>
+Fonte: https://tutorialedge.net/general/what-is-a-rest-api/
 </center>
-#### <a name="2.1.1"></a>2.1.1. Model
+
+<!--#### <a name="2.1.1"></a>2.1.1. Model
 Os modelos(Models) são classes que representam os dados das tabela do banco de dados, sendo cada model uma tabela uníca. Com essa interação o Django dá uma API de acesso ao banco de dados gerada automaticamente, facilitando o desenvolvimento da aplicação.
 
 #### <a name="2.1.2"></a>2.1.2. View
 A View é responsável por receber a requisição web e retornar uma resposta web. Ela se comunica com a Model e a Template com lógicas arbritárias necessárias para retornar uma resposta, como por exemplo quando um usuário tenta fazer login, a view pega a requisição, confere com a model se os dados estão certos e pega com o template a forma visual que deve ser retornado caso o acesso de certo ou errado.
 
 #### <a name="2.1.3"></a>2.1.3. Template
-A Template é a camada mais externa e visual do software, que faz o retorno visual ao usuário. Ela é composta por HTML, CSS, javascript e etc.
+A Template é a camada mais externa e visual do software, que faz o retorno visual ao usuário. Ela é composta por HTML, CSS, javascript e etc.-->
 
 ### <a name="2.2"></a>2.2. Salic API
 A API utilizada para popular o nosso banco de dados será a [API Salic](http://api.salic.cultura.gov.br/doc/). Essa API acessa os dados do portal [Salic](http://rouanet.cultura.gov.br/), que é um sistema que reúne dados de propostas e projetos do Ministério da Cultura relacionados a Lei Rouanet. Serão usados os dados de projetos e propostas que serão exportados no formato *HAL+JSON* (ou XML ou CSV). Haverá uma integração continua do banco de dados com a API do salic, fazendo atualizações diárias.
