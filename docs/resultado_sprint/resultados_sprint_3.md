@@ -47,8 +47,8 @@ layout: default
 | 86 | US05-Eu, como desenvolvedor, desejo criar a tela de visualização dos resultados da pesquisa por meio de grafos | 13 | Pendente | Devido a mudança no escopo do projeto |
 
 ### Pareamento
-|nome | nome |
-|---|---|
+| nome | nome |
+|----|----|
 | Felipe | Shermam |
 | Igor | Adriely |
 | Lucas | Mikhaelle |
@@ -80,7 +80,7 @@ Pontos Positivos
 - Pareamento Eficiente
 
 Pontos Negativos
-- Desistencia de um menbro da equipe
+- Desistência de um membro da equipe
 - Faltas nas Daily por presencial por conta de transporte
 
 Melhorias 
@@ -93,18 +93,18 @@ Melhorias
 ### Quadro de Conhecimento
 
 Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quadro apresentado abaixo e sua Legenda:
-![Legenda do Quadro](images/Legenda.png)
+![Legenda](images/Legenda.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
 
-![Habilidades da Sprint 2](images/Habilidade_Sprint_2.png)
+![Habilidade_Sprint_2](images/Habilidade_Sprint_2.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_2.png)
 
 No final da Sprint, foi realizado as alteraações, com base no conhecimento de cada um, e foi obtido como resultado da Sprint o quadro abaixo:
 
-![Habilidades da Sprint 3](images/Habilidade_Sprint_3.png)
+![Habilidade_Sprint_3](images/Habilidade_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
@@ -112,14 +112,14 @@ No final da Sprint, foi realizado as alteraações, com base no conhecimento de 
 
 O velocity desta semana é apresentado :
 
-![Velocity Sprint 3](images/velocity_Sprint_3.png)
+![velocity_Sprint_3](images/velocity_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/velocity_Sprint_3.png)
 
 ### Pareamentos
 A imagem mostra a quantidade de pareamentos e com qual membro da equipe:
 
-![Pareamentos](images/Pareamento_3.png)
+![Pareamento_3](images/Pareamento_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Pareamento_3.png)
 
