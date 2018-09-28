@@ -11,20 +11,24 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Contribuição](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CONTRIBUTING.html)
 * [Código de Conduta](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CODE_OF_CONDUCT.html)
 
-## EPS
-
+## Abertura do Projeto
 * [Termo de Abertura do Projeto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/TAP.html)
 * [EAP](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/EAP.html)
 * [Canvas](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Canvas.html)
+
+## RoadMaP
+* [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
+* [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ScrumMaster.html)
+* [Roadmap do ProductOwner](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ProductOwner.html)
+
+## Viabilidade Técnica
 * [Definição de Pronto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definição_de_Pronto.html)
 * [Definição da Metodologia](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definicao_da_Metodologia.html)
 * [Plano de Comunicação](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Plano_de_comunicacao.html)
-* [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
-* [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ScrumMaster.html)
 * [Mapa de Requisitos](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Mapa_de_requisitos.html)
 * [Histórias de Usuário](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Historias_de_usuario.html)
 
-## MDS
+## Especificações
 
 * [Documento de Visão](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_visao.html)
 * [Documento de Arquitetura](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_Arquitetura.html)
