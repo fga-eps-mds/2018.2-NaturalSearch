@@ -89,6 +89,8 @@ Análise de risco contém três pilares conceituais, o futuro, a escolha e a mud
 | RN08 | não tiver domínio no código | da falta de empenho | inviabilidade no projeto | Tecnologia |
 | RN09 | Baixa produtividade da equipe | da falta de empenho da equipe de desenvolvimento | atraso no cronograma |Tecnologia |
 | RN10 | a equipe não se adaptar a tecnologia de comunicação | da dificuldade de utilização | dificuldade no gerenciamento | Comunicação |
+| RN11 | Mudar Arquitetura do projeto | de alguma tecnologia nãocompativel | atraso na entrega e ter que adaptar a nova tecnologia | tecnologia|
+| RN12 | 
 
 ### 8. Definição de Probabilidades e Impactos de Riscos
 
