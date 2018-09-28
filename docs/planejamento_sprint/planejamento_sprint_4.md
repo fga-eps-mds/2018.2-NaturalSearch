@@ -37,22 +37,25 @@ O planejamento da Sprint 4, é iniciado com algumas alterações na arquitetura,
 O quadro de conhecimento inicia com a imagem apresentada abaixo:
 
 <br>
+<br>
+<br>
 
 
-
-![Legenda](images/Legenda.png)
+![Legenda](image_Sprint3/Legenda.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
 <br>
 <br>
+<br>
 
-![Habilidade_Sprint_3](images/Habilidade_Sprint_3.png)
+![Habilidade_Sprint_3](image_Sprint3/Habilidade_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
-
-
+<br>
+<br>
+<br>
 
 ## 4. Objetivos Sprint4
 
