@@ -1,7 +1,8 @@
 | Data| Versão | Descrição |Autor(a)|
 | -------- | ------ | ------ | ------ |
-|09/09/2018|1.0|Abertura do Documento| Shermam Tácia da Costa Lima|
+|09/09/2018|1.0.0|Abertura do Documento| Shermam Tácia da Costa Lima|
 |13/09/2018|1.0.1|Ajustes na Formatação|Shermam Tácia da Costa Lima|
+|27/09/2018|1.0.2|Revisão e atualização dos riscos e Referências|Shermam Tácia da Costa Lima|
 
 
 
@@ -35,11 +36,14 @@ Os principais riscos do desenvolvimento do NaturalSearch e suas medidas preventi
 |Falta de comunicação|Dificuldade no gerenciamento do projeto|Manter a equipe unida, buscando feedbacks constantes para minimizar ao máxima a falta de comunicação e fazendo o acompanhamento constante dos membros.
 |Falta de infraestrutura de trabalho|Dificuldade no gerenciamento do projeto| Buscar reunir a equipe num ambiente que tenha condições mínimas de trabalho.
 |Buscar reunir a equipe num ambiente que tenha condições mínimas de trabalho.|Atraso no Projeto| Mudar a dupla, colocar outra pessoa que possa auxiliar
-|Perda ou defeito de equipamentos|Atraso na entrega do projeto|Manutenir os equipamentos periodicamente a fim de evitar maiores problemas
+|Perda ou defeito de equipamentos|Atraso na entrega do projeto|Manutenir os equipamentos periodicamente a fim de evitar maiores problemas |
+|Mudança no Escopo do Projeto / Arquitetura | Atraso no projeto, adaptação da tecnologia | Realizar treinamento |
+|Mal planejamento das sprints | Pode acarretar em um atraso grave na entrega do projeto | Montar o backlog das sprints utilizando a priorização do backlog geral |
+
 
 #### 7.2 Riscos Positivos
-| Riscos| Impacto |
-| -------- | ------ |
+| Riscos | Impacto |
+|---|---|
 | Design agradável | Satisfação dos usuários |
 |Terceiros colaborarem com o projeto| Maior visibilidade da plataforma e mais funcionalidades
 ## 8. Cronogramas e Marcos
@@ -47,9 +51,9 @@ O projeto tem como base dois principais marcos, que representam entregas do prod
 O cronograma do projeto é baseado nas datas pré-determinadas nas disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software. As principais datas e as mais importantes atividades serão descritas na tabela abaixo:
 
 | Marco | Data | Atividade |
-| -------- | ------ | ------ |
+|---|---|---|
 |Início do Projeto|14/07/2018|Começo do Projeto|
-|Release 01|02/10/2018|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.
+|Release 01|03/10/2018|Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação.
 |Release 02|27/11/2018|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.
 ## 9. Custo Estimado
 Foram postos na base do cálculo todos os insumos dos processos necessários para a realização do projeto, portanto, gastos com pessoal, aquisições e ferramentas foram contabilizados.
@@ -93,8 +97,8 @@ Por tanto, o custo do total dos Recursos Humanos:
 	R$ 28.562,50 Gerente + R$ 43.200,00 Desenvolvedores = R$ 71.762,50
 ```
 #### 9.3 Ferramentas
-| Ferramentas| Finalidade | Preço |
-| -------- | ------ | ------ |
+| Ferramentas | Finalidade | Preço |
+|----|----|----|
 |Sistema Operacional Linux| Ambiente de Desenvolvimento|R$ 0,00|
 |Google Drive|Armazenamento e edição colaborativa dos artefatos e documentos do projeto|R$ 0,00|
 |Git e GitHub|Controle de versão do código|R$ 0,00|
@@ -107,7 +111,7 @@ Por tanto, o custo do total dos Recursos Humanos:
 
 #### 9.4 Total
 | Tipo de Recurso| Custo |
-| -------- | ------ |
+|---|---|
 |Recursos Humanos|R$ 71.762,50|
 |Equipamentos e Serviços|R$ 29.240,00|
 |Ferramentas|R$ 0,00|
@@ -136,9 +140,16 @@ Os Desenvolvedores são composto por 6 discentes da disciplina de Metodos e Tecn
 |Gustavo Duarte Moreira|Desenvolvedor|Gustavoduartemoreira@gmail.com|@gustavoduartemoreira|
 |Michel Martins de Camargo|Desenvolvedor|michel.dcamargo@gmail.com| @micheldcamargo|
 
+### Orientadora
+|  Nome  | Papel | Email |User Git|
+| -------- | ------ | --------- |--------- |
+|Carla Rocha | Orientadora | rocha.carla@gmail.com | @RochaCarla |
+
 
 ### Referências
 Rank de tarifas. ANEEL Agência Nacional de Energia Elétrica. Disponível em http://www.aneel.gov.br/ranking-das-tarifas. Acesso em 02 de setembro de 2018
+
+LOVEMONDAYS. Salários para programadores e equipe de analista, arquiteto, scrum master, DevOps e PO. Disponível em: https://www.lovemondays.com.br/
 
 Link do Sistema Versalic http://versalic.cultura.gov.br/#/home. Acesso em 02 de setembro de 2018
 
