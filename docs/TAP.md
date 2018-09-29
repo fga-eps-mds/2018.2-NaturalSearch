@@ -55,10 +55,10 @@ O projeto tem como base dois principais marcos, que representam entregas do prod
 O cronograma do projeto é baseado nas datas pré-determinadas nas disciplinas de Métodos de Desenvolvimento de Software e Engenharia de Produto de Software. As principais datas e as mais importantes atividades serão descritas na tabela abaixo:
 
 | Marco  | Data | Atividade |
-| -------- | ------ | --------- |
+|----|----|----|
 | Início do Projeto | 14/07/2018 | Começo do Projeto |
 | Release 01 | 03/10/2018 | Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação. |
-|Release 02|27/11/2018|Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil.|
+| Release 02 | 27/11/2018 |Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil. |
 ## 9. Custo Estimado
 Foram postos na base do cálculo todos os insumos dos processos necessários para a realização do projeto, portanto, gastos com pessoal, aquisições e ferramentas foram contabilizados.
 #### 9.1 Aquisição
@@ -102,16 +102,16 @@ Por tanto, o custo do total dos Recursos Humanos:
 ```
 #### 9.3 Ferramentas
 |  Ferramentas  | Finalidade | Preço |
-| -------- | ------ | --------- |
+| ------ | ------ | ------ |
 | Sistema Operacional Linux | Ambiente de Desenvolvimento | R$ 0,00 |
-|Google Drive|Armazenamento e edição colaborativa dos artefatos e documentos do projeto|R$ 0,00|
-|Git e GitHub|Controle de versão do código|R$ 0,00|
-|Docker|Plataforma para testar e implantar a aplicação.|R$ 0,00|
-|Circleci|Integração contínua |R$ 0,00|
-| Draw.io |Construção de Diagramas| R$ 0,00|
-|Telegram|Comunicação|R$ 0,00|
-|Hangouts|Reuniões não presenciais, compartilhamento de tela.|R$ 0,00|
-|Editores de Texto|Editor de Texto / Código|R$ 0,00|
+| Google Drive|Armazenamento e edição colaborativa dos artefatos e documentos do projeto | R$ 0,00 |
+| Git e GitHub | Controle de versão do código | R$ 0,00 |
+| Docker | Plataforma para testar e implantar a aplicação. | R$ 0,00 |
+| Circleci | Integração contínua | R$ 0,00 |
+| Draw.io | Construção de Diagramas | R$ 0,00 |
+|Telegram | Comunicação | R$ 0,00 |
+| Hangouts | Reuniões não presenciais, compartilhamento de tela.| R$ 0,00 |
+| Editores de Texto|Editor de Texto / Código | R$ 0,00 |
 
 #### 9.4 Total
 |  Tipo de Recurso  | Custo |

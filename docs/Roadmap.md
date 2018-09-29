@@ -7,6 +7,7 @@ layout: default
 |           Data          |         Versão         |       Descrição   |         Autores   |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|
 | 04/09/2018         |           0.1                | Versão inicial do Roadmap |  Igor Araújo de Sousa e Filipe Coelho Hilário Barcelos |
+| 29/09/2018         |           0.2                | adição das Sprints        | Shermam Tácia da Costa Lima |
 
 <br>
 <br>
