@@ -1,3 +1,4 @@
+
 ---
 layout: default
 ---
@@ -19,6 +20,8 @@ layout: default
 | 29/09/2018 | 0.9 | Alteração da representação da arquitetura, Atualização dos tópicos 2.4, 2.5, 2.6, 2.7 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv)|
 | 01/10/2018 | 1.0 | Alteração da representação da arquitetura, supressão tópico 2.7. Alteração tópico 3.1 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Filipe Barcelos](https://github.com/FilipeKN4) |
 | 01/10/2018 | 1.1 | Adição das seções 5 e 6. Desrição da Arquitetura de Microserviços | [Filipe Barcelos](https://github.com/FilipeKN4) |
+| 02/10/2018 | 1.2 | Atualização do item 2.4 e Adição e descrição do item 4.2.| [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv) |
+
 
 ## Sumário
 
@@ -100,7 +103,14 @@ A API utilizada para popular o nosso banco de dados será a [API Salic](http://a
 O TensorFlow é uma biblioteca open source de _machine learning(ML)_ para pesquisa e produção que será utilizada no projeto para relacionamentos de similaridade e aplicação de Linguagem Natural. Isso será necessário para o tratamento do banco de dados, o que permitirá o retorno das relações entre os projetos e propostas em forma de grafos para o usuário.
 
 ### <a name="2.4"></a>2.4. Node.js
-O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
+O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos. Utilizamos o NodeJS como uma plataforma back-end que permite executarmos scripts Javascript no lado do servidor para acessar e trabalhar de maneira extremamente rápida com o grande volume de dados em formato JSON que serão coletados da API SALIC. O fato de não possuir dependências ajuda bastante no processo de desenvolvimento, deploy e integração contínua do código já que com apenas o Node instalado na máquina já se pode desenvolver qualquer aplicação. Levando em conta o tempo disponível para a conclusão da aplicação o NodeJS atendeu todas a nossas demandas economizando o tempo de aprendizado que seria necessário com outras outras linguagens como por exemplo PHP ou RUBY. A forma com que o Node.JS gerencia os requests através de um looping de eventos permite que a aplicação trabalhe em paralelo, de forma assíncrona e como nossa aplicação demanda muita leitura de arquivos e manipulação na base de dados, com IO não-bloqueante do Node.js essas tarefas são facilmente executadas em background e o retorno de sucesso ou falha dessas tarefas ocorrem através de uma função de callback.
+
+<img src="https://cdn-images-1.medium.com/max/1600/0*X7Z0k20cwHHi8UOI.png"  class ="responsive-img">
+</center>
+
+<center>
+Fonte: https://blog.rocketseat.com.br/nodejs-vale-a-pena-vantagens/
+</center>
 
 ### <a name="2.5"></a>2.5. Neo4J
 O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dados que não utiliza os conceitos estruturados). As informações não são armazenadas em tabelas, mas sim na forma de Grafos e suas estruturas são representadas de forma que o conhecimento é representado pelos conceitos matemáticos da Teoria de Grafos. Neste tipo de Banco de Dados, os registros são gravados em vértices (nós) que possuem propriedades definidas conforme a necessidade. Estes vértices por sua vez se relacionam com outros vértices através de arestas (arcos) que se interligam criando caminhos entre os vértices de maneira organizada com relações explícitas. Dessa forma será possível integrar metodologias de pesquisa com linguagem natural utilizando a biblioteca Tensorflow e entregar para o usuário dados com um melhor grau de relacionamento entre si.
@@ -143,6 +153,18 @@ O projeto **NaturalSearch** possui as seguintes metas:
 
 ### <a name="4.2"></a>4.2. Pacotes de Design Significativos do Ponto de Vista da Arquitetura  
 
+4.2.1. View
+A View será responsável por gerenciar os comportamentos da aplicação e os dados.
+
+4.2.2 Model
+A Model identifica as entidades a serem utilizadas na aplicação de maneira correlacionada com conceitos abstraídos das circunstâncias apresentadas no mundo real. Nessa camada também é implementado a comunicação com o banco de dados.
+
+4.2.3 Test (Teste)
+
+
+4.2.4 Serializers
+Serialização é o processo de conversão de um objeto em um fluxo de bytes para armazenar o objeto ou fluxo na memória, em um banco de dados, ou em um arquivo, ou transmití-lo por uma conexão de rede, seja em forma binária ou em formato de texto como o JSON. Sua finalidade principal é salvar o estado de um objeto para ser capaz de recriá-lo quando necessário. Logo é um método simples e robusto para tornar objetos persistentes.
+
 ## <a name="5"></a>5. Arquitetura dos Serviços e visão de Implementação
 
 Essa seção oferece a visão arquitetural dos micro-serviços implementados na construção do produto.
@@ -178,8 +200,11 @@ DJANGO: DOCUMENTAÇÃO DO DJANGO: <https://docs.djangoproject.com/pt-br/2.1/>. A
 
 PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Disponível em: <https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django>. Acesso em: 09 de Setembro de 2018.
 
-DJANGO MODELS. Disponível em: <https://django-portuguese.readthedocs.io/en/1.0/topics/db/models.html>. Acesso em: 09 de Setembro de 2018
+DJANGO MODELS. Disponível em: <https://django-portuguese.readthedocs.io/en/1.0/topics/db/models.html>. Acesso em: 09 de Setembro de 2018.
 
-TENSORFLOW: AN OP MACHINE LEARNING LIBRARY. Disponível em : <https://www.tensorflow.org/?hl=pt-br>. Acesso em: 14 de Setembro de 2018
+TENSORFLOW: AN OP MACHINE LEARNING LIBRARY. Disponível em : <https://www.tensorflow.org/?hl=pt-br>. Acesso em: 14 de Setembro de 2018.
 
-ARBOR.JS: INTRODUCTION. Disponível em : <http://arborjs.org/introduction>. Acesso em 14 de Setembro de 2018
+NODE.JS: DOCUMENTAÇÃO DO NODE: <https://nodejs.org/en/docs/>. Acesso em 29 de Setembro de 2018.
+
+MEDIUM: What exactly is Node.js?  Disponível em: <https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5>. Acesso em 30 de Setembro de 2018. 
+
