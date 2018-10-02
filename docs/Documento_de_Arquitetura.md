@@ -17,6 +17,7 @@ layout: default
 | 11/09/2018 | 0.7 | Adição das restrições do projeto, Atualização dos tópicos 1.1, 1.2, 1.4  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 | 27/09/2018 | 0.8 | Alteração da representação da arquitetura, Atualização dos tópicos 2, 2.1 |[Michel Martins de Camargo](https://github.com/micheldcamargo)|
 | 29/09/2018 | 0.9 | Alteração da representação da arquitetura, Atualização dos tópicos 2.4, 2.5, 2.6, 2.7 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv)|
+| 01/10/2018 | 0.9 | Alteração da representação da arquitetura, supressão tópico 2.7. Alteração tópico 3.1 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), Filipe Barcelos |
 
 ## Sumário
 
@@ -33,7 +34,6 @@ layout: default
     * 2.4 [Node.js](#2.4)
     * 2.5 [Neo4J](#2.5)
     * 2.6 [D3.js](#2.6)
-    * 2.7 [Banco de Dados Orientado à Grafos](#2.7)
 
 3. [Metas e Restrições de Arquitetura](#3)        
     * 3.1 [Ambiente e Ferramentas de Desenvolvimento](#3.1)
@@ -50,11 +50,7 @@ layout: default
 
 7. [Referências](#7)
 
-
-
-
 ## <a name="1"></a>1. Introdução
-
 
 ### <a name="1.1"></a>1.1 Finalidade
 
@@ -78,10 +74,12 @@ Este documento traz o detalhamento, a descrição e as principais característic
 
 ## <a name="2"></a>2. Representação da Arquitetura
 
-Para o projeto será adotada a arquitetura baseada em componentes. Nesta abordagem o foco está na decomposição dos sistemas possibilitando a reusabilidade, substituição, encapsulamento, independência. O projeto será dividido em duas partes, a primeira consta em uma API rest desenvolvida com base no framework Django Rest que deve tratar os dados recebidos da API SALIC e armazená-los em uma base de dados orientada a grafos(Neo4j). A segunda parte trata do front-end e da exibição destes dados e utiliza as ferramentas NodeJs e D3 para tratar e exibir os dados recuperados do banco de dados orientado a grafos.<!--O *Django Application* é o conceito responsável por dar flexibilidade e grande reaproveitamento de componentes ao **Django**.-->
+Para o projeto será adotada a arquitetura baseada em componentes. Nesta abordagem o foco está na decomposição dos sistemas possibilitando a reusabilidade, substituição, encapsulamento, independência. O projeto será dividido em duas partes, a primeira consta em uma API rest desenvolvida com base no framework Django Rest que deve tratar os dados recebidos da API SALIC e armazená-los em uma base de dados orientada a grafos(Neo4j). A segunda parte trata do front-end e da exibição destes dados e utiliza as ferramentas NodeJs e D3 para tratar e exibir os dados recuperados do banco de dados orientado a grafos.
+
+Do Django Rest os dados tratados são enviados para o Node.js e são salvos no Banco de Dados. O segundo serviço contempla o tratamento dos dados do banco de dados gerando arquivos json, de acordo com as pesquisas realizadas, no formato compatível com o D3.js para a visualização em forma de grafos.  
 
 ### <a name="2.1"></a>2.1. Django REST
-A API NaturalSearch será uma aplicação desenvolvida a partir do framework Django REST, utilizando linguagem python. Um framework já contém um conjunto de componentes que são normalmente utilizados pela maioria dos desenvolvedores o que ajuda a desenvolver uma aplicação de forma mais rápida, eficiente e organizada. <!--O padrão arquitetural que é utilizado pelo Django é o MVT(Model, View, Template) que é uma derivação do MVC(Model, View, Controller) e será melhor explicado nos tópicos abaixo.-->
+A API NaturalSearch será uma aplicação desenvolvida a partir do framework Django REST, utilizando linguagem python. Um framework já contém um conjunto de componentes que são normalmente utilizados pela maioria dos desenvolvedores o que ajuda a desenvolver uma aplicação de forma mais rápida, eficiente e organizada.
 
 A arquiteura do Django REST é baseada no modelo arquitetural REST(Representational State Transfer) que utiliza os métodos do protocolo HTTP de requisitção e resposta onde o foco são os recursos. O modelo REST entrega alta performance e escalabilidade e ainda pode ser utilizado por praticamente qualquer cliente imprimindo interoperabilidade, o que é um recurso importante para o projeto.
 
@@ -90,22 +88,9 @@ A API rest recebe requisições HTTP de um cliente e executa o que a requisiçã
 <img src="https://tutorialedge.net/uploads/rest-api.png" class ="responsive-img">
 </center>
 
-<!--A arquitetura do Django segue basicamente o fluxograma da imagem abaixo. Quando o usuário faz uma requisição ao servidor web pela URL, ela é passada na urlresolver do Django e quando encontrada é feita a requisição a View. A View se comunica com o Template e a Model, que por sua vez se comunica com o banco de dados, e vice e versa. Depois o resultado dessa interação é retornado ao usuário.
-<center>
--->
-
 <center>
 Fonte: https://tutorialedge.net/general/what-is-a-rest-api/
 </center>
-
-<!--#### <a name="2.1.1"></a>2.1.1. Model
-Os modelos(Models) são classes que representam os dados das tabela do banco de dados, sendo cada model uma tabela uníca. Com essa interação o Django dá uma API de acesso ao banco de dados gerada automaticamente, facilitando o desenvolvimento da aplicação.
-
-#### <a name="2.1.2"></a>2.1.2. View
-A View é responsável por receber a requisição web e retornar uma resposta web. Ela se comunica com a Model e a Template com lógicas arbritárias necessárias para retornar uma resposta, como por exemplo quando um usuário tenta fazer login, a view pega a requisição, confere com a model se os dados estão certos e pega com o template a forma visual que deve ser retornado caso o acesso de certo ou errado.
-
-#### <a name="2.1.3"></a>2.1.3. Template
-A Template é a camada mais externa e visual do software, que faz o retorno visual ao usuário. Ela é composta por HTML, CSS, javascript e etc.-->
 
 ### <a name="2.2"></a>2.2. Salic API
 A API utilizada para popular o nosso banco de dados será a [API Salic](http://api.salic.cultura.gov.br/doc/). Essa API acessa os dados do portal [Salic](http://rouanet.cultura.gov.br/), que é um sistema que reúne dados de propostas e projetos do Ministério da Cultura relacionados a Lei Rouanet. Serão usados os dados de projetos e propostas que serão exportados no formato *HAL+JSON* (ou XML ou CSV). Haverá uma integração continua do banco de dados com a API do salic, fazendo atualizações diárias.
@@ -113,12 +98,8 @@ A API utilizada para popular o nosso banco de dados será a [API Salic](http://a
 ### <a name="2.3"></a>2.3. TensorFlow
 O TensorFlow é uma biblioteca open source de _machine learning(ML)_ para pesquisa e produção que será utilizada no projeto para relacionamentos de similaridade e aplicação de Linguagem Natural. Isso será necessário para o tratamento do banco de dados, o que permitirá o retorno das relações entre os projetos e propostas em forma de grafos para o usuário.
 
-<!--### <a name="2.4"></a>2.4. Arbor.js
-O Arbor.js é um bliblioteca JavaScript para visualização de grafos. Ela proporcionará um algoritmo de layout e abstrações para a organização do gráfico e visualização na tela. As bibliotecas são adicionadas no Template do projeto Django.-->
-
 ### <a name="2.4"></a>2.4. Node.js
-O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos. Ele será utilizado como 
-
+O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
 
 ### <a name="2.5"></a>2.5. Neo4J
 O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dados que não utiliza os conceitos estruturados). As informações não são armazenadas em tabelas, mas sim na forma de Grafos e suas estruturas são representadas de forma que o conhecimento é representado pelos conceitos matemáticos da Teoria de Grafos. Neste tipo de Banco de Dados, os registros são gravados em vértices (nós) que possuem propriedades definidas conforme a necessidade. Estes vértices por sua vez se relacionam com outros vértices através de arestas (arcos) que se interligam criando caminhos entre os vértices de maneira organizada com relações explícitas. Dessa forma será possível integrar metodologias de pesquisa com linguagem natural utilizando a biblioteca Tensorflow e entregar para o usuário dados com um melhor grau de relacionamento entre si.
@@ -127,12 +108,7 @@ O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dad
 
 D3 ou (Data-Drive-Documents) é um biblioteca do javascript com a função de organizar e mostrar dados dinamicamente em forma gráfica. Através dele o usuário poderá visualizar os relacionamentos entre sua pesquisa com outros dados de forma intuitiva com a utilização dos grafos e mostrar a relação entre os itens pesquisados.
 
-
-### <a name="2.7"></a>2.7 Banco de Dados Orientado à Grafos  
-O bando de dados orientado à grafos difere dos bancos de dados relacionais por utilizar o **NoSQL**. No NoSQL a recuperação de dados de grafos se dá de uma forma mais rápida por causa da relação mais natural feita entre os vértices e aresta. O vértice é a unidade de dados, um conjunto de propriedade do tipo chave valor que representam uma entidade. As arestas são os relacionamentos que ligam os vértices por uma rede semântica. 
-
 ## <a name="3"></a>3. Metas e Restrições de Arquitetura       
-
 O projeto **NaturalSearch** possui as seguintes metas:
 
 * Funcionar nos  principais browsers utilizados atualmente: Mozilla Firefox, Google Chrome e Internet Explorer.
@@ -150,13 +126,15 @@ O projeto **NaturalSearch** possui as seguintes metas:
 | Requisito | Ferramenta/Solução | Versão | Descrição |
 |---|---|---|---|
 |Linguagem| Python | 3.6 | Linguagem de programação de alto nível, orientada a objetos, interpretada e imperativa. |
-|Framework| Django | 2.0.8 | Framework para desenvolvimento web rápido de alto nível escrito em python, baseado no padrão MTV. |
+|Framework| Django REST | 3.8 | Framework para desenvolvimento de API REST rápido de alto nível escrito em python. |
+|Framework| Node.js | 8.12 | Framework para desenvolvimento web de alto nível escrito em python. |
+|Biblioteca| D3.js | 4 | Biblioteca javascript para exibição de dados dinâmicos e interativa. |
 |Plataforma| Web - Navegadores Google Chrome, Safari e Firefox | -- | -- |
 |Virtualização| Docker | 18.03.1-ce | O Docker fornece uma camada adicional de abstração e automação de virtualização de nível de sistema operacional. |
 |Virtualização| Docker-compose | 1.22.0 |  Ferramenta para a criação e execução de múltiplos containers de aplicação da Docker. |
 |Base de dados| API Salic | -- | API aberta para acesso aos dados do portal SALIC. |
+|Base de dados em grafos| Neo4J | 3.0 | Base de dados orientada a grafos |
 |LN| TensorFlow | r1.10 | Biblioteca para aplicação de Linguagem Natural. |
-|Visualização de grafos| Arbor.js | -- | Biblioteca de visualização de grafos. |
 
 ## <a name="4"></a>4. Visão Lógica    
 
