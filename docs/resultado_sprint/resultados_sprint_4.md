@@ -124,38 +124,32 @@ No final da Sprint, foi realizado as alteraações, com base no conhecimento de 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
 <br>
-<br>
-<br>
+
 
 ### Velocity
 
 O velocity desta semana é apresentado :
 
 <br>
-<br>
-<br>
 
-![velocity_Sprint_4](image_Sprint3/velocity_Sprint_4.png)
+![velocity_Sprint_4](image_Sprint4/velocity_Sprint_4.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint4/velocity_Sprint_4.png)
 
 <br>
-<br>
-<br>
+
 
 ### Pareamentos
 A imagem mostra a quantidade de pareamentos e com qual membro da equipe:
 <br>
-<br>
-<br>
 
-![Pareamento_4](image_Sprint3/Pareamento_4.png)
+
+![Pareamento_4](image_Sprint4/Pareamento_4.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint4/Pareamento_4.png)
 
 <br>
-<br>
-<br>
+
 
 
 

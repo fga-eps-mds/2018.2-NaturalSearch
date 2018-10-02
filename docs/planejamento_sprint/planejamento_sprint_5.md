@@ -1,9 +1,9 @@
 ---
 ---
 
-# Planejamento da Sprint 4
+# Planejamento da Sprint 5
 
-## 1. Dados da Sprint 4
+## 1. Dados da Sprint 
 
 | Início | Término | Duração | Pontos Planejados | Pontos Dívida Técnica | Pontuação Total |
 |----------|----------|----------|----------|----------|----------|
@@ -20,7 +20,7 @@
 | Igor Sousa | Devops |
 | Mikhaelle Bueno, Adrielly Jesus, Marcos Conceição, Fabiana Ribas, Gustavo Moreira, Michel Camargo | Desenvolvedores |
 
-## 3. Planejamento da Sprint 4
+## 3. Planejamento da Sprint
 
 O planejamento da Sprint 5, tem como  objetivo a refatoração de documentação para a apresentação da Release 01
 
@@ -30,7 +30,7 @@ Nesta Sprint, não haverá pareamento.
 
 
 
-## 5. Objetivos Sprint4
+## 5. Objetivos Sprint
 
 
 * Refatorar Documento de Visão
