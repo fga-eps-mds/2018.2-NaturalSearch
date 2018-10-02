@@ -17,7 +17,8 @@ layout: default
 | 11/09/2018 | 0.7 | Adição das restrições do projeto, Atualização dos tópicos 1.1, 1.2, 1.4  |[Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira)|
 | 27/09/2018 | 0.8 | Alteração da representação da arquitetura, Atualização dos tópicos 2, 2.1 |[Michel Martins de Camargo](https://github.com/micheldcamargo)|
 | 29/09/2018 | 0.9 | Alteração da representação da arquitetura, Atualização dos tópicos 2.4, 2.5, 2.6, 2.7 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv)|
-| 01/10/2018 | 0.9 | Alteração da representação da arquitetura, supressão tópico 2.7. Alteração tópico 3.1 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), Filipe Barcelos |
+| 01/10/2018 | 1.0 | Alteração da representação da arquitetura, supressão tópico 2.7. Alteração tópico 3.1 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Filipe Barcelos](https://github.com/FilipeKN4) |
+| 01/10/2018 | 1.1 | Adição das seções 5 e 6. Desrição da Arquitetura de Microserviços | [Filipe Barcelos](https://github.com/FilipeKN4) |
 
 ## Sumário
 
@@ -144,11 +145,29 @@ O projeto **NaturalSearch** possui as seguintes metas:
 
 ## <a name="5"></a>5. Arquitetura dos Serviços e visão de Implementação
 
-### <a name="5.1"></a>5.1.
+Essa seção oferece a visão arquitetural dos micro-serviços implementados na construção do produto.
 
-### <a name="5."></a>5.2.
+### <a name="5.1"></a>5.1. Visão Geral 
 
+![arquitetura](images/arquitetura_natural_search.png)
+
+### <a name="5."></a>5.2. Microserviços e Camadas
+
+Segue o detalhamento dos microserviços implementados no projeto, bem como as justificativas para suas escolhas.
+
+#### 5.2.1 Processamento de Dados da Salic API
+
+Primeiro microserviço do produto que possui arquitetura no padrão MVT, utilizando o _framework_ Django _Rest_. É utilizada com os objetivos de puxar os dados da Salic API e realizar o tratamento de forma a definir as categorias de projetos e propostas e classificá-las, assim, obtendo as relações de semelhança entre todas elas. Para a realização desse processamento de dados é utilizada a biblioteca de _Machine Learning_ _TensorFlow_. Esse serviço possibilita ao produto a realização do processamento de dados de forma independente da visualização.
+
+#### 5.2.2 Visualização em Grafos
+
+Segundo microserviço implementado no projeto com a utilização do _framework_ Node.js. Esse serviço recebe os dados processados no Django _Rest_ e popula o banco de dados com o objetivo de gerar arquivos _json_ compatíveis com a biblioteca D3.js, para que, assim, possa gerar a visualização em grafos dos projetos e propostas de acordo com a pesquisa realizada pelo usuário. Além disso, nesse serviço é implementado o front-end do produto por completo.
+ 
 ## <a name="6"></a>6. Visão de Dados
+
+Essa seção descreve o modelo de dados oferecido pela Salic API para a construção dos relacionamentos e visualiação do projeto.
+
+![DER](images/DER_natural_search.png)
 
 ## <a name="7"></a>7. Referências
 ARTEFATO: DOCUMENTO DE ARQUITETURA DE SOFTWARE. FUNPAR. Disponível em: <http://www.funpar.ufpr.br:8080/rup/process/artifact/ar_sadoc.htm>. Acesso em: 04 de Setembro de 2018.
