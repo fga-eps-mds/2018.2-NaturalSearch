@@ -20,6 +20,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
 * [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/RoadMap_ScrumMaster.html)
 * [Roadmap do ProductOwner](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ProductOwner.html)
+* [Roadmap do Arquiteto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_do_arquiteto.html)
 
 ## Viabilidade Técnica
 * [Definição de Pronto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definição_de_Pronto.html)

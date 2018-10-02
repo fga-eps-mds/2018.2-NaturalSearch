@@ -13,6 +13,6 @@ layout: default
 <br>
 <br>
 
-![Roadmap](images/Roadmap_NaturalSearch.jpg)
+![Roadmap](images/Roadmap_NaturalSearch.png)
 
-[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Roadmap_NaturalSearch.jpg)
+[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Roadmap_NaturalSearch.png)
