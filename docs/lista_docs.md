@@ -18,7 +18,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 ## RoadMaP
 * [Roadmap do Produto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap.html)
-* [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/RoadMap_ScrumMaster.html)
+* [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ScrumMaster.html)
 * [Roadmap do ProductOwner](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ProductOwner.html)
 
 ## Viabilidade Técnica
@@ -75,5 +75,5 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 ### _Sprint_ 4
 
 * [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_sprint/planejamento_sprint_4.html)
-* [Resultados]()
+* [Resultados](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/resultados_sprint_4.html)
 
