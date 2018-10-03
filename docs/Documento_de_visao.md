@@ -104,7 +104,7 @@ Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestõe
 |----------|----------|          
 |**Problema** |As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes. |
 |**Funçoes Afetadas** | A entrega de um resultado de pesquisa não esperado e irrelevante.     |
-|**Efeito** | O usuário encontra dificultade em visualizar as informações relevantes. |
+|**Efeito** | O usuário encontra dificuldade em visualizar as informações relevantes. |
 |**Solução** |Utilizar os princípios da LN para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados  mais relevantes e correlacionados. |
 
 
