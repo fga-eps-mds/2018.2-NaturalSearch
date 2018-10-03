@@ -23,3 +23,14 @@ layout: default
 <br>
 <br>
 ![frame4](images/tela4_prototipo_alta.png)
+
+## 2.Protótipo da tela de resultados
+<br>
+<br>
+<br>
+
+![result1](images/result_high_fidelity1.png)
+<br>
+<br>
+![result2](images/result_high_fidelity2.png)
+
