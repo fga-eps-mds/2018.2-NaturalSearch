@@ -32,6 +32,9 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Mapa de Requisitos](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Mapa_de_requisitos.html)
 * [Histórias de Usuário](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Historias_de_usuario.html)
 
+## Pipeline 
+* [DevOps](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/pipeline_devops.html)
+
 
 ## Especificações
 
