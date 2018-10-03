@@ -110,20 +110,7 @@ Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quad
 
 <br>
 <br>
-<br>
 
-No final da Sprint, foi realizado as alteraações, com base no conhecimento de cada um, e foi obtido como resultado da Sprint o quadro abaixo:
-
-<br>
-<br>
-<br>
-
-
-![Habilidade_Sprint_3](image_Sprint3/Habilidade_Sprint_3.png)
-
-[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
-
-<br>
 
 
 ### Velocity

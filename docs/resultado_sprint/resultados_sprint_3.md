@@ -118,7 +118,7 @@ Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quad
 <br>
 <br>
 
-No final da Sprint, foi realizado as alteraações, com base no conhecimento de cada um, e foi obtido como resultado da Sprint o quadro abaixo:
+No final da Sprint, foi realizado as alterações, com base no conhecimento de cada um, e foi obtido como resultado da Sprint o quadro abaixo:
 
 <br>
 <br>
