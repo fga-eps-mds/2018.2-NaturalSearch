@@ -21,6 +21,8 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Roadmap do Scrum Master](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/RoadMap_ScrumMaster.html)
 * [Roadmap do ProductOwner](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_ProductOwner.html)
 * [Roadmap do Arquiteto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_do_arquiteto.html)
+* [Roadmap do DevOps](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/roadmap_devops.html)
+
 
 ## Viabilidade Técnica
 * [Definição de Pronto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definição_de_Pronto.html)
@@ -36,7 +38,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Documento de Visão](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_visao.html)
 * [Documento de Arquitetura](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_Arquitetura.html)
 * [Protótipo de Baixa Fidelidade](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Prototipo_de_baixa_Fidelidade.html)
-* [Protótipo de Alta Fidelidade]()
+* [Protótipo de Alta Fidelidade](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Prototipo_alta_fidelidade.html)
 
 ## _Sprints_
 
