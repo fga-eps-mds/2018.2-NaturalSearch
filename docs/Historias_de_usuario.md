@@ -10,6 +10,8 @@ layout: default
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|
 | 09/09/2018         |           0.1                | Versão inicial das Histórias de Usuário | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4), [Igor Araújo de Sousa](https://github.com/zero101010) |
 | 23/09/2018         |           0.2                | Adição de novas histórias de usuário e histórias técnicas | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
+| 03/10/2018         |           0.3                | Adição de novas histórias para a feature de disponibilizar dados processados | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
+
 
 ## 1. Processamento de Dados da API Salic
 
@@ -36,6 +38,11 @@ layout: default
 | relacionar os dados | Eu como desenvolvedor, desejo relacionar os dados de projetos e propostas de acordo com as categorias em que foram classificados. |
 
 ### 1.4 Disponibilizar os dados Processados
+
+| **história de usuário** | **descrição** |
+|:---:|:---:|
+| converter os dados para o formato JSON | Eu, como desenvolvedor, desejo converter os dados processados para o formato JSON. |
+| criar API para fornecer o JSON | Eu, como desenvolvedor, desejo criar uma API para fornecer os dados processados em formato JSON. |
 
 ## 2. Visualização em Grafos
 
