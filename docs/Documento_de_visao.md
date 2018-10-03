@@ -99,6 +99,7 @@ O **NaturalSearch** facilitará a pesquisa de projetos e propostas da Lei Rouane
 Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestões inteligentes ao usuário, mas não há registro de aplicações que funcionem para diversas APIs em sites de busca.
 
 ### <a name="2.2"></a> 2.2 Instrução do Problema
+
 |||  
 |----------|----------|          
 |**Problema** |As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes. |
@@ -154,7 +155,6 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 #### <a name="3.4.2"></a> 3.4.2 Equipe de Desenvolvimento
 
-
 |||  
 |----------|----------|          
 |**Representantes** | [Adrielly Rodrigues de Jesus](https://github.com/drykette), [Fabiana Luiza V. P. Ribas](https://github.com/FabianaRibas), [Gustavo Duarte Moreira](https://github.com/gustavoduartemoreira), [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Mikhaelle de Carvalho Bueno](https://github.com/Mikhaelle);|
@@ -169,7 +169,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 |||  
 |----------|----------|        
-|**Representantes** | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4), [Igor Araújo de Sousa](https://github.com/zero101010), [Lucas Midlhey Cardoso Naves](https://github.com/lucasmidlhey),  [Shermam Tácia da Costa Lima](https://github.com/tacia68); |
+|**Representantes** | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4), [Igor Araújo de Sousa](https://github.com/zero101010), [Shermam Tácia da Costa Lima](https://github.com/tacia68); |
 |**Descrição** | Gerentes de Projeto|
 |**Tipo** | Grupo de Estudadntes da Faculdade do Gama (FGA), matriculados na disciplina EPS |
 |**Responsabilidades** | Gerenciar, supervisionar e manter a equipe de desenvolvimento a fim de que as metodologias ágeis sejam aplicadas e o produto seja entregue ao cliente no final.|
