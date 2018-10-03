@@ -42,13 +42,18 @@ layout: default
 3. [Metas e Restrições de Arquitetura](#3)        
     * 3.1 [Ambiente e Ferramentas de Desenvolvimento](#3.1)
 
-4. [Visão Lógica](#4)    
-    * 4.1 [Diagrama de pacotes](#4.1)    
-    * 4.2 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura]($4.2)
+4. [Visão Lógica](#4)       
+    * 4.1 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura](#4.1)
+        * 4.1.1 [View](#4.1.1)
+        * 4.1.2 [Model](#4.1.2)
+        * 4.1.3 [Test](#4.1.3)
+        * 4.1.4 [Serializers](#4.1.4)
 
 5. [Arquitetura dos Serviços e visão de Implementação](#5)
     * 5.1 [Visão Geral](#5.1)
     * 5.2 [Micro Serviços e Camadas](#5.2)
+        * 5.2.1 [Processamento de Dados da Salic API](#5.2.1)
+        * 5.2.2 [Visualização em Grafos](#5.2.2)
 
 6. [Visão de Dados](#6)                  
 
@@ -74,7 +79,7 @@ Este documento foi construído sobre a visão da arquitetura utilizada na implem
 
 ### <a name="1.4"></a>1.4 Visão Geral
 
-Este documento traz o detalhamento, a descrição e as principais características da arquitetura adotada pela equipe de desenvolvimento visando oferecer o melhor desempenho para o projeto **NaturalSearch**. Nele estará presente: Representação da Arquitetura, Metas e Restrições de Arquitetura, Visão Lógica, Visão de Lógica, Visão de Processos, Visão de Implantação, Visão de Implementação, Visão de Dados, Tamanho e Desempenho, Qualidade e Referências bibliográficas.
+Este documento traz o detalhamento, a descrição e as principais características da arquitetura adotada pela equipe de desenvolvimento visando oferecer o melhor desempenho para o projeto **NaturalSearch**. Nele estará presente: Representação da Arquitetura, Metas e Restrições de Arquitetura, Visão Lógica, Visão de Implementação, Visão de Dados e Referências bibliográficas.
 
 ## <a name="2"></a>2. Representação da Arquitetura
 
@@ -97,13 +102,19 @@ Fonte: https://tutorialedge.net/general/what-is-a-rest-api/
 </center>
 
 ### <a name="2.2"></a>2.2. Salic API
-A API utilizada para popular o nosso banco de dados será a [API Salic](http://api.salic.cultura.gov.br/doc/). Essa API acessa os dados do portal [Salic](http://rouanet.cultura.gov.br/), que é um sistema que reúne dados de propostas e projetos do Ministério da Cultura relacionados a Lei Rouanet. Serão usados os dados de projetos e propostas que serão exportados no formato *HAL+JSON* (ou XML ou CSV). Haverá uma integração continua do banco de dados com a API do salic, fazendo atualizações diárias.
+A API utilizada para popular o nosso banco de dados será a [API Salic](http://api.salic.cultura.gov.br/doc/). Essa API acessa os dados do portal [Salic](http://rouanet.cultura.gov.br/), que é um sistema que reúne dados de propostas e projetos do Ministério da Cultura relacionados a Lei Rouanet. Serão usados os dados de projetos e propostas que serão exportados no formato *HAL+JSON*. Haverá uma integração continua do banco de dados com a API do salic.
 
 ### <a name="2.3"></a>2.3. TensorFlow
 O TensorFlow é uma biblioteca open source de _machine learning(ML)_ para pesquisa e produção que será utilizada no projeto para relacionamentos de similaridade e aplicação de Linguagem Natural. Isso será necessário para o tratamento do banco de dados, o que permitirá o retorno das relações entre os projetos e propostas em forma de grafos para o usuário.
 
 ### <a name="2.4"></a>2.4. Node.js
-O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos. Utilizamos o NodeJS como uma plataforma back-end que permite executarmos scripts Javascript no lado do servidor para acessar e trabalhar de maneira extremamente rápida com o grande volume de dados em formato JSON que serão coletados da API SALIC. O fato de não possuir dependências ajuda bastante no processo de desenvolvimento, deploy e integração contínua do código já que com apenas o Node instalado na máquina já se pode desenvolver qualquer aplicação. Levando em conta o tempo disponível para a conclusão da aplicação o NodeJS atendeu todas a nossas demandas economizando o tempo de aprendizado que seria necessário com outras outras linguagens como por exemplo PHP ou RUBY. A forma com que o Node.JS gerencia os requests através de um looping de eventos permite que a aplicação trabalhe em paralelo, de forma assíncrona e como nossa aplicação demanda muita leitura de arquivos e manipulação na base de dados, com IO não-bloqueante do Node.js essas tarefas são facilmente executadas em background e o retorno de sucesso ou falha dessas tarefas ocorrem através de uma função de callback.
+O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
+
+ Utilizamos o NodeJS como uma plataforma back-end que permite executarmos scripts Javascript no lado do servidor para acessar e trabalhar de maneira extremamente rápida com o grande volume de dados em formato JSON que serão coletados da API SALIC. O fato de não possuir dependências ajuda bastante no processo de desenvolvimento, deploy e integração contínua do código já que com apenas o Node instalado na máquina já se pode desenvolver qualquer aplicação.
+ 
+  Levando em conta o tempo disponível para a conclusão da aplicação o NodeJS atendeu todas a nossas demandas economizando o tempo de aprendizado que seria necessário com outras outras linguagens como por exemplo PHP ou RUBY. 
+  
+  A forma com que o Node.JS gerencia os requests através de um looping de eventos permite que a aplicação trabalhe em paralelo, de forma assíncrona e como nossa aplicação demanda muita leitura de arquivos e manipulação na base de dados, com IO não-bloqueante do Node.js essas tarefas são facilmente executadas em background e o retorno de sucesso ou falha dessas tarefas ocorrem através de uma função de callback.
 
 <img src="https://cdn-images-1.medium.com/max/1600/0*X7Z0k20cwHHi8UOI.png"  class ="responsive-img">
 </center>
@@ -113,11 +124,11 @@ Fonte: https://blog.rocketseat.com.br/nodejs-vale-a-pena-vantagens/
 </center>
 
 ### <a name="2.5"></a>2.5. Neo4J
-O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dados que não utiliza os conceitos estruturados). As informações não são armazenadas em tabelas, mas sim na forma de Grafos e suas estruturas são representadas de forma que o conhecimento é representado pelos conceitos matemáticos da Teoria de Grafos. Neste tipo de Banco de Dados, os registros são gravados em vértices (nós) que possuem propriedades definidas conforme a necessidade. Estes vértices por sua vez se relacionam com outros vértices através de arestas (arcos) que se interligam criando caminhos entre os vértices de maneira organizada com relações explícitas. Dessa forma será possível integrar metodologias de pesquisa com linguagem natural utilizando a biblioteca Tensorflow e entregar para o usuário dados com um melhor grau de relacionamento entre si.
+O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dados que não utiliza os conceitos estruturados). As informações não são armazenadas em tabelas, mas sim na forma de Grafos e suas estruturas são representadas pelos conceitos matemáticos da Teoria de Grafos. Neste tipo de Banco de Dados, os registros são gravados em vértices (nós) que possuem propriedades definidas conforme a necessidade. Estes vértices por sua vez se relacionam com outros vértices através de arestas (arcos) que se interligam criando caminhos entre os vértices de maneira organizada com relações explícitas. Dessa forma será possível integrar metodologias de pesquisa com linguagem natural utilizando a biblioteca Tensorflow e entregar para o usuário dados com um melhor grau de relacionamento entre si.
 
 ### <a name="2.6"></a>2.6. D3.js
 
-D3 ou (Data-Drive-Documents) é um biblioteca do javascript com a função de organizar e mostrar dados dinamicamente em forma gráfica. Através dele o usuário poderá visualizar os relacionamentos entre sua pesquisa com outros dados de forma intuitiva com a utilização dos grafos e mostrar a relação entre os itens pesquisados.
+D3 ou (Data-Drive-Documents) é um biblioteca do javascript com a função de organizar e mostrar dados dinamicamente em forma gráfica. Através dele o usuário poderá visualizar os relacionamentos entre sua pesquisa com outros dados de forma intuitiva com a utilização dos grafos.
 
 ## <a name="3"></a>3. Metas e Restrições de Arquitetura       
 O projeto **NaturalSearch** possui as seguintes metas:
@@ -149,20 +160,19 @@ O projeto **NaturalSearch** possui as seguintes metas:
 
 ## <a name="4"></a>4. Visão Lógica    
 
-### <a name="4.1"></a>4.1. Diagrama de pacotes
+### <a name="4.2"></a>4.1. Pacotes de Design Significativos do Ponto de Vista da Arquitetura  
 
-### <a name="4.2"></a>4.2. Pacotes de Design Significativos do Ponto de Vista da Arquitetura  
-
-4.2.1. View
+#### <a name="4.1.1"></a>4.1.1. View
 A View será responsável por gerenciar os comportamentos da aplicação e os dados.
 
-4.2.2 Model
+#### <a name="4.1.2"></a>4.1.2. Model
 A Model identifica as entidades a serem utilizadas na aplicação de maneira correlacionada com conceitos abstraídos das circunstâncias apresentadas no mundo real. Nessa camada também é implementado a comunicação com o banco de dados.
 
-4.2.3 Test (Teste)
+#### <a name="4.1.3"></a>4.1.3. Test
+Os testes utilizados serão o de unidade e integração para garantir a qualidade do software entregado. 
 
 
-4.2.4 Serializers
+#### <a name="4.1.3"></a>4.1.4. Serializers
 Serialização é o processo de conversão de um objeto em um fluxo de bytes para armazenar o objeto ou fluxo na memória, em um banco de dados, ou em um arquivo, ou transmití-lo por uma conexão de rede, seja em forma binária ou em formato de texto como o JSON. Sua finalidade principal é salvar o estado de um objeto para ser capaz de recriá-lo quando necessário. Logo é um método simples e robusto para tornar objetos persistentes.
 
 ## <a name="5"></a>5. Arquitetura dos Serviços e visão de Implementação
@@ -177,11 +187,11 @@ Essa seção oferece a visão arquitetural dos micro-serviços implementados na 
 
 Segue o detalhamento dos microserviços implementados no projeto, bem como as justificativas para suas escolhas.
 
-#### 5.2.1 Processamento de Dados da Salic API
+#### <a name="5.2.1"></a>5.2.1 Processamento de Dados da Salic API
 
 Primeiro microserviço do produto que possui arquitetura no padrão MVT, utilizando o _framework_ Django _Rest_. É utilizada com os objetivos de puxar os dados da Salic API e realizar o tratamento de forma a definir as categorias de projetos e propostas e classificá-las, assim, obtendo as relações de semelhança entre todas elas. Para a realização desse processamento de dados é utilizada a biblioteca de _Machine Learning_ _TensorFlow_. Esse serviço possibilita ao produto a realização do processamento de dados de forma independente da visualização.
 
-#### 5.2.2 Visualização em Grafos
+#### <a name="5.2.2"></a>5.2.2 Visualização em Grafos
 
 Segundo microserviço implementado no projeto com a utilização do _framework_ Node.js. Esse serviço recebe os dados processados no Django _Rest_ e popula o banco de dados com o objetivo de gerar arquivos _json_ compatíveis com a biblioteca D3.js, para que, assim, possa gerar a visualização em grafos dos projetos e propostas de acordo com a pesquisa realizada pelo usuário. Além disso, nesse serviço é implementado o front-end do produto por completo.
  
