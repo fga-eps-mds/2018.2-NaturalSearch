@@ -4,39 +4,42 @@ import requests, json
 def home(request):
     return render(request,'natural_search/home.html')
 
-def search_proponent():
-        #para testar só as duas ultimas paginas descomente:
-        #http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&
-
-    proponentCurrentLink = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
+def get_proponents_json():
+    #para testar só as duas ultimas paginas descomente:
+    #actualLink = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91700&format=json&"
+    
+    proponent_current_ink = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
 
     while True:
-        url = actualLink
-        respose = requests.get(url)
-        data = json.load(response.text)
+        
+        url = proponent_current_ink
+        response = requests.get(url)
+        data = json.loads(response.text)
 
-        count = data['count']
-        embedded = data['_embedded']
-        total = data['total']
-        link = data['_links']
+        #primeira camada: dicionário
+        count = data['count'] #já é um int
+        links = data['_links'] #é um dicionário
+        embedded = data['_embedded'] #é um dicionário
 
-        self_link = links['self']
-        first_link = links['first']
-        last_link = links['last']
+        print(proponent_current_ink)
 
-        getProponentPag(embedded, count)
+        proponents = []
+        proponents.append(get_proponents_labels(embedded, count))        
 
         if 'next' in links:
-             proponentCurrentLink = links['next']
+            proponent_current_ink = links['next']
         else:
             break
 
-def getProponentPag(enbedded,count):
-        proponente = []
-        for proponentes_id in range(0,count):
-                proponente.append(embedded['proponentes'][proponentes_id], proponentes['nome']) 
-                print(proponente)
 
+def get_proponents_labels(embedded, count):
+        proponents = []
+        for proponent_number in range(0, count):
+
+                proponents.append(embedded['proponentes'][proponent_number])
+
+                '''
+                nome = proponentes['nome']
                 cgccpf = proponentes['cgccpf']
                 responsavel = proponentes['responsavel']
                 tipo_pessoa = proponentes['tipo_pessoa']
@@ -46,16 +49,9 @@ def getProponentPag(enbedded,count):
                 
                 _self = _links['self']
                 projetos = _links['projetos']
+                '''
+        
+        return proponents
 
-search_proponent()
+get_proponents_json()
 
-'''
-print(nome)
-print(cgccpf)
-print(responsavel)
-print(tipo_pessoa)
-print(UF)
-print(municipio)
-print(total_captado)
-search_projects()
-'''
