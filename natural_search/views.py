@@ -1,5 +1,5 @@
 from django.shortcuts import render
-import requests, json
+import requests,json   
 
 def home(request):
     return render(request,'natural_search/home.html')
@@ -8,7 +8,7 @@ def get_proponents_json():
     #para testar só as duas ultimas paginas descomente:
     #actualLink = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91700&format=json&"
     
-    proponent_current_ink = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
+    proponent_current_ink = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=1&offset=44171&format=json&"
 
     while True:
         
@@ -21,10 +21,11 @@ def get_proponents_json():
         links = data['_links'] #é um dicionário
         embedded = data['_embedded'] #é um dicionário
 
-        print(proponent_current_ink)
+        #print(proponent_current_ink)
 
         proponents = []
-        proponents.append(get_proponents_labels(embedded, count))        
+        proponents.append(get_proponents_labels(embedded, count)) 
+        print(proponents)       
 
         if 'next' in links:
             proponent_current_ink = links['next']
@@ -34,22 +35,22 @@ def get_proponents_json():
 
 def get_proponents_labels(embedded, count):
         proponents = []
+        proponent = []
         for proponent_number in range(0, count):
 
-                proponents.append(embedded['proponentes'][proponent_number])
+                #proponents.append(embedded['proponentes'][proponent_number])
+                proponent.append(embedded['proponentes'][proponent_number]['nome'])
+                proponent.append(embedded['proponentes'][proponent_number]['responsavel'])
+                proponent.append(embedded['proponentes'][proponent_number]['tipo_pessoa'])
+                proponent.append(embedded['proponentes'][proponent_number]['UF'])
+                proponent.append(embedded['proponentes'][proponent_number]['municipio'])
+                proponent.append(embedded['proponentes'][proponent_number]['total_captado'])
 
-                '''
-                nome = proponentes['nome']
-                cgccpf = proponentes['cgccpf']
-                responsavel = proponentes['responsavel']
-                tipo_pessoa = proponentes['tipo_pessoa']
-                UF = proponentes['UF']
-                municipio = proponentes['municipio']
-                total_captado = proponentes['total_captado']
-                
-                _self = _links['self']
-                projetos = _links['projetos']
-                '''
+                proponent_id = embedded['proponentes'][proponent_number]['_links']['projetos'].split('=')
+                proponent.append(proponent_id[1])
+                proponents.append(proponent)
+
+                proponent = []
         
         return proponents
 
