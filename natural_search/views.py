@@ -2,19 +2,19 @@
 from django.shortcuts import render
 import requests,json   
 
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
+
 def home(request):
     return render(request,'natural_search/home.html')
 
-def get_proponents_json():
+def get_proponents_json(proponent_current_link):
     #para testar só as duas ultimas paginas descomente:
     #actualLink = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
-    
-    proponent_current_ink = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
 
     proponents_list = []
     
     while True:
-        url = proponent_current_ink
+        url = proponent_current_link
         response = requests.get(url)
         data = json.loads(response.text)
 
@@ -22,19 +22,17 @@ def get_proponents_json():
         count = data['count'] #já é um int
         links = data['_links'] #é um dicionário
         embedded = data['_embedded'] #é um dicionário
-
-        #print(proponent_current_ink)
+        #print(proponent_current_link)
 
 
         proponents = get_proponents_labels(embedded, count)
-
         for proponent in proponents:
                 proponents_list.append(proponent)
 
         #print(proponents_list)       
 
         if 'next' in links:
-            proponent_current_ink = links['next']
+            proponent_current_link = links['next']
         else:
             break
         
@@ -88,5 +86,5 @@ def get_proponents_labels(embedded, count):
         
         return proponents
 
-get_proponents_json()
+get_proponents_json(proponent_current_link)
 
