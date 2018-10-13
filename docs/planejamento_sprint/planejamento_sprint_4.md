@@ -54,7 +54,7 @@ O quadro de conhecimento inicia com a imagem apresentada abaixo:
 <br>
 
 
-## 4. Objetivos Sprint4
+## 6. Objetivos Sprint4
 
 
 * Refatorar o TAP
@@ -71,10 +71,10 @@ O quadro de conhecimento inicia com a imagem apresentada abaixo:
 * Identidade Visual
 * ROI
 
-## 5. Backlog da Sprint
+## 7. Backlog da Sprint
 * [TS02](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/99)-Eu, como desenvolvedor, desejo consumir os dados de projetos e propostas utilizando o Node.js.
 * [TS03](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/10)-Eu, como desenvolvedor, desejo realizar pesquisas no banco de dados utilizando o Node.js
 
-## 6. Riscos da Sprint
+## 8. Riscos da Sprint
 Nessa Sprint, foi assumido o risco da mudança da arquitetura, mudança do Django para Django Rest, e inclusão do Node.js sendo este um interpretador de código JavaScript com o código aberto, focado em migrar o Javascript do lado do cliente para servidores. Essa Sprint pode impactar em os desenvolvedores não conseguirem realizar as historias, por falta de conhecimento e treinamento. Como estamos trabalhando com outros serviços como a API Salic, corre o risco de não está disponivel para ser acessado, e ocasionando atraso, no desenvolvimento da historia.
 
