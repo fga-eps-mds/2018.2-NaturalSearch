@@ -1,11 +1,17 @@
 from django.shortcuts import render
 import requests,json 
-    
-def search_projects():
+
+
+projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+
+def home(request):
+    return render(request,'natural_search/home.html')
+        
+def search_projects(projects_current_link):
     #para testar só as duas ultimas paginas descomente:
     #projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91700&format=json&"
     
-    projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+    
 
     projects_list = []
 
@@ -17,16 +23,16 @@ def search_projects():
 
         #primeira camada: dicionário
         total = data['total'] 
-        count = data['count']
-        links = data['_links'] 
-        embedded = data['_embedded'] 
+        count = data['count'] #já é um int
+        links = data['_links'] #é um dicionário
+        embedded = data['_embedded']
 
         #segunda camada: links
-        self_link = links['self']
-        first_link = links['first']
-        last_link = links['last']
+        #self_link = links['self']
+        #first_link = links['first']
+        #last_link = links['last']
 
-        #print(projects_current_link)
+        print(projects_current_link)
 
         projects = get_projects_labels(embedded,count)
 
@@ -42,17 +48,20 @@ def search_projects():
             'projects': projects_list
         }
         
-        with open('projects.json' 'w') as project_file:
+        with open('projects.json', 'w') as project_file:
             json.dump(projects_json, project_file, ensure_ascii=False)
+        
+        print(projects_json)
 
 
-def get_projects_labels(embedded,count):
+def get_projects_labels(embedded, count):
+
     projects = []
     project = {}
 
     for numero_projeto in range(0,count):
             #segunda camada: embedded
-            projetos = embedded['projetos'][numero_projeto]['projetos']
+            #projetos = embedded['projetos'][numero_projeto]['projetos']
             PRONAC = embedded['projetos'][numero_projeto]['PRONAC']
             ano_projeto = embedded['projetos'][numero_projeto]['ano_projeto'] 	
             nome = embedded['projetos'][numero_projeto]['nome']
@@ -107,4 +116,4 @@ def get_projects_labels(embedded,count):
 
     return projects
 
-search_projects()
+search_projects(projects_current_link)
