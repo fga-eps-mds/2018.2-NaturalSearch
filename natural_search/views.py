@@ -3,7 +3,7 @@ from django.shortcuts import render
 import requests,json   
 
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
-projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91900&format=json&"
 
 def home(request):
     return render(request,'natural_search/home.html')
