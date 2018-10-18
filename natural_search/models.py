@@ -48,3 +48,25 @@ class Proposition(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Proponent(models.Model):
+    nome = models.CharField(max_length=200)
+    responsavel = models.CharField(max_length=200)
+
+    fisica = 'fisica'
+    juridica = 'juridica'
+    default = '--'
+    TIPO_PESSOA = (
+        (default,'--'),
+        (fisica, 'fisica'),
+        (juridica, 'juridica'),
+    )
+
+    tipo_pessoa = models.CharField(max_length=8, choices=TIPO_PESSOA, default=default)  
+    UF = models.CharField(max_length=2) 
+    municipio = models.CharField(max_length=200)
+    total_captado = models.DecimalField(max_digits=8, decimal_places=2)
+    proponente_id = models.CharField(max_length=55)
+    
+    def __str__(self):
+        return self.nome

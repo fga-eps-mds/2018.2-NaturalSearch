@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
-from natural_search.models import ProjetoList, Proposition
+from natural_search.models import ProjetoList, Proposition, Proponent
 from natural_search.serializers import ProjetoListSerializer, PropositionSerializer
 import requests,json   
 from rest_framework import viewsets
