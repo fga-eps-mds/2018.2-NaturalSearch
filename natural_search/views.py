@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
 from natural_search.models import ProjetoList, Proposition, Proponent
-from natural_search.serializers import ProjetoListSerializer, PropositionSerializer
+from natural_search.serializers import ProjetoListSerializer, PropositionSerializer, ProponentSerializer
 import requests,json   
 from rest_framework import viewsets
 
@@ -212,3 +212,8 @@ class ProjetoListViewSet(viewsets.ModelViewSet):
 class PropositionViewSet(viewsets.ModelViewSet):
     queryset = Proposition.objects.all()
     serializer_class = PropositionSerializer
+
+# ViewSets define the view behavior.
+class ProponentViewSet(viewsets.ModelViewSet):
+    queryset = Proponent.objects.all()
+    serializer_class = ProponentSerializer
