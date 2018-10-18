@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render
+from natural_search.models import ProjetoList, Proposition
+from natural_search.serializers import ProjetoListSerializer, PropositionSerializer
 import requests,json   
+from rest_framework import viewsets
 
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
 projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91900&format=json&"
@@ -199,3 +202,13 @@ def get_projects_labels(embedded, count):
     return projects
 
 search_projects(projects_current_link)
+
+# ViewSets define the view behavior.
+class ProjetoListViewSet(viewsets.ModelViewSet):
+    queryset = ProjetoList.objects.all()
+    serializer_class = ProjetoListSerializer
+
+# ViewSets define the view behavior.
+class PropositionViewSet(viewsets.ModelViewSet):
+    queryset = Proposition.objects.all()
+    serializer_class = PropositionSerializer
