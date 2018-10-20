@@ -5,6 +5,7 @@ import json
 
 # proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
 projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+# projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92100&format=json&"
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 
@@ -93,17 +94,18 @@ def get_proponents_labels(embedded, count):
         return proponents
 
 
-get_proponents_json(proponent_current_link)
+# get_proponents_json(proponent_current_link)
 
 
-def search_projects(projects_current_link):
+def get_projects_json(projects_current_link):
     # para testar só as duas ultimas paginas descomente:
     # projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91700&format=json&"
     
-    projects_list = []
+    iteration = 0
 
     while True:
-        
+        iteration += 1
+
         url = projects_current_link
         response = requests.get(url)
         data = json.loads(response.text)
@@ -121,23 +123,22 @@ def search_projects(projects_current_link):
 
         print(projects_current_link)
 
+        projects_number = count
         projects = get_projects_labels(embedded, count)
 
-        for project in projects:
-            projects_list.append(project)
-        
+        projects_json = {
+            'projetos': projects,
+            'quantidade': projects_number
+        }
+
+        file_name = '{}{}{}'.format('projetos', iteration, '.json')
+        with open('{}{}'.format('natural_search/projetos/', file_name), 'w') as project_file:
+            json.dump(projects_json, project_file, ensure_ascii=False)
+
         if 'next' in links:
             projects_current_link = links['next']
         else:
-            break
-        
-        projects_json = {
-            'projects': projects_list
-        }
-        
-        with open('projects.json', 'w') as project_file:
-            json.dump(projects_json, project_file, ensure_ascii=False)
-        
+            break   
         # print(projects_json)
 
 
@@ -204,4 +205,4 @@ def get_projects_labels(embedded, count):
     return projects
 
 
-# search_projects(projects_current_link)
+get_projects_json(projects_current_link)
