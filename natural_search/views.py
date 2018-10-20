@@ -5,6 +5,8 @@ from natural_search.serializers import ProjetoListSerializer, PropositionSeriali
 import requests,json   
 from rest_framework import viewsets
 
+
+
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
 projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91900&format=json&"
 
@@ -66,6 +68,8 @@ def get_proponents_labels(embedded, count):
                 proponent_id_aux = embedded['proponentes'][proponent_number]['_links']['projetos'].split('=')
                 proponent_id = proponent_id_aux[1]
 
+                proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
+                proponent_instance.save()
                 proponent = {
                         'nome': nome,
                         'responsavel': responsavel,
@@ -75,15 +79,7 @@ def get_proponents_labels(embedded, count):
                         'total_captado': total_captado,
                         'proponente_id': proponent_id
                 }
-                '''
-                proponent.append(embedded['proponentes'][proponent_number]['nome'])
-                proponent.append(embedded['proponentes'][proponent_number]['responsavel'])
-                proponent.append(embedded['proponentes'][proponent_number]['tipo_pessoa'])
-                proponent.append(embedded['proponentes'][proponent_number]['UF'])
-                proponent.append(embedded['proponentes'][proponent_number]['municipio'])
-                proponent.append(embedded['proponentes'][proponent_number]['total_captado'])
-                proponent.append(proponent_id)
-                '''
+               
                 proponents.append(proponent)
 
                 proponent = {}
