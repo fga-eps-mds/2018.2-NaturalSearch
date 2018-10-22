@@ -54,6 +54,7 @@ layout: default
 |:---:|:---:|
 | popular com projetos | Eu, como desenvolvedor, desejo popular a tabela de projetos do banco de dados com os dados consumidos da API Salic. |
 | popular com proponentes | Eu, como desenvolvedor, desejo popular a tabela de proponentes do banco de dados com os dados consumidos da API Salic. |
+| popular com projetos e proponentes| eu, como desenvolvedor, desejo popular o banco de dados do serviço de processamento de dados da Salic API com os dados de projetos e proponentes. |
 | conectar projetos e proponentes | Eu, como desenvolvedor, desejo conectar os projetos com os respectivos proponentes no banco de dados. |
 
 ### 2.2 Visualizar os dados
@@ -74,3 +75,5 @@ layout: default
 | consumir dados da API Salic com Node.js | Eu, como desenvolvedor, desejo consumir os dados de projetos e propostas utilizando o Node.js. |
 | realizar pesquisa utilizando o Node.js| Eu, como desenvolvedor, desejo realizar pesquisas no banco de dados utilizando o Node.js. |
 | otimizar tela de visualização | Eu, como desenvolvedor, desejo otimizar a tela de visualização dos resultados da pesquisa por meio de grafos. |
+| testar o serviço de visualização | Eu, como desenvolvedor, desejo testar toda a aplicação de visualização de grafos. |
+| testar o serviço de processamento de dados | Eu, como desenvolvedor, desejo testar toda a aplicação de processamento de dados da Salic API. |
