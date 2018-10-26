@@ -17,11 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 from natural_search.views import home
 from rest_framework import routers
-from natural_search.views import ProjetoListViewSet, PropositionViewSet, ProponentViewSet
+from natural_search.views import ProjectViewSet, ProponentViewSet
 
 router = routers.DefaultRouter()
-router.register('projeto', ProjetoListViewSet)
-router.register('propostas', PropositionViewSet)
+router.register('projeto', ProjectViewSet)
 router.register('proponente', ProponentViewSet)
 
 urlpatterns = [

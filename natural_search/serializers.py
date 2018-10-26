@@ -1,17 +1,11 @@
-from natural_search.models import ProjetoList,Proposition, Proponent
+from natural_search.models import Project, Proponent
 from rest_framework import serializers
 
 
 # Serializers define the API representation.
-class ProjetoListSerializer(serializers.HyperlinkedModelSerializer):
+class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = ProjetoList
-        fields = '__all__'
-
-# Serializers define the API representation.
-class PropositionSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Proposition
+        model = Project
         fields = '__all__'
 
 # Serializers define the API representation.
