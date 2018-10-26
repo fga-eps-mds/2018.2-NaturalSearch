@@ -66,7 +66,6 @@ class Proponent(models.Model):
     UF = models.CharField(max_length=2) 
     municipio = models.CharField(max_length=200)
     total_captado = models.DecimalField(max_digits=8, decimal_places=2)
-    proponente_id = models.CharField(max_length=55)
     
     def __str__(self):
         return self.nome
