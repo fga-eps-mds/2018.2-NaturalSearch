@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'natural_search',
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
@@ -70,6 +72,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'NaturalSearch.wsgi.application'
 
+# API REST
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 100, 
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -83,6 +95,8 @@ DATABASES = {
         'HOST': os.environ.get('POSTGRES_HOST')
     }
 }
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
