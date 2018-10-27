@@ -3,18 +3,22 @@ from django.shortcuts import render
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
 import requests,json   
-from rest_framework import viewsets
-
+from rest_framework import viewsets 
 
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
-projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91900&format=json&"
+#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92100&format=json&"
+#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
-    return render(request,'natural_search/home.html')
+    return render(request, 'natural_search/home.html')
+
 
 def get_proponents_json(proponent_current_link):
 
     while True:
+        iteration += 1
+
         url = proponent_current_link
         response = requests.get(url)
         data = json.loads(response.text)
@@ -23,9 +27,10 @@ def get_proponents_json(proponent_current_link):
         count = data['count'] #já é um int
         links = data['_links'] #é um dicionário
         embedded = data['_embedded'] #é um dicionário
-        #print(proponent_current_link)
+        print(proponent_current_link)
 
         get_proponents_labels(embedded, count)
+
 
         if 'next' in links:
             proponent_current_link = links['next']
@@ -33,11 +38,10 @@ def get_proponents_json(proponent_current_link):
             break
 
 
-
 def get_proponents_labels(embedded, count):
         for proponent_number in range(0, count):
 
-                #proponents.append(embedded['proponentes'][proponent_number])
+                # proponents.append(embedded['proponentes'][proponent_number])
                 
                 nome = embedded['proponentes'][proponent_number]['nome']
                 responsavel = embedded['proponentes'][proponent_number]['responsavel']
@@ -53,23 +57,20 @@ def get_proponents_labels(embedded, count):
                 #proponent_instance.save() 
 
 
-
-get_proponents_json(proponent_current_link)
-
 def search_projects(projects_current_link):
 
     while True:
-        
+        iteration += 1
+
         url = projects_current_link
         response = requests.get(url)
         data = json.loads(response.text)
 
-        #primeira camada: dicionário
-        total = data['total'] 
-        count = data['count'] #já é um int
-        links = data['_links'] #é um dicionário
+        # primeira camada: dicionário
+        # total = data['total'] 
+        count = data['count']  # já é um int
+        links = data['_links']  # é um dicionário
         embedded = data['_embedded']
-
         print(projects_current_link)
 
         get_projects_labels(embedded,count)
@@ -79,12 +80,11 @@ def search_projects(projects_current_link):
         else:
             break
 
-
 def get_projects_labels(embedded, count):
 
     for numero_projeto in range(0,count):
-            #segunda camada: embedded
-            #projetos = embedded['projetos'][numero_projeto]['projetos']
+            # segunda camada: embedded
+            # projetos = embedded['projetos'][numero_projeto]['projetos']
             PRONAC = embedded['projetos'][numero_projeto]['PRONAC']
             ano_projeto = embedded['projetos'][numero_projeto]['ano_projeto'] 	
             nome = embedded['projetos'][numero_projeto]['nome']
@@ -92,7 +92,7 @@ def get_projects_labels(embedded, count):
             proponente = embedded['projetos'][numero_projeto]['proponente']
             segmento = embedded['projetos'][numero_projeto]['segmento']
             area = embedded['projetos'][numero_projeto]['area']
-            UF  = embedded['projetos'][numero_projeto]['UF']
+            UF = embedded['projetos'][numero_projeto]['UF']
             municipio = embedded['projetos'][numero_projeto]['municipio']
             data_inicio = embedded['projetos'][numero_projeto]['data_inicio']
             data_termino = embedded['projetos'][numero_projeto]['data_termino']
@@ -111,40 +111,7 @@ def get_projects_labels(embedded, count):
             #project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
             #project_instance.save()
 
-            """ project = {
-                'projetos': numero_projeto, 
-                'PRONAC': PRONAC,
-                'ano_projeto': ano_projeto,
-                'nome': nome,
-                'cgccpf' : cgccpf,
-                'proponente' : proponente,
-                'segmento' : segmento,
-                'area' : area,
-                'UF'  : UF,
-                'municipio' : municipio,
-                'data_inicio' : data_inicio,
-                'data_termino' : data_termino,
-                'mecanismo' : mecanismo,
-                'enquadramento' : enquadramento,
-                'valor_projeto' : valor_projeto,
-                'valor_captado' : valor_captado,
-                'valor_proposta' : valor_proposta,
-                'valor_solicitado' : valor_solicitado,
-                'valor_aprovado' : valor_aprovado
-            }
-
-            #quarta camada: Links
-            fornecedores = _links['fornecedores']
-            _self = _links['self']
-            incentivadores = _links['incentivadores']
-            _proponente = _links['proponente']
-   
-            projects.append(project)
-
-            project = {}
-
-    return projects """
-
+get_proponents_json(proponent_current_link)
 search_projects(projects_current_link)
 
 # ViewSets define the view behavior.
@@ -156,3 +123,4 @@ class ProjectViewSet(viewsets.ModelViewSet):
 class ProponentViewSet(viewsets.ModelViewSet):
     queryset = Proponent.objects.all()
     serializer_class = ProponentSerializer
+
