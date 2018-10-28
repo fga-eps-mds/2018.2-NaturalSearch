@@ -3,16 +3,19 @@ from django.shortcuts import render
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
 import requests,json   
-from rest_framework import viewsets
+from rest_framework import viewsets 
 
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
-projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91900&format=json&"
+#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92100&format=json&"
+#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 Proponent.objects.all().delete()
 Project.objects.all().delete()
 
 def home(request):
-    return render(request,'natural_search/home.html')
+    return render(request, 'natural_search/home.html')
+
 
 def get_proponents(proponent_current_link):
 
@@ -29,6 +32,7 @@ def get_proponents(proponent_current_link):
         print(proponent_current_link)
 
         save_proponents_data(embedded, count)
+
 
         if 'next' in links:
             proponent_current_link = links['next']
@@ -55,17 +59,16 @@ def save_proponents_data(embedded, count):
 def get_projects(projects_current_link):
 
     while True:
-        
+
         url = projects_current_link
         response = requests.get(url)
         data = json.loads(response.text)
 
-        #primeira camada: dicionário
-        total = data['total'] 
-        count = data['count'] #já é um int
-        links = data['_links'] #é um dicionário
+        # primeira camada: dicionário
+        # total = data['total'] 
+        count = data['count']  # já é um int
+        links = data['_links']  # é um dicionário
         embedded = data['_embedded']
-
         print(projects_current_link)
 
         save_projects_data(embedded,count)
@@ -79,8 +82,8 @@ def get_projects(projects_current_link):
 def save_projects_data(embedded, count):
 
     for numero_projeto in range(0,count):
-            #segunda camada: embedded
-            #projetos = embedded['projetos'][numero_projeto]['projetos']
+            # segunda camada: embedded
+            # projetos = embedded['projetos'][numero_projeto]['projetos']
             PRONAC = embedded['projetos'][numero_projeto]['PRONAC']
             ano_projeto = embedded['projetos'][numero_projeto]['ano_projeto'] 	
             nome = embedded['projetos'][numero_projeto]['nome']
@@ -88,7 +91,7 @@ def save_projects_data(embedded, count):
             proponente = embedded['projetos'][numero_projeto]['proponente']
             segmento = embedded['projetos'][numero_projeto]['segmento']
             area = embedded['projetos'][numero_projeto]['area']
-            UF  = embedded['projetos'][numero_projeto]['UF']
+            UF = embedded['projetos'][numero_projeto]['UF']
             municipio = embedded['projetos'][numero_projeto]['municipio']
             data_inicio = embedded['projetos'][numero_projeto]['data_inicio']
             data_termino = embedded['projetos'][numero_projeto]['data_termino']
