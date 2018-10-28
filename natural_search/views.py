@@ -5,16 +5,19 @@ from natural_search.serializers import ProjectSerializer, ProponentSerializer
 import requests,json   
 from rest_framework import viewsets
 
-
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
 projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=91900&format=json&"
+
+Proponent.objects.all().delete()
+Project.objects.all().delete()
 
 def home(request):
     return render(request,'natural_search/home.html')
 
-def get_proponents_json(proponent_current_link):
+def get_proponents(proponent_current_link):
 
     while True:
+
         url = proponent_current_link
         response = requests.get(url)
         data = json.loads(response.text)
@@ -23,40 +26,33 @@ def get_proponents_json(proponent_current_link):
         count = data['count'] #já é um int
         links = data['_links'] #é um dicionário
         embedded = data['_embedded'] #é um dicionário
-        #print(proponent_current_link)
+        print(proponent_current_link)
 
-        get_proponents_labels(embedded, count)
+        save_proponents_data(embedded, count)
 
         if 'next' in links:
             proponent_current_link = links['next']
         else:
             break
 
+def save_proponents_data(embedded, count):
 
+    for proponent_number in range(0, count):
 
-def get_proponents_labels(embedded, count):
-        for proponent_number in range(0, count):
+            # proponents.append(embedded['proponentes'][proponent_number])
+            
+            nome = embedded['proponentes'][proponent_number]['nome']
+            responsavel = embedded['proponentes'][proponent_number]['responsavel']
+            tipo_pessoa = embedded['proponentes'][proponent_number]['tipo_pessoa']
+            UF = embedded['proponentes'][proponent_number]['UF']
+            municipio = embedded['proponentes'][proponent_number]['municipio']
+            total_captado = embedded['proponentes'][proponent_number]['total_captado']
 
-                #proponents.append(embedded['proponentes'][proponent_number])
-                
-                nome = embedded['proponentes'][proponent_number]['nome']
-                responsavel = embedded['proponentes'][proponent_number]['responsavel']
-                tipo_pessoa = embedded['proponentes'][proponent_number]['tipo_pessoa']
-                UF = embedded['proponentes'][proponent_number]['UF']
-                municipio = embedded['proponentes'][proponent_number]['municipio']
-                total_captado = embedded['proponentes'][proponent_number]['total_captado']
+            #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
+            proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
+            proponent_instance.save()
 
-                #Para adicionar os proponentes no banco descomentar as prox duas linhas
-                #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
-                
-                #proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
-                #proponent_instance.save() 
-
-
-
-get_proponents_json(proponent_current_link)
-
-def search_projects(projects_current_link):
+def get_projects(projects_current_link):
 
     while True:
         
@@ -72,7 +68,7 @@ def search_projects(projects_current_link):
 
         print(projects_current_link)
 
-        get_projects_labels(embedded,count)
+        save_projects_data(embedded,count)
 
         if 'next' in links:
             projects_current_link = links['next']
@@ -80,7 +76,7 @@ def search_projects(projects_current_link):
             break
 
 
-def get_projects_labels(embedded, count):
+def save_projects_data(embedded, count):
 
     for numero_projeto in range(0,count):
             #segunda camada: embedded
@@ -105,47 +101,12 @@ def get_projects_labels(embedded, count):
             valor_aprovado = embedded['projetos'][numero_projeto]['valor_aprovado']
             _links = embedded['projetos'][numero_projeto]['_links']
            
-            #Para adicionar os projetos no banco descomentar as prox duas linhas
             #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
+            project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
+            project_instance.save()
 
-            #project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
-            #project_instance.save()
-
-            """ project = {
-                'projetos': numero_projeto, 
-                'PRONAC': PRONAC,
-                'ano_projeto': ano_projeto,
-                'nome': nome,
-                'cgccpf' : cgccpf,
-                'proponente' : proponente,
-                'segmento' : segmento,
-                'area' : area,
-                'UF'  : UF,
-                'municipio' : municipio,
-                'data_inicio' : data_inicio,
-                'data_termino' : data_termino,
-                'mecanismo' : mecanismo,
-                'enquadramento' : enquadramento,
-                'valor_projeto' : valor_projeto,
-                'valor_captado' : valor_captado,
-                'valor_proposta' : valor_proposta,
-                'valor_solicitado' : valor_solicitado,
-                'valor_aprovado' : valor_aprovado
-            }
-
-            #quarta camada: Links
-            fornecedores = _links['fornecedores']
-            _self = _links['self']
-            incentivadores = _links['incentivadores']
-            _proponente = _links['proponente']
-   
-            projects.append(project)
-
-            project = {}
-
-    return projects """
-
-search_projects(projects_current_link)
+get_proponents(proponent_current_link)
+get_projects(projects_current_link)
 
 # ViewSets define the view behavior.
 class ProjectViewSet(viewsets.ModelViewSet):
