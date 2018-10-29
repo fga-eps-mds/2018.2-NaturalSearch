@@ -45,6 +45,7 @@ layout: default
 | converter os dados de projetos para o formato JSON | Eu, como desenvolvedor, desejo converter os dados processados de projetos para o formato JSON e salvar em um arquivo. |
 | converter os dados de proponentes para o formato JSON | Eu, como desenvolvedor, desejo converter os dados processados de proponentes para o formato JSON e salvar em um arquivo. |
 | criar API para fornecer o JSON | Eu, como desenvolvedor, desejo criar uma API para disponibilizar as informações obtidas em formato JSON. |
+| documentar API | Eu, como desenvolvedor, desejo documentar a API criada para fornecer detalhes das informações disponibilizadas de projetos e proponentes. |
 
 ## 2. Visualização em Grafos
 
@@ -54,7 +55,7 @@ layout: default
 |:---:|:---:|
 | popular com projetos | Eu, como desenvolvedor, desejo popular a tabela de projetos do banco de dados com os dados consumidos da API Salic. |
 | popular com proponentes | Eu, como desenvolvedor, desejo popular a tabela de proponentes do banco de dados com os dados consumidos da API Salic. |
-| popular com projetos e proponentes| eu, como desenvolvedor, desejo popular o banco de dados do serviço de processamento de dados da Salic API com os dados de projetos e proponentes. |
+| popular com projetos e proponentes| Eu, como desenvolvedor, desejo popular o banco de dados do serviço de processamento de dados da Salic API com os dados de projetos e proponentes. |
 | conectar projetos e proponentes | Eu, como desenvolvedor, desejo conectar os projetos com os respectivos proponentes no banco de dados. |
 
 ### 2.2 Visualizar os dados
@@ -77,3 +78,6 @@ layout: default
 | otimizar tela de visualização | Eu, como desenvolvedor, desejo otimizar a tela de visualização dos resultados da pesquisa por meio de grafos. |
 | testar o serviço de visualização | Eu, como desenvolvedor, desejo testar toda a aplicação de visualização de grafos. |
 | testar o serviço de processamento de dados | Eu, como desenvolvedor, desejo testar toda a aplicação de processamento de dados da Salic API. |
+| realizar o deploy da aplicação | Eu, como desenvolvedor, desejo realizar o deploy da aplicação para disponibilizar todos os incrementos realizados até o momento e automatizar o processo. |
+| realizar todos os testes da aplicação | Eu, como desenvolvedor, desejo realizar todos os testes da aplicação para visualização e processamento de dados. |
+| aprimorar a pesquisa da aplicação | Eu, como desenvolvedor, desejo aprimorar o método de pesquisa para que possa se adequar a pesquisa de projetos. |
