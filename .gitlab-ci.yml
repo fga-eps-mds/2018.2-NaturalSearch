@@ -1,0 +1,16 @@
+image: python:latest
+
+services:
+  - postgres:latest
+
+variables:
+  POSTGRES_DB: nome_projeto
+
+before_script:                                  
+  - pip install -r requirements.txt
+
+test:
+  variables:
+    DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
+  script:
+  - python -m unittest natural_search/tests.py
