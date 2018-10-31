@@ -1,31 +1,22 @@
 import unittest
-from django.test import TestCase
+from django.test import TestCase, RequestFactory
 from natural_search import views
 
 # Create your tests here.
-class TestProponent(unittest.TestCase):
-    
-    def test_get_proponents_labels(self):
-        #last_proponent_json_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=1&offset=44171&format=json&"
-        json = {'proponentes': 
-                [{'nome': 'Aguinaldo Silva Filho', 
-                  'cgccpf': '***855788**', 
-                  '_links': 
-                    {'self': 'http://api.salic.cultura.gov.br/v1/proponentes/217713ede204e05fe552821b4f7898419a0da9c47f4662d568bd15', 
-                    'projetos': 'http://api.salic.cultura.gov.br/v1/projetos/?proponente_id=217713ede204e05fe552821b4f7898419a0da9c47f4662d568bd15'}, 
-                  'tipo_pessoa': 'fisica', 
-                  'responsavel': 'Aguinaldo Silva Filho', 
-                  'UF': 'SP', 
-                  'total_captado': 299190.0, 
-                  'municipio': 'São Paulo'}]}
-        result = views.get_proponents_labels(json, 1)
-        proponent = [{'nome': 'Aguinaldo Silva Filho', 
-                      'responsavel': 'Aguinaldo Silva Filho', 
-                      'tipo_pessoa': 'fisica', 
-                      'UF': 'SP', 
-                      'municipio': 'São Paulo', 
-                      'total_captado': 299190.0, 
-                      'proponente_id': '217713ede204e05fe552821b4f7898419a0da9c47f4662d568bd15'
-                      }]
+class TestProponent(TestCase):
+    def setUp(self):
 
-        self.assertEqual(result, proponent)
+        self.proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+        self.proponent_current_link_wrong = "http://api.salic.cultura.gov.br/v1/wrongurl"
+        self.projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
+        self.projects_current_link_wrong ="http://api.salic.cultura.gov.br/v1/wrongurl"
+
+    def test_search_proponents_wrong_link(self):
+
+        with self.assertRaises(Exception):
+            search_proponents(self.proponent_current_link_wrong)
+
+    def test_search_projects_wrong_link(self):
+
+        with self.assertRaises(Exception):
+            search_projects(self.projects_current_link_wrong)
