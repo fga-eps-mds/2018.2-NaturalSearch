@@ -1,21 +1,28 @@
 # -*- coding: utf-8 -*-
+#DjangoRest imports
 from django.shortcuts import render
-from natural_search.models import Project, Proponent
-from natural_search.serializers import ProjectSerializer, ProponentSerializer
 import requests,json
 from rest_framework import viewsets
 
+#Local DjangoRest imports
+from natural_search.models import Project, Proponent
+from natural_search.serializers import ProjectSerializer, ProponentSerializer
+
+#Links para coleta de dados de proponentes e projetos da api
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
 #projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
 projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
 #proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
+#Render the homepage
     return render(request, 'natural_search/home.html')
 
-
 def search_proponents(proponent_current_link):
-    iteration = 1
+    '''Function responsible for iterate with the api, generating the proponent json,
+    extracting data from it and calling the function to insert the data into DB.
+    '''
+    iteration = 0
     while True:
         iteration += 1
 
@@ -23,7 +30,7 @@ def search_proponents(proponent_current_link):
         response = requests.get(url)
         data = json.loads(response.text)
 
-        #primeira camada: dicionário
+        #First layer: Dictionary
         count = data['count'] #já é um int
         links = data['_links'] #é um dicionário
         embedded = data['_embedded'] #é um dicionário
@@ -41,10 +48,10 @@ def search_proponents(proponent_current_link):
             print("Testando" + Exception)
 
 def get_proponents_labels(embedded, count):
+#This function receives the json and inserts proponent data into DB
         for proponent_number in range(0, count):
-
+                #Second layer: embedded
                 # proponents.append(embedded['proponentes'][proponent_number])
-
                 nome = embedded['proponentes'][proponent_number]['nome']
                 responsavel = embedded['proponentes'][proponent_number]['responsavel']
                 tipo_pessoa = embedded['proponentes'][proponent_number]['tipo_pessoa']
@@ -58,9 +65,11 @@ def get_proponents_labels(embedded, count):
                 #proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
                 #proponent_instance.save()
 
-
 def search_projects(projects_current_link):
-    iteration = 1
+    '''Function responsible for iterate with the api, generating the project json,
+    extracting data from it and calling the function to insert the data into DBself.
+    '''
+    iteration = 0
     while True:
         iteration += 1
 
@@ -68,7 +77,7 @@ def search_projects(projects_current_link):
         response = requests.get(url)
         data = json.loads(response.text)
 
-        # primeira camada: dicionário
+        # First layer: Dictionary
         # total = data['total']
         count = data['count']  # já é um int
         links = data['_links']  # é um dicionário
@@ -83,9 +92,9 @@ def search_projects(projects_current_link):
             break
 
 def get_projects_labels(embedded, count):
-
+#This function receives the json and inserts projects data into DB
     for numero_projeto in range(0,count):
-            # segunda camada: embedded
+            # Second layer: embedded
             # projetos = embedded['projetos'][numero_projeto]['projetos']
             PRONAC = embedded['projetos'][numero_projeto]['PRONAC']
             ano_projeto = embedded['projetos'][numero_projeto]['ano_projeto']
@@ -113,6 +122,7 @@ def get_projects_labels(embedded, count):
             #project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
             #project_instance.save()
 
+#Call to execute functions to fetch data for proponents and projects
 search_proponents(proponent_current_link)
 search_projects(projects_current_link)
 
