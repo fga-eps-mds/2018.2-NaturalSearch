@@ -3,6 +3,13 @@ from django.test import TestCase, RequestFactory
 from natural_search import views
 
 # Create your tests here.
+class TestHomepage(TestCase):
+    def test_home(self):
+        resp = views.home('natural_search/home.html')
+
+        self.assertEqual(resp.status_code, 200)
+
+
 class TestProponent(TestCase):
 #classe de testes para proponentes
     def setUp(self):
