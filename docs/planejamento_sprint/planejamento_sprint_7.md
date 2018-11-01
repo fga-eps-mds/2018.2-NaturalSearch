@@ -7,7 +7,7 @@
 
 | Início | Término | Duração | Pontos Planejados | Pontos Dívida Técnica | Pontuação Total |
 |----------|----------|----------|----------|----------|----------|
-| 22/10/2018 | 27/10/2018 | 6 dias | 34 | 8 | 42 |
+| 22/10/2018 | 27/10/2018 | 6 dias | 54 | 0 | 54 |
 
 
 ## 2. Papéis 
