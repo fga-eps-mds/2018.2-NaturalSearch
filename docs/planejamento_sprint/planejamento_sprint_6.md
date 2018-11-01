@@ -74,7 +74,7 @@ O quadro de conhecimento inicia com a imagem apresentada abaixo:
 
 ## 6. Riscos da Sprint
 Essa Sprint assume alguns riscos, tais como:
--  Um membro desistir da disciplina 
+- Um membro desistir da disciplina 
 - Um membro da equipe ficar ausente
 - houver perdas de equipamentos
 - Baixa produtividade da equipe

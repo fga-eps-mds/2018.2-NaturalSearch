@@ -12,7 +12,7 @@ layout: default
 | 23/09/2018         |           0.2                | Adição de novas histórias de usuário e histórias técnicas | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
 | 03/10/2018         |           0.3                | Adição de novas histórias para a feature de disponibilizar dados processados | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
 | 08/10/2018         |           0.4                | Mudanças e adições de novas histórias de usuário | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
-
+| 31/10/2018         |           0.5                | Mudanças e adições de novas histórias de usuário | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
 
 ## 1. Processamento de Dados da API Salic
 
@@ -81,3 +81,4 @@ layout: default
 | realizar o deploy da aplicação | Eu, como desenvolvedor, desejo realizar o deploy da aplicação para disponibilizar todos os incrementos realizados até o momento e automatizar o processo. |
 | realizar todos os testes da aplicação | Eu, como desenvolvedor, desejo realizar todos os testes da aplicação para visualização e processamento de dados. |
 | aprimorar a pesquisa da aplicação | Eu, como desenvolvedor, desejo aprimorar o método de pesquisa para que possa se adequar a pesquisa de projetos. |
+| adaptar visualização em grafo para projetos | Eu, como desenvolvedor, desejo obter os dados de projetos e proponentes e gerar um arquivo Json que apresente-os no formato para o D3.js. |
