@@ -5,9 +5,9 @@ from natural_search.serializers import ProjectSerializer, ProponentSerializer
 import requests,json
 from rest_framework import viewsets
 
-proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
 #projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
 #proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
@@ -37,6 +37,8 @@ def search_proponents(proponent_current_link):
         else:
             break
 
+        with self.assertRaises(Exception):
+            print("Testando" + Exception)
 
 def get_proponents_labels(embedded, count):
         for proponent_number in range(0, count):
