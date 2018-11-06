@@ -1,21 +1,40 @@
-image: python:latest
+stages:
+  - Test
+  - Publish
+  - Deploy
 
-services:
+.test:
+  image: python:latest
+  services:
   - postgres:latest
 
-variables:
-  POSTGRES_DB: nome_projeto
-
-cache:
-  paths:
-  - ~/.cache/pip/
-
-before_script:
-  - python -V                                   
-  - pip install -r requirements.txt
-
-test:
   variables:
     DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
-  - python manage.py test
+  - pip install -r requirements.txt
+  - python manage.py test natural_search/
+  
+publish_docker:
+  image: docker
+  stage: Publish
+  services:
+    - docker:dind
+  
+  script:
+    - docker login -p $PASSWORD_DOCKER -u $USER_DOCKER
+    - ls
+    - docker build . -t filipekn4/nsapi:latest
+    - docker push filipekn4/nsapi:latest
+
+  tags:
+    - docker
+
+deploy:
+  stage: Deploy
+
+  script:
+    - apt-get -y update
+    - apt-get -y install sshpass
+    - ls
+    - ./deploy.sh $PASSWORD $IP
+    - apt-get -y update
