@@ -1,21 +1,28 @@
 # -*- coding: utf-8 -*-
+#DjangoRest imports
 from django.shortcuts import render
+import requests,json
+from rest_framework import viewsets
+
+#Local DjangoRest imports
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
-import requests,json   
-from rest_framework import viewsets 
 
-proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44000&format=json&"
+#Links para coleta de dados de proponentes e projetos da api
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
 #projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
 #proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
+#Render the homepage
     return render(request, 'natural_search/home.html')
 
-
-def get_proponents_json(proponent_current_link):
-
+def search_proponents(proponent_current_link):
+    '''Function responsible for iterate with the api, generating the proponent json,
+    extracting data from it and calling the function to insert the data into DB.
+    '''
+    iteration = 0
     while True:
         iteration += 1
 
@@ -23,7 +30,7 @@ def get_proponents_json(proponent_current_link):
         response = requests.get(url)
         data = json.loads(response.text)
 
-        #primeira camada: dicionário
+        #First layer: Dictionary
         count = data['count'] #já é um int
         links = data['_links'] #é um dicionário
         embedded = data['_embedded'] #é um dicionário
@@ -37,12 +44,14 @@ def get_proponents_json(proponent_current_link):
         else:
             break
 
+        with self.assertRaises(Exception):
+            print("Testando" + Exception)
 
 def get_proponents_labels(embedded, count):
+#This function receives the json and inserts proponent data into DB
         for proponent_number in range(0, count):
-
+                #Second layer: embedded
                 # proponents.append(embedded['proponentes'][proponent_number])
-                
                 nome = embedded['proponentes'][proponent_number]['nome']
                 responsavel = embedded['proponentes'][proponent_number]['responsavel']
                 tipo_pessoa = embedded['proponentes'][proponent_number]['tipo_pessoa']
@@ -52,13 +61,15 @@ def get_proponents_labels(embedded, count):
 
                 #Para adicionar os proponentes no banco descomentar as prox duas linhas
                 #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
-                
-                #proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
-                #proponent_instance.save() 
 
+                #proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
+                #proponent_instance.save()
 
 def search_projects(projects_current_link):
-
+    '''Function responsible for iterate with the api, generating the project json,
+    extracting data from it and calling the function to insert the data into DBself.
+    '''
+    iteration = 0
     while True:
         iteration += 1
 
@@ -66,8 +77,8 @@ def search_projects(projects_current_link):
         response = requests.get(url)
         data = json.loads(response.text)
 
-        # primeira camada: dicionário
-        # total = data['total'] 
+        # First layer: Dictionary
+        # total = data['total']
         count = data['count']  # já é um int
         links = data['_links']  # é um dicionário
         embedded = data['_embedded']
@@ -81,12 +92,12 @@ def search_projects(projects_current_link):
             break
 
 def get_projects_labels(embedded, count):
-
+#This function receives the json and inserts projects data into DB
     for numero_projeto in range(0,count):
-            # segunda camada: embedded
+            # Second layer: embedded
             # projetos = embedded['projetos'][numero_projeto]['projetos']
             PRONAC = embedded['projetos'][numero_projeto]['PRONAC']
-            ano_projeto = embedded['projetos'][numero_projeto]['ano_projeto'] 	
+            ano_projeto = embedded['projetos'][numero_projeto]['ano_projeto']
             nome = embedded['projetos'][numero_projeto]['nome']
             cgccpf = embedded['projetos'][numero_projeto]['cgccpf']
             proponente = embedded['projetos'][numero_projeto]['proponente']
@@ -104,14 +115,15 @@ def get_projects_labels(embedded, count):
             valor_solicitado = embedded['projetos'][numero_projeto]['valor_solicitado']
             valor_aprovado = embedded['projetos'][numero_projeto]['valor_aprovado']
             _links = embedded['projetos'][numero_projeto]['_links']
-           
+
             #Para adicionar os projetos no banco descomentar as prox duas linhas
             #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
 
             #project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
             #project_instance.save()
 
-get_proponents_json(proponent_current_link)
+#Call to execute functions to fetch data for proponents and projects
+search_proponents(proponent_current_link)
 search_projects(projects_current_link)
 
 # ViewSets define the view behavior.
@@ -123,4 +135,3 @@ class ProjectViewSet(viewsets.ModelViewSet):
 class ProponentViewSet(viewsets.ModelViewSet):
     queryset = Proponent.objects.all()
     serializer_class = ProponentSerializer
-

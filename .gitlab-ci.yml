@@ -6,11 +6,16 @@ services:
 variables:
   POSTGRES_DB: nome_projeto
 
-before_script:                                  
+cache:
+  paths:
+  - ~/.cache/pip/
+
+before_script:
+  - python -V                                   
   - pip install -r requirements.txt
 
 test:
   variables:
     DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
-  - python -m unittest natural_search/tests.py
+  - python manage.py test
