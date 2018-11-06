@@ -7,7 +7,7 @@
 
 | Início | Término | Duração | Pontos Planejados | Pontos Dívida Técnica | Pontuação Total |
 |----------|----------|----------|----------|----------|----------|
-| 29/10/2018 | 04/11/2018 | 7 dias | colocar | 0 | colocar |
+| 29/10/2018 | 04/11/2018 | 7 dias | 60 | 0 | 60 |
 
 
 ## 2. Papéis 
@@ -33,44 +33,25 @@ O planejamento da Sprint 8 tem como  objetivo explicitar as histórias de usuár
 | Gustavo Moreira | Michel Camargo |
 | Filipe Barcelos | Igor Sousa |
 
-## 5. Quadro de Conhecimento 
-O quadro de conhecimento se inicia com a imagem apresentada abaixo:
+## 5. Objetivos Sprint
 
-<br>
+* Documentar a API criada para fornecer detalhes das informações disponibilizadas de projetos e proponentes;
+* Realizar todos os testes da aplicação para visualização e processamento de dados;
+* Conectar os projetos com os respectivos proponentes no banco de dados;
+* Realizar o deploy da aplicação para disponibilizar todos os incrementos realizados até o momento e automatizar o processo;
+* Aprimorar o método de pesquisa para que possa se adequar a pesquisa de projetos
+* Obter os dados de projetos e proponentes e gerar um arquivo Json que apresente-os no formato para o D3.js;
 
+## 6. Backlog da Sprint
 
-![Legenda](image_Sprint3/Legenda.png)
+- [TS05](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/142) - TS05-Eu, como desenvolvedor, desejo realizar o deploy da aplicação para disponibilizar todos os incrementos realizados até o momento e automatizar o processo.
+- [TS06](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/144) - TS06-Eu, como desenvolvedor, desejo realizar todos os testes da aplicação para visualização e processamento de dados.
+- [TS07](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/145) - TS07-Eu, como desenvolvedor, desejo aprimorar o método de pesquisa para que possa se adequar a pesquisa de projetos.
+- [TS08](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/148) - TS08-Eu, como desenvolvedor, desejo obter os dados de projetos e proponentes e gerar um arquivo Json que apresente-os no formato para o D3.js.
+- [US16](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/136) - US16-Eu, como desenvolvedor, desejo conectar os projetos com os respectivos proponentes no banco de dados.
+- [US20](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/146) - US20-Eu, como desenvolvedor, desejo documentar a API criada para fornecer detalhes das informações disponibilizadas de projetos e proponentes.
 
-[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
-
-<br>
-
-![Habilidade_Sprint_6](image_Sprint6/Habilidade_Sprint_5.png)
-
-
-
-[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint6/Habilidade_Sprint_5.png)
-
-<br>
-
-
-## 6. Objetivos Sprint
--- Alterar
-* Conclusão da criação da API para disponibilizar as informações obtidas em formato JSON;
-* Realizar a conexão entre os projetos e os seus respectivos proponentes no banco de dados;
-* popular o banco de dados do serviço de processamento de dados da Salic API com os dados de projetos e proponentes;
-* Testar toda a aplicação de visualização de grafos;
-* Testar de toda a aplicação de processamento de dados da Salic API.
-
-## 7. Backlog da Sprint
-
-- [US13](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/128)
-- [US16](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/136)
-- [US17](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/137)
-- [US18](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/138)
-- [US19](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/139)
-
-## 8. Riscos da Sprint
+## 7. Riscos da Sprint
 
 Os riscos que podem ser mais relevantes ao longo dessa sprint são:
 
