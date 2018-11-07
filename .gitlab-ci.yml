@@ -3,18 +3,24 @@ stages:
   - Publish
   - Deploy
 
-.test:
+test:
   image: python:latest
+  stage: Test
   services:
   - postgres:latest
 
   variables:
-    DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
+    POSTGRES_PASSWORD: 1234678
+    POSTGRES_USER: Igor
+    POSTGRES_DB: nome_projeto
+    POSTGRES_HOST: postgres
   script:
-  - pip install -r requirements.txt
-  - python manage.py test natural_search/
+   - pip install -r requirements.txt
+   - python manage.py makemigrations
+   - python manage.py migrate
+   - python manage.py test natural_search/
   
-publish_docker:
+.publish_docker:
   image: docker
   stage: Publish
   services:
@@ -22,12 +28,17 @@ publish_docker:
   
   script:
     - docker login -p $PASSWORD_DOCKER -u $USER_DOCKER
-    - ls
-    - docker build . -t filipekn4/nsapi:latest
-    - docker push filipekn4/nsapi:latest
+    - docker build . -t filipekn4/nsapi
+    - docker push filipekn4/nsapi
 
   tags:
     - docker
+
+publish_development:
+  extends: .publish_docker
+  environment: development
+  only: 
+    - development
 
 deploy:
   stage: Deploy
