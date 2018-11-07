@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #DjangoRest imports
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 import requests,json
 from rest_framework import viewsets
 
@@ -16,7 +16,8 @@ projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&o
 
 def home(request):
 #Render the homepage
-    return render(request, 'natural_search/home.html')
+
+    return HttpResponse('fdp')
 
 def search_proponents(proponent_current_link):
     '''Function responsible for iterate with the api, generating the proponent json,
@@ -62,8 +63,8 @@ def get_proponents_labels(embedded, count):
                 #Para adicionar os proponentes no banco descomentar as prox duas linhas
                 #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
 
-                #proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
-                #proponent_instance.save()
+                proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
+                proponent_instance.save()
 
 def search_projects(projects_current_link):
     '''Function responsible for iterate with the api, generating the project json,
@@ -119,8 +120,8 @@ def get_projects_labels(embedded, count):
             #Para adicionar os projetos no banco descomentar as prox duas linhas
             #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
 
-            #project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
-            #project_instance.save()
+            project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
+            project_instance.save()
 
 #Call to execute functions to fetch data for proponents and projects
 search_proponents(proponent_current_link)

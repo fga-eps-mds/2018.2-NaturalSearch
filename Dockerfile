@@ -3,5 +3,7 @@ WORKDIR /code
 
 ADD requirements.txt /code
 RUN pip install -r requirements.txt
-ADD . /code
+COPY . /code
+CMD ["python", "manage.py", "makemigrations"]
+CMD ["python", "manage.py", "migrate"]
 CMD ["python","manage.py","runserver","0.0.0.0:8000"]

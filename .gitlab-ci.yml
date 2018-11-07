@@ -14,7 +14,7 @@ stages:
   - pip install -r requirements.txt
   - python manage.py test natural_search/
   
-publish_docker:
+.publish_docker:
   image: docker
   stage: Publish
   services:
@@ -22,12 +22,17 @@ publish_docker:
   
   script:
     - docker login -p $PASSWORD_DOCKER -u $USER_DOCKER
-    - ls
-    - docker build . -t filipekn4/nsapi:latest
-    - docker push filipekn4/nsapi:latest
+    - docker build . -t filipekn4/nsapi
+    - docker push filipekn4/nsapi
 
   tags:
     - docker
+
+publish_development:
+  extends: .publish_docker
+  environment: development
+  only: 
+    - development
 
 deploy:
   stage: Deploy
