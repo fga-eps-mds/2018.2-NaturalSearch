@@ -7,6 +7,7 @@ services:
             - POSTGRES_PASSWORD=1234678
             - POSTGRES_USER=Igor
             - POSTGRES_DB=nome_projeto
+            
         volumes:
             - ./ignore:/var/lib/postgresql/data
     web:
