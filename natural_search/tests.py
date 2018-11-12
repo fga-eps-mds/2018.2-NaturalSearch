@@ -46,6 +46,6 @@ class TestProject(TestCase):
             views.search_projects(self.projects_current_link_wrong)
 
     #testa search_projects com um link da api válido
-    def test_search_proponents_link(self):
+    def test_search_projects_link(self):
         print(self.projects_current_link)
         self.assertIsNone(views.search_projects(self.projects_current_link))
