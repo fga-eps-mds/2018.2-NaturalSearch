@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # DjangoRest imports
+from django.db import connection
 from django.shortcuts import render, HttpResponse
 import requests,json
 from rest_framework import viewsets
@@ -123,16 +124,23 @@ def get_projects_labels(embedded, count):
             project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
             project_instance.save()
 
+def db_table_exists(table_name):
+    return table_name in connection.introspection.table_names()
+    
 # ViewSets define the view behavior.
 class ProjectViewSet(viewsets.ModelViewSet):
+    project_exists = db_table_exists('natural_search_project')
     queryset = Project.objects.all()
-    if not queryset:
-        search_projects(projects_current_link)
+    if project_exists is True:
+        if not queryset:
+            search_projects(projects_current_link)
     serializer_class = ProjectSerializer
 
 # ViewSets define the view behavior.
 class ProponentViewSet(viewsets.ModelViewSet):
+    proponent_exists = db_table_exists('natural_search_proponent')
     queryset = Proponent.objects.all()
-    if not queryset:
-        search_proponents(proponent_current_link)
+    if proponent_exists is True:
+        if not queryset:
+            search_proponents(proponent_current_link)
     serializer_class = ProponentSerializer
