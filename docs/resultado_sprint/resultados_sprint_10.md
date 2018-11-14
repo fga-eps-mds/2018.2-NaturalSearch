@@ -38,8 +38,12 @@ layout: default
 
 | Issue | Descrição | Pontos | Status | Motivo |
 |---|---|---|---|---|
-|[TS05](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/142)|TS05-Eu, como desenvolvedor, desejo realizar o deploy da aplicação para disponibilizar todos os incrementos realizados até o momento e automatizar o processo. |13| 80% | Dificuldade na criação da conta do DigitalOcean |
-
+|[US16](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/136)|US16-Eu, como desenvolvedor, desejo conectar os projetos com os respectivos proponentes no banco de dados.|13|100%|Dificuldade na geração do json para o D3|
+|[TS10](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/151)|
+TS10-Eu, como desenvolvedor, desejo aprimorar o estilo da tela inicial e tela de pesquisa.|13|%||
+|[TS09](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/150)|
+TS09-Eu, como desenvolvedor, desejo realizar a integração dos serviços de processamento de dados e visualização em grafos.|13|%||
+|[TS04](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/141)|TS04-Eu, como desenvolvedor, desejo otimizar a tela de visualização dos resultados da pesquisa por meio de grafos.|13|%||
 
 ## Pareamento 
 
@@ -54,14 +58,14 @@ layout: default
 
 | Membros | 29/10 | 30/10 | 31/10 |01/11 | 02/11 | 03/11 |
 |---|---|---|---|---|---|---|
-|Filipe Coelho Hilário Barcelos| &#10004; |  |  |  | -- |  |
-|Igor Araújo de Sousa |  |  |  |  | -- |  |
-|Shermam Tácia da Costa Lima |  |  |  |  | -- |  |
-|Mikhaelle de Carvalho Bueno |  |  |  |  | -- |  |
-|Marcos Vinícius Rodrigues da Conceição |  |  |  |  | -- |  |
-|Fabiana Luiza V. P. Ribas |  |  |  |  | -- |  |
-|Gustavo Duarte Moreira |  |  |  |  | -- |  |
-|Michel Martins de Camargo |  |  |  |  | -- | &#x2718; |
+|Filipe Coelho Hilário Barcelos| &#10004; | &#10004; |  |  | -- |  |
+|Igor Araújo de Sousa | &#10004; | &#10004; |  |  | -- |  |
+|Shermam Tácia da Costa Lima | &#10004; | &#10004; |  |  | -- |  |
+|Mikhaelle de Carvalho Bueno | &#10004; | &#10004; |  |  | -- |  |
+|Marcos Vinícius Rodrigues da Conceição | &#10004; | &#10004; |  |  | -- |  |
+|Fabiana Luiza V. P. Ribas | &#10004; | &#10004; |  |  | -- |  |
+|Gustavo Duarte Moreira | &#10004; | &#10004; |  |  | -- |  |
+|Michel Martins de Camargo | &#10004; | &#10004; |  |  | -- | &#x2718; |
 
 ## Retrospectiva da Sprint
 
