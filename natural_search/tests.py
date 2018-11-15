@@ -1,13 +1,14 @@
 import unittest, json
 from django.test import TestCase, RequestFactory
+from django.shortcuts import redirect
 from natural_search import views
 
 # Create your tests here.
 class TestHomepage(TestCase):
     def test_home(self):
-        resp = views.home('natural_search/home.html')
+        resp = views.home('/')
 
-        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.url, '/projeto/')
 
 
 class TestProponent(TestCase):
@@ -46,6 +47,6 @@ class TestProject(TestCase):
             views.search_projects(self.projects_current_link_wrong)
 
     #testa search_projects com um link da api válido
-    def test_search_proponents_link(self):
+    def test_search_projects_link(self):
         print(self.projects_current_link)
         self.assertIsNone(views.search_projects(self.projects_current_link))

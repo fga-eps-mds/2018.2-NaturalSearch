@@ -34,13 +34,13 @@ test:
   tags:
     - docker
 
-publish_development:
+publish_master:
   extends: .publish_docker
-  environment: development
+  environment: master
   only: 
-    - development
+    - master
 
-deploy:
+.deploy:
   stage: Deploy
 
   script:
@@ -49,3 +49,9 @@ deploy:
     - ls
     - ./deploy.sh $PASSWORD $IP
     - apt-get -y update
+
+deploy_master:
+  extends: .deploy
+  environment: master
+  only: 
+    - master

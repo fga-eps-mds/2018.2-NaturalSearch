@@ -1,23 +1,23 @@
 # -*- coding: utf-8 -*-
-#DjangoRest imports
-from django.shortcuts import render, HttpResponse
+# DjangoRest imports
+from django.db import connection
+from django.shortcuts import render, HttpResponse, redirect
 import requests,json
 from rest_framework import viewsets
 
-#Local DjangoRest imports
+# Local DjangoRest imports
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
 
-#Links para coleta de dados de proponentes e projetos da api
-proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
-#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
-#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
+# Links para coleta de dados de proponentes e projetos da api
+# proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+# projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
 #Render the homepage
-
-    return HttpResponse('Agradecemos ao amoedo,cordialmente')
+    return redirect('/projeto/')
 
 def search_proponents(proponent_current_link):
     '''Function responsible for iterate with the api, generating the proponent json,
@@ -45,13 +45,10 @@ def search_proponents(proponent_current_link):
         else:
             break
 
-        with self.assertRaises(Exception):
-            print("Testando" + Exception)
-
 def get_proponents_labels(embedded, count):
-#This function receives the json and inserts proponent data into DB
+# This function receives the json and inserts proponent data into DB
         for proponent_number in range(0, count):
-                #Second layer: embedded
+                # Second layer: embedded
                 # proponents.append(embedded['proponentes'][proponent_number])
                 nome = embedded['proponentes'][proponent_number]['nome']
                 responsavel = embedded['proponentes'][proponent_number]['responsavel']
@@ -60,8 +57,8 @@ def get_proponents_labels(embedded, count):
                 municipio = embedded['proponentes'][proponent_number]['municipio']
                 total_captado = embedded['proponentes'][proponent_number]['total_captado']
 
-                #Para adicionar os proponentes no banco descomentar as prox duas linhas
-                #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
+                # Para adicionar os proponentes no banco descomentar as prox duas linhas
+                # PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
 
                 proponent_instance = Proponent.objects.create(nome = nome, responsavel = responsavel, tipo_pessoa = tipo_pessoa, UF=UF, municipio= municipio, total_captado=total_captado )
                 proponent_instance.save()
@@ -85,7 +82,7 @@ def search_projects(projects_current_link):
         embedded = data['_embedded']
         print(projects_current_link)
 
-        get_projects_labels(embedded,count)
+        get_projects_labels(embedded, count)
 
         if 'next' in links:
             projects_current_link = links['next']
@@ -93,7 +90,7 @@ def search_projects(projects_current_link):
             break
 
 def get_projects_labels(embedded, count):
-#This function receives the json and inserts projects data into DB
+# This function receives the json and inserts projects data into DB
     for numero_projeto in range(0,count):
             # Second layer: embedded
             # projetos = embedded['projetos'][numero_projeto]['projetos']
@@ -117,22 +114,29 @@ def get_projects_labels(embedded, count):
             valor_aprovado = embedded['projetos'][numero_projeto]['valor_aprovado']
             _links = embedded['projetos'][numero_projeto]['_links']
 
-            #Para adicionar os projetos no banco descomentar as prox duas linhas
-            #PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
+            # Para adicionar os projetos no banco descomentar as prox duas linhas
+            # PS: nao rodar migrate/makemigrations com as prox duas linhas descomentadas
 
             project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
             project_instance.save()
 
-#Call to execute functions to fetch data for proponents and projects
-#search_proponents(proponent_current_link)
-#search_projects(projects_current_link)
-
+def db_table_exists(table_name):
+    return table_name in connection.introspection.table_names()
+    
 # ViewSets define the view behavior.
 class ProjectViewSet(viewsets.ModelViewSet):
+    project_exists = db_table_exists('natural_search_project')
     queryset = Project.objects.all()
+    if project_exists is True:
+        if not queryset:
+            search_projects(projects_current_link)
     serializer_class = ProjectSerializer
 
 # ViewSets define the view behavior.
 class ProponentViewSet(viewsets.ModelViewSet):
+    proponent_exists = db_table_exists('natural_search_proponent')
     queryset = Proponent.objects.all()
+    if proponent_exists is True:
+        if not queryset:
+            search_proponents(proponent_current_link)
     serializer_class = ProponentSerializer
