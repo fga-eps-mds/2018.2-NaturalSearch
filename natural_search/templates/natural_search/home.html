@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Natural Search</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--Font awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+
+
+  <style>
+  #inputGroup-sizing-lg {
+    width: 80%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 2px solid #7B68EE; /* Add a grey border */
+    margin-bottom: 2px; /* Add some space below the input */
+    border-radius: 10px;
+    background-color: #fff;
+    
+  }
+  .check-box{
+    color: #fff;
+    font-size: 20px;
+  }
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+     margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  } 
+  /*background de search*/ 
+  .bg-search {
+      background-image: url('{% static "natural_search/graph.jpg"%}');
+      background-repeat: no-repeat;
+      
+      color: #000;
+      padding: 200px 150px;
+      font-family: Montserrat, sans-serif;
+  }
+  /* radio buttuns */
+  .check-box input[type=radio], .check-box input[type=checkbox]{
+      display:none; /* Esconde os inputs */
+  }
+ 
+  .check-box label {
+      cursor: pointer;
+  }
+  .check-box input[type="radio"] + label:before, .check-box input[type="checkbox"] + label:before {
+      border: 1px solid #5D5C5C;
+      background-color: #FFF;
+      content: "\00a0";
+      display: inline-block;
+      font: 16px/1em sans-serif;
+      height: 20px;
+      margin: 0 .25em 0 0;
+      padding:0;
+      vertical-align: top;
+      width: 20px;
+      border-radius:4px;
+  }
+  
+  .check-box input[type="radio"]:checked + label:before, .check-box input[type="checkbox"]:checked + label:before {
+      background:#3CB371;
+      color: #FFF;
+      content: "\2714";
+      text-align: center ;
+  }
+  
+  .check-box input[type=radio]:checked + label:after, .check-box input[type="checkbox"]:checked + label:after {
+      font-weight: bold;
+  }
+  .container-fluid-1 {
+    background-color:#e1eaea; 
+    padding: 60px 50px;   
+  }
+  .container-fluid-2{
+    background-color:#d1e0e0; 
+    padding: 60px 50px;   
+  }
+  .container-fluid-3{
+    background-color:#fff; 
+    padding: 60px 50px;   
+  }
+
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+
+  /*nav-design*/ 
+  .navbar {
+      margin-bottom: 10;
+      background:url('http://thecodeplayer.com/u/m/b1.png');
+      background-color: #000;
+      z-index: 9999;
+      border: 100px;
+      font-size: 14px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 4px;
+      text-transform: uppercase;
+  }
+  /* animation nav-bar mouse*/
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+      border-radius: 15px;
+    }
+
+/*JS*/
+  .slideanim {visibility:hidden;}
+
+</style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+  <!--Navbar-->
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#myPage">NaturalSearch</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="fas fa-search" href="#search">PESQUISAR</a></li>
+          <li><a class="fas fa-laptop-code" href="#howtouse">COMO USAR</a></li>
+          <li><a class="fas fa-users-cog" href="#whoare"> QUEM SOMOS </a> </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Search div-->
+  <div id="search" class="bg-search text-center ">
+    <input id="inputGroup-sizing-lg" type="search" placeholder="Digite aqui..">
+    <div class="check-box center">  
+        <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox1" />
+        <label for="campo-checkbox1">Projetos</label>
+        &ensp;&ensp;
+        <input type="checkbox" value="0" name="campo-checkbox" id="campo-checkbox" />
+        <label for="campo-checkbox">Propostas</label>
+    </div>
+    <br>
+   <button class=" fas fa-search btn btn-info btn-lg"> Pesquisar</button>
+  </div>
+
+  <!-- Como usar  -->
+  <div id="howtouse" class="container-fluid-2">
+    <div class="row">
+      <div class="col-sm-8">
+        <h2>Como funciona a Pesquisa</h2>
+        <h4>Para realizar a pesquisa deve digitar qualquer palavra, frase e/ou
+          numero que interessar. A pesquisa retornará as informações encontradas como os
+          projetos e propostas, por meio da visualização de grafos, sendo utilizando o recurso
+          de Marchine Learning pois é um método de análise de dados que automatiza a construção
+          de modelos analíticos. O sistema então irá exibir de uma forma automática os
+          projetos e propostas que se assemelham por: Resumo, justificativa, objetivo,
+          sinopse e entre outros. Mostrando os dados de uma forma intuitiva e atrativa.</h4><br>
+        <p></p>
+
+      </div>
+      <div class="col-sm-4">
+        <img class="img-thumbnail" src="{% static 'natural_search/search.jpg'%}" width="100%" height="100%" alt="grafo">
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid-1">
+    <div class="row">
+      <div class="col-sm-4">
+        <img class="img-circle" src="{% static 'natural_search/graph_show.jpg'%}" width="100%" height="100%" alt="">
+      </div>
+      <div class="col-sm-8">
+        <h2>Como funciona o grafo </h2>
+        <h4>O NaturalSearch explora os dados, realiza o pré-processamento adequado, encontrar os melhores parâmetros de
+          seus modelos e apresentar os dados de maneira efetiva junto aos seus dados semelhantes.
+          Essa ferramenta permite a navegação através dos projetos culturais que recebe incentivos fiscais do
+          Ministério da Cultura. Com habilidades inteligentes de automatizar as interações e serviços ao cliente.
+          O código deste sistema está disponível no repositório github.com/2018-2NaturalSearch.</h4>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Container (Contact Section) -->
+  <div id="whoare" class="container-fluid-3">
+    <h2>Quem somos?</h2>
+    <h4>
+      Este Produto deu Inicio no dia 14 de agosto de 2018, sendo resultado da interdisciplinaridade
+      entre duas disciplinas ministrada pela professora Carla, da Universidade de Brasília(UnB),
+      sendo Engenharia de Produto de Software(EPS) e Métodos de Desenvolvimento de Software(MDS).
+      Somos alunos da UnB do curso de Engenharia de Software, a equipe do projeto é composta por 10 alunos,
+      sendo 4 de EPS, e 6 de MDS, os 4 representam os gerentes do projeto, que para o desenvolvimento utilizaram
+      metodologias ágeis como SCRUM e XP, utilizando papeis como Scrum Master, Product Owner, Arquiteto e Devops.
+      E os 6 de MDS representam os desenvolvedores do produto.
+    </h4>
+  </div>
+
+  </footer>
+
+  <script>
+    $(document).ready(function () {
+      // Add smooth scrolling to all links in navbar + footer link
+      $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 900, function () {
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+
+      $(window).scroll(function () {
+        $(".slideanim").each(function () {
+          var pos = $(this).offset().top;
+
+          var winTop = $(window).scrollTop();
+          if (pos < winTop + 600) {
+            $(this).addClass("slide");
+          }
+        });
+      });
+    })
+  </script>
+
+</body>
+
+</html>

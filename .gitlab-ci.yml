@@ -1,0 +1,57 @@
+stages:
+  - Test
+  - Publish
+  - Deploy
+
+test:
+  image: python:latest
+  stage: Test
+  services:
+  - postgres:latest
+
+  variables:
+    POSTGRES_PASSWORD: 1234678
+    POSTGRES_USER: Igor
+    POSTGRES_DB: nome_projeto
+    POSTGRES_HOST: postgres
+  script:
+   - pip install -r requirements.txt
+   - python manage.py makemigrations
+   - python manage.py migrate
+   - python manage.py test
+  
+.publish_docker:
+  image: docker
+  stage: Publish
+  services:
+    - docker:dind
+  
+  script:
+    - docker login -p $PASSWORD_DOCKER -u $USER_DOCKER
+    - docker build . -t filipekn4/nsapi
+    - docker push filipekn4/nsapi
+
+  tags:
+    - docker
+
+publish_master:
+  extends: .publish_docker
+  environment: master
+  only: 
+    - master
+
+.deploy:
+  stage: Deploy
+
+  script:
+    - apt-get -y update
+    - apt-get -y install sshpass
+    - ls
+    - ./deploy.sh $PASSWORD $IP
+    - apt-get -y update
+
+deploy_master:
+  extends: .deploy
+  environment: master
+  only: 
+    - master
