@@ -3,7 +3,7 @@ stages:
   - Publish
   - Deploy
 
-test:
+.test:
   image: python:latest
   stage: Test
   services:
@@ -18,7 +18,7 @@ test:
    - pip install -r requirements.txt
    - python manage.py makemigrations
    - python manage.py migrate
-   - python -m unittest natural_search/tests.py
+   - python manage.py test
   
 .publish_docker:
   image: docker
