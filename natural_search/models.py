@@ -38,7 +38,7 @@ class Proponent(models.Model):
         (juridica, 'juridica'),
     )
 
-    tipo_pessoa = models.CharField(max_length=8, choices=TIPO_PESSOA, default=default, null=True)  
+    tipo_pessoa = models.CharField(max_length=9, choices=TIPO_PESSOA, default=default, null=True)  
     UF = models.CharField(max_length=2, null=True) 
     municipio = models.CharField(max_length=1000, null=True)
     total_captado = models.DecimalField(max_digits=8, decimal_places=2, null=True)
