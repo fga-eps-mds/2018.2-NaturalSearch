@@ -41,7 +41,7 @@ class Proponent(models.Model):
     tipo_pessoa = models.CharField(max_length=9, choices=TIPO_PESSOA, default=default, null=True)  
     UF = models.CharField(max_length=2, null=True) 
     municipio = models.CharField(max_length=1000, null=True)
-    total_captado = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+    total_captado = models.DecimalField(max_digits=10, null=True)
     
     def __str__(self):
         return self.nome
