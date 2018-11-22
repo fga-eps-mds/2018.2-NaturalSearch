@@ -4,7 +4,7 @@ info:
   
   NaturalSearch é um sistema que reúne dados a respeito de propostas de projetos e proponentes culturais a serem incentivados pelo Ministério da Cultura [MINC](http://www.cultura.gov.br/) por meio da [lei Rouanet](http://rouanet.cultura.gov.br/o-que-e/).
   
-  Nele é possivel realizar uma pesquisa sobre as informações dos projetos e proponentes e visualizar o resultado em forma de grafo e suas conexções.  Você pode encontrar mais sobre o NaturalSearch em [https://fga-eps-mds.github.io/2018.2-NaturalSearch/](https://fga-eps-mds.github.io/2018.2-NaturalSearch/)."
+  Nele é possivel realizar uma pesquisa sobre as informações dos projetos e proponentes e visualizar o resultado em forma de grafo e suas conexões.  Você pode encontrar mais sobre o NaturalSearch em [https://fga-eps-mds.github.io/2018.2-NaturalSearch/](https://fga-eps-mds.github.io/2018.2-NaturalSearch/)."
   
   version: "1.0.0"
   title: "NaturalSearch API"
@@ -22,266 +22,1631 @@ schemes:
 paths:
   /projeto:
 ##########################################################################        
-  /projeto/inventory:
+swagger: '2.0'
+info:
+  description: |-
+    Essa é uma API aberta para acesso aos dados do portal [**SALIC.**](http://salic.cultura.gov.br/cidadao/consultar) 
+
+    SALIC é um sistema que reúne dados a respeito de propostas de projetos culturais a serem incentivados pelo Ministério da Cultura (**MINC**) por meio da lei Rouanet.
+
+      ![alt text](http://rouanet.cultura.gov.br/wp-content/uploads/sites/2/2017/09/api-imagem-cinza-1.png 'Fluxograma API Salic' ) 
+
+    Veja mais informações [aqui](http://www.cultura.gov.br/programa-nacional-de-apoio-a-cultura-pronac-).
+
+
+
+
+    # **Formatos de Resposta** 
+
+     Atualmente a API suporta exportação dos dados nos formatos * <code>HAL+JSON</code>(padrão) * * <code>XML</code> e * <code>CSV</code>. A escolha do formato deve ser definido a cada chamada, por meio do campo de cabeçalho <code>Accept</code> ou pelo parâmetro de pesquisa <code>format</code>. 
+
+
+     # **Paginação** 
+
+     Para alguns recursos que possam gerar um grande volume de resultados, a API provê um sistema de  paginação. Ao fazer sua requisição, basta fazer uso dos campos <code>limit</code> **[1-100]** e <code>offset</code> **[0-Total-Count]** para navegar pelos resultados. Você também pode se guiar pelos links <code>first, self, prev, next, last</code> contidos nas respostas. Sua resposta conterá campos <code>count</code> e <code>total</code> que se referem ao total de objetos retornados e total de entradas contidas na base de dados repectivamente. Adicionamente, um campo de cabeçalho chamado <code>X-Total-Count</code> será enviado junto às respostas, denotando também o total de entradas contidas na base de dados que atendam ao seu critério de busca.
+  version: 0.2.1-beta
+  title: SALIC API
+  termsOfService: 'http://www.cultura.gov.br/programa-nacional-de-apoio-a-cultura-pronac-'
+  contact:
+    name: 'Laboratório de Dados Abertos do curso de Gestão da Informação da Universidade Federal de Goiás (http://www.gi.fic.ufg.br/lda/#)'
+    email: ldaufg@gmail.com
+  license:
+    name: ODbL 1.0
+    url: 'http://opendatacommons.org/licenses/oDbl/summary/'
+host: api.salic.cultura.gov.br
+basePath: /v1
+schemes:
+  - http
+produces:
+  - application/json
+  - application/xml
+  - text/csv
+paths:
+  '/projetos/{PRONAC}':
     get:
       tags:
-      - "projetos : Dados relativos a Projetos"
-      summary: "Returns pet inventories by status"
-      description: "Returns a map of status codes to quantities"
-      operationId: "getInventory"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "object"
-            additionalProperties:
-              type: "integer"
-              format: "int32"
-      security:
-      - api_key: []
-###########################################################################3
-  /store/order/{orderId}:
-    get:
-      tags:
-      - "projetos : Dados relativos a Projetos"
-      summary: "Find purchase order by ID"
-      description: "For valid response try integer IDs with value >= 1 and <= 10.         Other values will generated exceptions"
-      operationId: "getOrderById"
-      produces:
-      - "application/xml"
-      - "application/json"
+        - 'projetos : Dados relativos a Projetos'
+      summary: Busca um projeto por meio de seu número PRONAC
+      operationId: projeto_detail
       parameters:
-      - name: "orderId"
-        in: "path"
-        description: "ID of pet that needs to be fetched"
-        required: true
-        type: "integer"
-        maximum: 10.0
-        minimum: 1.0
-        format: "int64"
+        - in: path
+          name: PRONAC
+          description: Número do PRONAC
+          required: true
+          type: string
+          format: int64
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
       responses:
-        200:
-          description: "successful operation"
+        '200':
+          description: Operação bem-sucedida
           schema:
-            $ref: "#/definitions/Order"
-        400:
-          description: "Invalid ID supplied"
-        404:
-          description: "Order not found"
-###############################################################################
-  /proponente/login:
-    get:
-      tags:
-      - "proponente"
-      summary: "Logs user into the system"
-      description: ""
-      operationId: "loginUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "query"
-        description: "The user name for login"
-        required: true
-        type: "string"
-      - name: "password"
-        in: "query"
-        description: "The password for login in clear text"
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "successful operation"
-          schema:
-            type: "string"
+            $ref: '#/definitions/ProjetoDetail'
           headers:
-            X-Rate-Limit:
-              type: "integer"
-              format: "int32"
-              description: "calls per hour allowed by the user"
-            X-Expires-After:
-              type: "string"
-              format: "date-time"
-              description: "date in UTC when token expires"
-        400:
-          description: "Invalid username/password supplied"
-##############################################################################
-  /proponente/logout:
-    get:
-      tags:
-      - "proponente"
-      summary: "Logs out current logged in user session"
-      description: ""
-      operationId: "logoutUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters: []
-      responses:
-        default:
-          description: "successful operation"
-##############################################################################
-  /proponente/{username}:
-    get:
-      tags:
-      - "proponente"
-      summary: "Get user by user name"
-      description: ""
-      operationId: "getUserByName"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "path"
-        description: "The name that needs to be fetched. Use user1 for testing. "
-        required: true
-        type: "string"
-      responses:
-        200:
-          description: "successful operation"
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Projeto com PRONAC fornecido não encontrado
           schema:
-            $ref: "#/definitions/User"
-        400:
-          description: "Invalid username supplied"
-        404:
-          description: "User not found"
-#############################################################################
-securityDefinitions:
-  petstore_auth:
-    type: "oauth2"
-    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
-    flow: "implicit"
-    scopes:
-      write:pets: "modify pets in your account"
-      read:pets: "read your pets"
-  api_key:
-    type: "apiKey"
-    name: "api_key"
-    in: "header"
-definitions:
-  Order:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      petId:
-        type: "integer"
-        format: "int64"
-      quantity:
-        type: "integer"
-        format: "int32"
-      shipDate:
-        type: "string"
-        format: "date-time"
-      status:
-        type: "string"
-        description: "Order Status"
-        enum:
-        - "placed"
-        - "approved"
-        - "delivered"
-      complete:
-        type: "boolean"
-        default: false
-    xml:
-      name: "Order"
-  Category:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      name:
-        type: "string"
-    xml:
-      name: "Category"
-  User:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      username:
-        type: "string"
-      firstName:
-        type: "string"
-      lastName:
-        type: "string"
-      email:
-        type: "string"
-      password:
-        type: "string"
-      phone:
-        type: "string"
-      userStatus:
-        type: "integer"
-        format: "int32"
-        description: "User Status"
-    xml:
-      name: "User"
-  Tag:
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      name:
-        type: "string"
-    xml:
-      name: "Tag"
-  Pet:
-    type: "object"
-    required:
-    - "name"
-    - "photoUrls"
-    properties:
-      id:
-        type: "integer"
-        format: "int64"
-      category:
-        $ref: "#/definitions/Category"
-      name:
-        type: "string"
-        example: "doggie"
-      photoUrls:
-        type: "array"
-        xml:
-          name: "photoUrl"
-          wrapped: true
-        items:
-          type: "string"
+            $ref: '#/definitions/Error'
+        '405':
+          description: PRONAC inválido
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /projetos/:
+    get:
       tags:
-        type: "array"
-        xml:
-          name: "tag"
-          wrapped: true
-        items:
-          $ref: "#/definitions/Tag"
-      status:
-        type: "string"
-        description: "pet status in the store"
-        enum:
-        - "available"
-        - "pending"
-        - "sold"
-    xml:
-      name: "Pet"
-  ApiResponse:
-    type: "object"
+        - 'projetos : Dados relativos a Projetos'
+      summary: Busca projetos dado uma combinação de valores diversos de pesquisa
+      operationId: projeto_list
+      parameters:
+        - in: query
+          name: limit
+          description: Número de projetos a serem retornados
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: PRONAC
+          description: Número do PRONAC
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: proponente
+          description: Nome do proponente do projeto (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: proponente_id
+          description: id de identificacao do proponente
+          required: false
+          type: string
+          format: string
+        - in: query
+          name: cgccpf
+          description: Cgc/Cpf do proponente
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: nome
+          description: Nome do projeto (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: area
+          description: Código da Área do projeto
+          required: false
+          type: string
+        - in: query
+          name: segmento
+          description: Código do Segmento do projeto
+          required: false
+          type: string
+        - in: query
+          name: UF
+          description: 'Estado de origem no formato EE '
+          required: false
+          type: string
+        - in: query
+          name: ano_projeto
+          description: Ano em que o projeto foi apresentado em dois dígitos. Formato AA
+          required: false
+          type: string
+        - in: query
+          name: data_inicio
+          description: Data de início no formato AAAA-MM-DD
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: data_termino
+          description: Data de finalização no formato AAAA-MM-DD
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: data_inicio_min
+          description: Data de início mínimo no formato AAAA-MM-DD
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: data_inicio_max
+          description: Data de início máximo no formato AAAA-MM-DD
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: data_termino_min
+          description: Data de término mínimo no formato AAAA-MM-DD
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: data_termino_max
+          description: Data de término máximo no formato AAAA-MM-DD
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: sort
+          description: 'Ordenar a busca por um dos campos : PRONAC, ano_projeto, data_inicio, data_termino, valor_solicitado, outras_fontes, valor_captado, valor_proposta, valor_aprovado, valor_projeto. Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : ano_projeto:desc'
+          required: false
+          type: string
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/ProjetoList'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+            X-Total-Count:
+              description: Número total de objetos que atendem seu critério de busca
+              type: integer
+        '404':
+          description: Projetos com esses parâmetros não encontrados
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: 'Parametros fornecidos invalidos '
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /projetos/areas:
+    get:
+      tags:
+        - 'projetos : Dados relativos a Projetos'
+      summary: Retorna todas as áreas disponíveis
+      operationId: projeto_areas
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Area'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Areas indisponiveis
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /projetos/segmentos:
+    get:
+      tags:
+        - 'projetos : Dados relativos a Projetos'
+      summary: Retorna todos os segmentos disponíveis
+      operationId: projeto_segmentos
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Segmento'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Segmentos indisponiveis
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /propostas/:
+    get:
+      tags:
+        - 'propostas : Dados relativos a Propostas de projetos'
+      summary: Busca propostas dado uma combinação de valores diversos de pesquisa
+      operationId: proposta_list
+      parameters:
+        - in: query
+          name: limit
+          description: Número de propostas a serem retornados
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: nome
+          description: Nome do projeto (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: data_inicio
+          description: Data de início no formato aaaa-mm-dd
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: data_termino
+          description: Data de finalização no formato aaaa-mm-dd
+          required: false
+          type: string
+          format: date
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Proposta'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+            X-Total-Count:
+              description: Número total de objetos que atendem seu critério de busca
+              type: integer
+        '404':
+          description: Propostas com esses parâmetros não encontrados
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: Parametros fornecidos invalidos
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  '/propostas/{proposta_id}/':
+    get:
+      tags:
+        - 'propostas : Dados relativos a Propostas de projetos'
+      summary: Dados detalhados de uma proposta
+      operationId: proposta_detail
+      parameters:
+        - in: path
+          name: proposta_id
+          description: id da proposta
+          required: true
+          type: string
+          format: int64
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            $ref: '#/definitions/Proposta'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Proposta com ID fornecido nao encontrado
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: Parametro fornecido invalido
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /incentivadores/:
+    get:
+      tags:
+        - 'incentivadores : Dados relativos a Incentivadores'
+      summary: Busca incentivadores dado uma combinação de valores diversos de pesquisa
+      operationId: incentivador_list
+      parameters:
+        - in: query
+          name: limit
+          description: Número de incentivadores a serem retornados
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: nome
+          description: Nome do incentivador (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: incentivador_id
+          description: id de identificacao do incentivador
+          required: false
+          type: string
+          format: string
+        - in: query
+          name: cgccpf
+          description: Cgc/Cpf do incentivador
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: municipio
+          description: Cidade do incentivador (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: UF
+          description: 'Estado do incentivador no formato EE '
+          required: false
+          type: string
+        - in: query
+          name: tipo_pessoa
+          description: Tipo de pessoa
+          enum:
+            - fisica
+            - juridica
+          required: false
+          type: string
+        - in: query
+          name: PRONAC
+          description: Número do PRONAC
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: sort
+          description: 'Ordenar a busca por um dos campos : total_doado.Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : Internamente baseado no cgccpf'
+          required: false
+          type: string
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            $ref: '#/definitions/Incentivador'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+            X-Total-Count:
+              description: Número total de objetos que atendem seu critério de busca
+              type: integer
+        '404':
+          description: Nenhum incentivador encontrado com esses criterios
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: Parametros fornecidos invalidos
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  '/incentivadores/{incentivador_id}':
+    get:
+      tags:
+        - 'incentivadores : Dados relativos a Incentivadores'
+      summary: Busca incentivadores dado uma combinação de valores diversos de pesquisa
+      operationId: incentivador_detail
+      parameters:
+        - in: path
+          name: incentivador_id
+          description: id do incentivador
+          required: true
+          type: string
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Incentivador'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Nenhum incentivador encontrado com esses criterios
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: Parametros fornecidos invalidos
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  '/incentivadores/{incentivador_id}/doacoes':
+    get:
+      tags:
+        - 'incentivadores : Dados relativos a Incentivadores'
+      summary: 'Dado o id de um incentivador, retorna informações relativas a todas as doações por ele feitas'
+      operationId: doacoes
+      parameters:
+        - in: path
+          name: incentivador_id
+          description: id do incentivador
+          required: true
+          type: string
+        - in: query
+          name: limit
+          description: Número de doações a serem retornadas
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Doacao'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Incentivador com id fornecido não encontrado
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: cgccpf inválido
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /fornecedores/:
+    get:
+      tags:
+        - 'fornecedores : Dados relativos a Fornecedores'
+      summary: Busca fornecedores dado uma combinação de valores diversos de pesquisa
+      operationId: fornecedores_list
+      parameters:
+        - in: query
+          name: nome
+          description: Nome do fornecedor (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: fornecedor_id
+          description: id de identificacao do fornecedor
+          required: false
+          type: string
+          format: string
+        - in: query
+          name: cgccpf
+          description: Cgc/Cpf do fornecedor
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: PRONAC
+          description: Número do PRONAC
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: limit
+          description: Número de fornecedores a serem retornados
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Fornecedor'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+            X-Total-Count:
+              description: Número total de objetos que atendem seu critério de busca
+              type: integer
+        '404':
+          description: Fornecedor com os critérios fornecidos não encontrados
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: PRONAC ou cgccpf inválido
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  '/fornecedores/{fornecedor_id}':
+    get:
+      tags:
+        - 'fornecedores : Dados relativos a Fornecedores'
+      summary: Busca fornecedores dado uma combinação de valores diversos de pesquisa
+      operationId: fornecedores_detail
+      parameters:
+        - in: path
+          name: fornecedor_id
+          description: id do fornecedor
+          required: true
+          type: string
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            $ref: '#/definitions/Fornecedor'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Fornecedor com id fornecido não encontrado
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: id inválido
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  '/fornecedores/{fornecedor_id}/produtos':
+    get:
+      tags:
+        - 'fornecedores : Dados relativos a Fornecedores'
+      summary: 'Dado o id de um fornecedor, retorna informações relativas a todas os ítens ou serviços fornecidos por ele'
+      operationId: supplier_products
+      parameters:
+        - in: path
+          name: fornecedor_id
+          description: id do fornecedor
+          required: true
+          type: string
+        - in: query
+          name: limit
+          description: Número de produtos a serem retornados
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Produto'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Nenhum item encontrado referente ao fornecedor com id fornecido
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: id inválido
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  /proponentes/:
+    get:
+      tags:
+        - 'proponentes : Dados relativos a Proponentes'
+      summary: Busca proponentes dado uma combinação de valores diversos de pesquisa
+      operationId: proponente_list
+      parameters:
+        - in: query
+          name: limit
+          description: Número de proponentes a serem retornados
+          required: false
+          type: integer
+          default: 100
+          minimum: 1
+          maximum: 100
+        - in: query
+          name: offset
+          description: Número de paginação de resultados
+          required: false
+          type: integer
+          default: 0
+          minimum: 0
+        - in: query
+          name: nome
+          description: Nome do proponente (valor exato ou parcial)
+          required: false
+          type: string
+        - in: query
+          name: cgccpf
+          description: Cgc/Cpf do proponente
+          required: false
+          type: string
+          format: int64
+        - in: query
+          name: proponente_id
+          description: id de identificacao do proponente
+          required: false
+          type: string
+          format: string
+        - in: query
+          name: municipio
+          description: Cidade
+          required: false
+          type: string
+        - in: query
+          name: UF
+          description: Estado
+          required: false
+          type: string
+        - in: query
+          name: tipo_pessoa
+          description: Tipo de pessoa
+          enum:
+            - fisica
+            - juridica
+          required: false
+          type: string
+        - in: query
+          name: sort
+          description: 'Ordenar a busca por um dos campos : total_captado.Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : Internamente baseado no cgccpf'
+          required: false
+          type: string
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Proponente'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+            X-Total-Count:
+              description: Número total de objetos que atendem seu critério de busca
+              type: integer
+        '404':
+          description: Nenhum proponente com criterios fornecidos encontrados
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: Parametros fornecidos inválidos
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+  '/proponentes/{proponente_id}':
+    get:
+      tags:
+        - 'proponentes : Dados relativos a Proponentes'
+      summary: Busca proponentes dado um id fornecido
+      operationId: proponente_detail
+      parameters:
+        - in: path
+          name: proponente_id
+          description: id do proponente
+          required: true
+          type: string
+        - in: query
+          name: format
+          description: Formato de retorno
+          enum:
+            - json
+            - xml
+            - csv
+          required: false
+          type: string
+      responses:
+        '200':
+          description: Operação bem-sucedida
+          schema:
+            $ref: '#/definitions/Proponente'
+          headers:
+            X-Rate-Limit-Limit:
+              description: Número de requisições permitidas no período
+              type: integer
+            X-Rate-Limit-Remaining:
+              description: Número de requisições restantes na janela de limite atual
+              type: integer
+            X-Rate-Limit-Reset:
+              description: Tempo para que a janela de limite resete em segundos UTC epoch
+              type: integer
+            Retry-After:
+              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
+              type: integer
+        '404':
+          description: Nenhum proponente com id fornecido encontrado
+          schema:
+            $ref: '#/definitions/Error'
+        '405':
+          description: Parametros fornecidos inválidos
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Erro interno
+          schema:
+            $ref: '#/definitions/Error'
+definitions:
+  ProjetoList:
+    type: object
     properties:
-      code:
-        type: "integer"
-        format: "int32"
-      type:
-        type: "string"
+      PRONAC:
+        type: string
+        format: int64
+      ano_projeto:
+        type: string
+      nome:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      proponente:
+        type: string
+      segmento:
+        type: string
+      area:
+        type: string
+      UF:
+        type: string
+      municipio:
+        type: string
+      data_inicio:
+        type: string
+        format: date
+      data_termino:
+        type: string
+        format: date
+      situacao:
+        type: string
+      mecanismo:
+        type: string
+      enquadramento:
+        type: string
+      valor_projeto:
+        type: number
+        format: double
+      outras_fontes:
+        type: number
+        format: double
+      valor_captado:
+        type: number
+        format: double
+      valor_proposta:
+        type: number
+        format: double
+      valor_solicitado:
+        type: number
+        format: double
+      valor_aprovado:
+        type: number
+        format: double
+      acessibilidade:
+        type: string
+      objetivos:
+        type: string
+      justificativa:
+        type: string
+      etapa:
+        type: string
+      ficha_tecnica:
+        type: string
+      impacto_ambiental:
+        type: string
+      especificacao_tecnica:
+        type: string
+      estrategia_execucao:
+        type: string
+      providencia:
+        type: string
+      democratizacao:
+        type: string
+      sinopse:
+        type: string
+      resumo:
+        type: string
+  MarcaAnexada:
+    type: object
+    properties:
+      id_documento:
+        type: integer
+      data_envio:
+        type: string
+        format: date
+      link:
+        type: string
+        format: uri
+      id_arquivo:
+        type: integer
+      descricao:
+        type: string
+      nome_arquivo:
+        type: string
+  Divulgacao:
+    type: object
+    properties:
+      peca:
+        type: string
+      veiculo:
+        type: string
+  Prorrogacao:
+    type: object
+    properties:
+      atendimento:
+        type: string
+      usuario:
+        type: string
+      data_final:
+        type: string
+        format: date
+      data_pedido:
+        type: string
+        format: date
+      observacao:
+        type: string
+      data_inicio:
+        type: string
+        format: date
+      estado:
+        type: string
+  Distribuicao:
+    type: object
+    properties:
+      qtd_patrocinador:
+        type: integer
+      qtd_proponente:
+        type: integer
+      area:
+        type: string
+      posicao_logo:
+        type: string
+      produto:
+        type: string
+      segmento:
+        type: string
+      localizacao:
+        type: string
+      qtd_venda_normal:
+        type: integer
+      qtd_outros:
+        type: integer
+      receita_pro:
+        type: integer
+      preco_unitario_normal:
+        type: integer
+      qtd_produzida:
+        type: integer
+      qtd_venda_promocional:
+        type: integer
+      preco_unitario_promocional:
+        type: integer
+      receita_prevista:
+        type: integer
+      receita_normal:
+        type: integer
+  DocumentoAnexado:
+    type: object
+    properties:
+      nome:
+        type: string
+      data:
+        type: string
+        format: date
+      classificacao:
+        type: string
+      link:
+        type: string
+        format: uri
+  CertidaoNegativa:
+    type: object
+    properties:
+      data_emissao:
+        type: string
+        format: date
+      data_validade:
+        type: string
+        format: date
+      situacao:
+        type: string
+      descricao:
+        type: string
+  RelacaoPagamento:
+    type: object
+    properties:
+      id_planilha_aprovacao:
+        type: integer
+      justificativa:
+        type: string
+      data_pagamento:
+        type: string
+        format: date
+      nome:
+        type: string
+      cgccpf:
+        type: string
+      data_aprovacao:
+        type: string
+        format: date
+      valor_pagamento:
+        type: number
+        format: double
+      nm_arquivo:
+        type: string
+      id_arquivo:
+        type: integer
+      nome_fornecedor:
+        type: string
+      id_comprovante_pagamento:
+        type: integer
+      nr_documento_pagamento:
+        type: string
+      tipo_documento:
+        type: string
+  Readequacao:
+    type: object
+    properties:
+      is_arquivo:
+        type: string
+      nome_arquivo:
+        type: string
+      st_atendimento:
+        type: string
+      descricao_readequacao:
+        type: string
+      descricao_justificativa:
+        type: string
+      descricao_encaminhamento:
+        type: string
+      descricao_avaliacao:
+        type: string
+      descricao_solicitacao:
+        type: integer
+      id_avaliador:
+        type: integer
+      id_tipo_readequacao:
+        type: integer
+      si_encaminhamento:
+        type: integer
+      id_readequacao:
+        type: integer
+      id_solicitante:
+        type: integer
+      st_estado:
+        type: boolean
+      data_solicitacao:
+        type: string
+        format: date
+      data_avaliador:
+        type: string
+        format: date
+  RelatorioFisco:
+    type: object
+    properties:
+      etapa:
+        type: string
+      unidade:
+        type: string
+      item:
+        type: string
+      perc_executado:
+        type: number
+        format: double
+      perc_a_executar:
+        type: number
+        format: double
+      valor_programado:
+        type: number
+        format: double
+      qtd_programada:
+        type: integer
+      valor_executado:
+        type: integer
+      id_planilha_etapa:
+        type: integer
+  ProjetoDetail:
+    type: object
+    properties:
+      PRONAC:
+        type: string
+        format: int64
+      ano_projeto:
+        type: string
+      nome:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      proponente:
+        type: string
+      segmento:
+        type: string
+      area:
+        type: string
+      UF:
+        type: string
+      municipio:
+        type: string
+      data_inicio:
+        type: string
+        format: date
+      data_termino:
+        type: string
+        format: date
+      situacao:
+        type: string
+      mecanismo:
+        type: string
+      enquadramento:
+        type: string
+      valor_projeto:
+        type: number
+        format: double
+      outras_fontes:
+        type: number
+        format: double
+      valor_captado:
+        type: number
+        format: double
+      valor_proposta:
+        type: number
+        format: double
+      valor_solicitado:
+        type: number
+        format: double
+      valor_aprovado:
+        type: number
+        format: double
+      acessibilidade:
+        type: string
+      objetivos:
+        type: string
+      justificativa:
+        type: string
+      etapa:
+        type: string
+      ficha_tecnica:
+        type: string
+      impacto_ambiental:
+        type: string
+      especificacao_tecnica:
+        type: string
+      estrategia_execucao:
+        type: string
+      providencia:
+        type: string
+      democratizacao:
+        type: string
+      sinopse:
+        type: string
+      resumo:
+        type: string
+      marcas_anexadas:
+        type: array
+        items:
+          $ref: '#/definitions/MarcaAnexada'
+      divulgacao:
+        type: array
+        items:
+          $ref: '#/definitions/Divulgacao'
+      relatorio_fisco:
+        type: array
+        items:
+          $ref: '#/definitions/RelatorioFisco'
+      relacao_pagamentos:
+        type: array
+        items:
+          $ref: '#/definitions/RelacaoPagamento'
+      certidoes_negativas:
+        type: array
+        items:
+          $ref: '#/definitions/CertidaoNegativa'
+      readequacoes:
+        type: array
+        items:
+          $ref: '#/definitions/Readequacao'
+      documentos_anexados:
+        type: array
+        items:
+          $ref: '#/definitions/DocumentoAnexado'
+      distribuicao:
+        type: array
+        items:
+          $ref: '#/definitions/Distribuicao'
+      prorrogacao:
+        type: array
+        items:
+          $ref: '#/definitions/Prorrogacao'
+      captacoes:
+        type: array
+        items:
+          $ref: '#/definitions/Captacao'
+  Proposta:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      nome:
+        type: string
+      mecanismo:
+        type: string
+      data_aceite:
+        type: string
+        format: date
+      data_inicio:
+        type: string
+        format: date
+      data_termino:
+        type: string
+        format: date
+      data_arquivamento:
+        type: string
+        format: date
+      acessibilidade:
+        type: string
+      objetivos:
+        type: string
+      justificativa:
+        type: string
+      etapa:
+        type: string
+      ficha_tecnica:
+        type: string
+      impacto_ambiental:
+        type: string
+      especificacao_tecnica:
+        type: string
+      estrategia_execucao:
+        type: string
+      providencia:
+        type: string
+      democratizacao:
+        type: string
+      sinopse:
+        type: string
+      resumo:
+        type: string
+  Proponente:
+    type: object
+    properties:
+      nome:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      responsavel:
+        type: string
+      tipo_pessoa:
+        type: string
+      UF:
+        type: string
+      municipio:
+        type: string
+      total_captado:
+        type: number
+        format: double
+  Incentivador:
+    type: object
+    properties:
+      nome:
+        type: string
+      responsavel:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      tipo_pessoa:
+        type: string
+      UF:
+        type: string
+      municipio:
+        type: string
+      total_doado:
+        type: number
+        format: double
+  Doacao:
+    type: object
+    properties:
+      PRONAC:
+        type: string
+        format: int64
+      valor:
+        type: number
+        format: double
+      data_recibo:
+        type: string
+        format: date
+      nome_projeto:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      nome_doador:
+        type: string
+  Captacao:
+    type: object
+    properties:
+      PRONAC:
+        type: string
+        format: int64
+      valor:
+        type: number
+        format: double
+      data_recibo:
+        type: string
+        format: date
+      nome_projeto:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      nome_doador:
+        type: string
+  Fornecedor:
+    type: object
+    properties:
+      nome:
+        type: string
+      cgccpf:
+        type: string
+        format: int64
+      email:
+        type: string
+        format: email
+  Produto:
+    type: object
+    properties:
+      id_planilha_aprovacao:
+        type: integer
+      justificativa:
+        type: string
+      data_pagamento:
+        type: string
+        format: date
+      nome:
+        type: string
+      cgccpf:
+        type: string
+      data_aprovacao:
+        type: string
+        format: date
+      valor_pagamento:
+        type: number
+        format: double
+      nm_arquivo:
+        type: string
+      id_arquivo:
+        type: integer
+      nome_fornecedor:
+        type: string
+      id_comprovante_pagamento:
+        type: integer
+      nr_documento_pagamento:
+        type: string
+      tipo_documento:
+        type: string
+  Area:
+    type: object
+    properties:
+      codigo:
+        type: integer
+      nome:
+        type: string
+  Segmento:
+    type: object
+    properties:
+      codigo:
+        type: integer
+      nome:
+        type: string
+  Error:
+    type: object
+    properties:
       message:
-        type: "string"
-externalDocs:
-  description: "Find out more about Swagger"
-  url: "http://swagger.io"
+        type: string
+      code:
+        type: string
+      more_info:
+        type: string
+
