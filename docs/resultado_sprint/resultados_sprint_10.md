@@ -39,10 +39,8 @@ layout: default
 | Issue | Descrição | Pontos | Status | Motivo |
 |---|---|---|---|---|
 |[US16](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/136)|US16-Eu, como desenvolvedor, desejo conectar os projetos com os respectivos proponentes no banco de dados.|13|100%|--|
-|[TS10](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/151)|
-TS10-Eu, como desenvolvedor, desejo aprimorar o estilo da tela inicial e tela de pesquisa.|13|100%|--|
-|[TS09](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/150)|
-TS09-Eu, como desenvolvedor, desejo realizar a integração dos serviços de processamento de dados e visualização em grafos.|13|80%|Dificuldade com as tecnologias de deploy|
+|[TS10](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/151)|TS10-Eu, como desenvolvedor, desejo aprimorar o estilo da tela inicial e tela de pesquisa.|13|100%|--|
+|[TS09](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/150)|TS09-Eu, como desenvolvedor, desejo realizar a integração dos serviços de processamento de dados e visualização em grafos.|13|80%|Dificuldade com as tecnologias de deploy|
 |[TS04](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/141)|TS04-Eu, como desenvolvedor, desejo otimizar a tela de visualização dos resultados da pesquisa por meio de grafos.|13|100%|--|
 
 ## Pareamento 
