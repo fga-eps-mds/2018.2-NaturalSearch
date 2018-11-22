@@ -479,16 +479,11 @@ definitions:
       data_termino:
         type: string
         format: date
-      situacao:
-        type: string
       mecanismo:
         type: string
       enquadramento:
         type: string
       valor_projeto:
-        type: number
-        format: double
-      outras_fontes:
         type: number
         format: double
       valor_captado:
@@ -503,30 +498,6 @@ definitions:
       valor_aprovado:
         type: number
         format: double
-      acessibilidade:
-        type: string
-      objetivos:
-        type: string
-      justificativa:
-        type: string
-      etapa:
-        type: string
-      ficha_tecnica:
-        type: string
-      impacto_ambiental:
-        type: string
-      especificacao_tecnica:
-        type: string
-      estrategia_execucao:
-        type: string
-      providencia:
-        type: string
-      democratizacao:
-        type: string
-      sinopse:
-        type: string
-      resumo:
-        type: string
   Proponente:
     type: object
     properties:
@@ -555,4 +526,3 @@ definitions:
         type: string
       more_info:
         type: string
-
