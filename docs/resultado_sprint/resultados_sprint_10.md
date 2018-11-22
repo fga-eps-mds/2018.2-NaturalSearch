@@ -28,7 +28,7 @@ layout: default
 
 |    Papel |     Responsável |
 |-----|-----|
-| Igor Sousa | Arquiteta |
+| Igor Sousa | Arquiteto |
 | Igor Sousa e Filipe Barcelos | Product Owner |
 | Michel Camargo | Scrum Master |
 | Filipe Barcelos | Devops |
