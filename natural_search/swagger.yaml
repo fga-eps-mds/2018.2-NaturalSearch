@@ -19,59 +19,7 @@ tags:
 schemes:
 - "http"
 paths:
-  '/projetos/{PRONAC}':
-    get:
-      tags:
-        - 'projetos : Dados relativos a Projetos'
-      summary: Busca um projeto por meio de seu número PRONAC
-      operationId: projeto_detail
-      parameters:
-        - in: path
-          name: PRONAC
-          description: Número do PRONAC
-          required: true
-          type: string
-          format: int64
-        - in: query
-          name: format
-          description: Formato de retorno
-          enum:
-            - json
-            - xml
-            - csv
-          required: false
-          type: string
-      responses:
-        '200':
-          description: Operação bem-sucedida
-          schema:
-            $ref: '#/definitions/ProjetoDetail'
-          headers:
-            X-Rate-Limit-Limit:
-              description: Número de requisições permitidas no período
-              type: integer
-            X-Rate-Limit-Remaining:
-              description: Número de requisições restantes na janela de limite atual
-              type: integer
-            X-Rate-Limit-Reset:
-              description: Tempo para que a janela de limite resete em segundos UTC epoch
-              type: integer
-            Retry-After:
-              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
-              type: integer
-        '404':
-          description: Projeto com PRONAC fornecido não encontrado
-          schema:
-            $ref: '#/definitions/Error'
-        '405':
-          description: PRONAC inválido
-          schema:
-            $ref: '#/definitions/Error'
-        '503':
-          description: Erro interno
-          schema:
-            $ref: '#/definitions/Error'
-  /projetos/:
+  "/projeto":
     get:
       tags:
         - 'projetos : Dados relativos a Projetos'
@@ -86,6 +34,7 @@ paths:
           default: 100
           minimum: 1
           maximum: 100
+          
         - in: query
           name: offset
           description: Número de paginação de resultados
@@ -93,90 +42,124 @@ paths:
           type: integer
           default: 0
           minimum: 0
+          
         - in: query
           name: PRONAC
           description: Número do PRONAC
           required: false
           type: string
           format: int64
+          
         - in: query
-          name: proponente
-          description: Nome do proponente do projeto (valor exato ou parcial)
+          name: ano_projeto
+          description: Ano em que o projeto foi apresentado em dois dígitos. Formato AA
           required: false
           type: string
+          
         - in: query
-          name: proponente_id
-          description: id de identificacao do proponente
+          name: nome
+          description: Nome do projeto (valor exato ou parcial)
           required: false
           type: string
-          format: string
+          
         - in: query
           name: cgccpf
           description: Cgc/Cpf do proponente
           required: false
           type: string
           format: int64
+          
         - in: query
-          name: nome
-          description: Nome do projeto (valor exato ou parcial)
+          name: proponente
+          description: Nome do proponente do projeto (valor exato ou parcial)
           required: false
           type: string
-        - in: query
-          name: area
-          description: Código da Área do projeto
-          required: false
-          type: string
+          
         - in: query
           name: segmento
           description: Código do Segmento do projeto
           required: false
           type: string
+          
+        - in: query
+          name: area
+          description: Código da Área do projeto
+          required: false
+          type: string
+          
         - in: query
           name: UF
           description: 'Estado de origem no formato EE '
           required: false
           type: string
+          
         - in: query
-          name: ano_projeto
-          description: Ano em que o projeto foi apresentado em dois dígitos. Formato AA
+          name: municipio
+          description: Cidade
           required: false
           type: string
+          
         - in: query
           name: data_inicio
           description: Data de início no formato AAAA-MM-DD
           required: false
           type: string
           format: date
+          
         - in: query
           name: data_termino
           description: Data de finalização no formato AAAA-MM-DD
           required: false
           type: string
           format: date
+          
         - in: query
-          name: data_inicio_min
-          description: Data de início mínimo no formato AAAA-MM-DD
+          name: mecanismo
+          description: descrever
           required: false
           type: string
-          format: date
+          
         - in: query
-          name: data_inicio_max
-          description: Data de início máximo no formato AAAA-MM-DD
+          name: enquadramento
+          description: Artigo em que se enquadra
           required: false
           type: string
-          format: date
+          
         - in: query
-          name: data_termino_min
-          description: Data de término mínimo no formato AAAA-MM-DD
+          name: valor_projeto
+          description: Valor do projeto
           required: false
-          type: string
-          format: date
+          type: number
+          format: double
+          
         - in: query
-          name: data_termino_max
-          description: Data de término máximo no formato AAAA-MM-DD
+          name: valor_captado
+          description: Valor captado
           required: false
-          type: string
-          format: date
+          type: number
+          format: double
+          
+        - in: query
+          name: valor_proposta
+          description: Valor da proposta
+          required: false
+          type: number
+          format: double
+          
+        - in: query
+          name: valor_solicitado
+          description: Valor solicitado
+          required: false
+          type: number
+          format: double
+          
+        - in: query
+          name: valor_aprovado
+          description: Valor aprovado
+          required: false
+          type: number
+          format: double
+          
         - in: query
           name: sort
           description: 'Ordenar a busca por um dos campos : PRONAC, ano_projeto, data_inicio, data_termino, valor_solicitado, outras_fontes, valor_captado, valor_proposta, valor_aprovado, valor_projeto. Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : ano_projeto:desc'
