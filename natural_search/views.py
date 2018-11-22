@@ -9,15 +9,15 @@ from rest_framework import viewsets
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
 
-# Links para coleta de dados de proponentes e projetos da api
-# proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
-projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-# projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
-proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
+#Links para coleta de dados de proponentes e projetos da api
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
+#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
 #Render the homepage
-    return redirect('/projeto/')
+    return render(request, 'natural_search/home.html')
 
 def search_proponents(proponent_current_link):
     '''Function responsible for iterate with the api, generating the proponent json,

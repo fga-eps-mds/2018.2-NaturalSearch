@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'natural_search',
     'rest_framework',
-    'rest_framework_swagger',
+    #'rest_framework_swagger',
     
 ]
 
