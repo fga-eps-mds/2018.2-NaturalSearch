@@ -18,13 +18,21 @@ tags:
 
 schemes:
 - "http"
+
+produces:
+  - application/json
+  - application/xml
+  - text/csv
+
 paths:
-  "/projeto":
+  /projeto/:
     get:
       tags:
         - 'projetos : Dados relativos a Projetos'
       summary: Busca projetos dado uma combinação de valores diversos de pesquisa
+      
       operationId: projeto_list
+      
       parameters:
         - in: query
           name: limit
@@ -165,122 +173,68 @@ paths:
           description: 'Ordenar a busca por um dos campos : PRONAC, ano_projeto, data_inicio, data_termino, valor_solicitado, outras_fontes, valor_captado, valor_proposta, valor_aprovado, valor_projeto. Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : ano_projeto:desc'
           required: false
           type: string
+          
         - in: query
           name: format
           description: Formato de retorno
-          enum:
+           enum:
             - json
+            - xml
+            - csv
           required: false
           type: string
+          
       responses:
         '200':
           description: Operação bem-sucedida
           schema:
             type: array
             items:
-              $ref: '#/definitions/ProjetoList'
-          headers:
+              $ref: '#/definitions/Projeto'
+              
             X-Rate-Limit-Limit:
               description: Número de requisições permitidas no período
               type: integer
+              
             X-Rate-Limit-Remaining:
               description: Número de requisições restantes na janela de limite atual
               type: integer
+              
             X-Rate-Limit-Reset:
               description: Tempo para que a janela de limite resete em segundos UTC epoch
               type: integer
+              
             Retry-After:
               description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
               type: integer
+              
             X-Total-Count:
               description: Número total de objetos que atendem seu critério de busca
               type: integer
+              
         '404':
           description: Projetos com esses parâmetros não encontrados
           schema:
             $ref: '#/definitions/Error'
+            
         '405':
           description: 'Parametros fornecidos invalidos '
           schema:
             $ref: '#/definitions/Error'
+            
         '503':
           description: Erro interno
           schema:
             $ref: '#/definitions/Error'
-  /projetos/areas:
-    get:
-      tags:
-        - 'projetos : Dados relativos a Projetos'
-      summary: Retorna todas as áreas disponíveis
-      operationId: projeto_areas
-      responses:
-        '200':
-          description: Operação bem-sucedida
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Area'
-          headers:
-            X-Rate-Limit-Limit:
-              description: Número de requisições permitidas no período
-              type: integer
-            X-Rate-Limit-Remaining:
-              description: Número de requisições restantes na janela de limite atual
-              type: integer
-            X-Rate-Limit-Reset:
-              description: Tempo para que a janela de limite resete em segundos UTC epoch
-              type: integer
-            Retry-After:
-              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
-              type: integer
-        '404':
-          description: Areas indisponiveis
-          schema:
-            $ref: '#/definitions/Error'
-        '503':
-          description: Erro interno
-          schema:
-            $ref: '#/definitions/Error'
-  /projetos/segmentos:
-    get:
-      tags:
-        - 'projetos : Dados relativos a Projetos'
-      summary: Retorna todos os segmentos disponíveis
-      operationId: projeto_segmentos
-      responses:
-        '200':
-          description: Operação bem-sucedida
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Segmento'
-          headers:
-            X-Rate-Limit-Limit:
-              description: Número de requisições permitidas no período
-              type: integer
-            X-Rate-Limit-Remaining:
-              description: Número de requisições restantes na janela de limite atual
-              type: integer
-            X-Rate-Limit-Reset:
-              description: Tempo para que a janela de limite resete em segundos UTC epoch
-              type: integer
-            Retry-After:
-              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
-              type: integer
-        '404':
-          description: Segmentos indisponiveis
-          schema:
-            $ref: '#/definitions/Error'
-        '503':
-          description: Erro interno
-          schema:
-            $ref: '#/definitions/Error'
-  /proponentes/:
+  
+  /proponente/:
     get:
       tags:
         - 'proponentes : Dados relativos a Proponentes'
       summary: Busca proponentes dado uma combinação de valores diversos de pesquisa
+      
       operationId: proponente_list
+      
       parameters:
         - in: query
           name: limit
@@ -290,6 +244,7 @@ paths:
           default: 100
           minimum: 1
           maximum: 100
+          
         - in: query
           name: offset
           description: Número de paginação de resultados
@@ -297,33 +252,39 @@ paths:
           type: integer
           default: 0
           minimum: 0
+          
         - in: query
           name: nome
           description: Nome do proponente (valor exato ou parcial)
           required: false
           type: string
+          
         - in: query
           name: cgccpf
           description: Cgc/Cpf do proponente
           required: false
           type: string
           format: int64
+          
         - in: query
           name: proponente_id
           description: id de identificacao do proponente
           required: false
           type: string
           format: string
+          
         - in: query
           name: municipio
           description: Cidade
           required: false
           type: string
+          
         - in: query
           name: UF
           description: Estado
           required: false
           type: string
+          
         - in: query
           name: tipo_pessoa
           description: Tipo de pessoa
@@ -332,11 +293,13 @@ paths:
             - juridica
           required: false
           type: string
+          
         - in: query
           name: sort
           description: 'Ordenar a busca por um dos campos : total_captado.Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : Internamente baseado no cgccpf'
           required: false
           type: string
+          
         - in: query
           name: format
           description: Formato de retorno
@@ -346,6 +309,7 @@ paths:
             - csv
           required: false
           type: string
+          
       responses:
         '200':
           description: Operação bem-sucedida
@@ -353,46 +317,58 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Proponente'
+              
           headers:
             X-Rate-Limit-Limit:
               description: Número de requisições permitidas no período
               type: integer
+              
             X-Rate-Limit-Remaining:
               description: Número de requisições restantes na janela de limite atual
               type: integer
+              
             X-Rate-Limit-Reset:
               description: Tempo para que a janela de limite resete em segundos UTC epoch
               type: integer
+              
             Retry-After:
               description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
               type: integer
+              
             X-Total-Count:
               description: Número total de objetos que atendem seu critério de busca
               type: integer
+              
         '404':
           description: Nenhum proponente com criterios fornecidos encontrados
           schema:
             $ref: '#/definitions/Error'
+            
         '405':
           description: Parametros fornecidos inválidos
           schema:
             $ref: '#/definitions/Error'
+            
         '503':
           description: Erro interno
           schema:
             $ref: '#/definitions/Error'
-  '/proponentes/{proponente_id}':
+            
+  '/proponente/{proponente_id}':
     get:
       tags:
         - 'proponentes : Dados relativos a Proponentes'
       summary: Busca proponentes dado um id fornecido
+      
       operationId: proponente_detail
+      
       parameters:
         - in: path
           name: proponente_id
           description: id do proponente
           required: true
           type: string
+          
         - in: query
           name: format
           description: Formato de retorno
@@ -402,110 +378,150 @@ paths:
             - csv
           required: false
           type: string
+          
       responses:
         '200':
           description: Operação bem-sucedida
           schema:
             $ref: '#/definitions/Proponente'
+            
           headers:
             X-Rate-Limit-Limit:
               description: Número de requisições permitidas no período
               type: integer
+              
             X-Rate-Limit-Remaining:
               description: Número de requisições restantes na janela de limite atual
               type: integer
+              
             X-Rate-Limit-Reset:
               description: Tempo para que a janela de limite resete em segundos UTC epoch
               type: integer
+              
             Retry-After:
               description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
               type: integer
+              
         '404':
           description: Nenhum proponente com id fornecido encontrado
           schema:
             $ref: '#/definitions/Error'
+            
         '405':
           description: Parametros fornecidos inválidos
           schema:
             $ref: '#/definitions/Error'
+            
         '503':
           description: Erro interno
           schema:
             $ref: '#/definitions/Error'
+            
 definitions:
-  ListaProjeto:
+
+  Projeto:
     type: object
     properties:
+    
       PRONAC:
         type: string
         format: int64
+        
       ano_projeto:
         type: string
+        
       nome:
         type: string
+        
       cgccpf:
         type: string
         format: int64
+        
       proponente:
         type: string
+        
       segmento:
         type: string
+        
       area:
         type: string
+        
       UF:
         type: string
+        
       municipio:
         type: string
+        
       data_inicio:
         type: string
         format: date
+        
       data_termino:
         type: string
         format: date
+        
       mecanismo:
         type: string
+        
       enquadramento:
         type: string
+        
       valor_projeto:
         type: number
         format: double
+        
       valor_captado:
         type: number
         format: double
+        
       valor_proposta:
         type: number
         format: double
+        
       valor_solicitado:
         type: number
         format: double
+        
       valor_aprovado:
         type: number
         format: double
+        
   Proponente:
     type: object
     properties:
+    
       nome:
         type: string
+        
       cgccpf:
         type: string
         format: int64
+        
       responsavel:
         type: string
+        
       tipo_pessoa:
         type: string
+        
       UF:
         type: string
+        
       municipio:
         type: string
+        
       total_captado:
         type: number
         format: double
+        
   Error:
     type: object
     properties:
+    
       message:
         type: string
+        
       code:
         type: string
+        
       more_info:
         type: string
