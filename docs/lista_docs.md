@@ -93,7 +93,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 ### _Sprint_ 6
 
 * [Planejamento](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/planejamento_sprint/planejamento_sprint_6.html)
-* [Resultados]()
+* [Resultados](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/resultados_sprint_6.html)
 
 ### _Sprint_ 7
 
