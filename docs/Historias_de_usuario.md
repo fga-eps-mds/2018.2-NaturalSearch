@@ -13,6 +13,7 @@ layout: default
 | 03/10/2018         |           0.3                | Adição de novas histórias para a feature de disponibilizar dados processados | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
 | 08/10/2018         |           0.4                | Mudanças e adições de novas histórias de usuário | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
 | 22/11/2018         |           0.5               | Mudanças e adições de novas histórias de usuário | [Shermam Tácia da Costa Lima](https://github.com/tacia68) |
+| 24/11/2018         |           1.0               | Adições de novas histórias de usuário | [Shermam Tácia da Costa Lima](https://github.com/tacia68) |
 
 
 ## 1. Processamento de Dados da API Salic
@@ -40,8 +41,7 @@ layout: default
 | US09 | Eu, como desenvolvedor, desejo remover informações desnecessárias de projetos que serão utilizadas. |
 | US10 | Eu, como desenvolvedor, desejo remover informações desnecessárias de projetos que serão utilizadas. |
 
-### 1.4 
-Disponibilizar os dados Processados
+### 1.4 Disponibilizar os dados Processados
 
 | **história de usuário** | **descrição** |
 |:---:|:---:|
