@@ -10,6 +10,7 @@
 | 21/09/18 | 0.3 | Formatação e Descrição dos riscos | Shermam Tácia da Costa Lima |
 | 02/10/18 | 0.4 | Adicão da Interpretação | Shermam Tácia da Costa Lima |
 | 02/10/18 | 0.5 | Refatoração da identificação e definição de probabilidade e impacto de riscos | Shermam Tácia da Costa Lima, Filipe Barcelos e Igor Araújo |
+| 24/11/18 | 0.6 | Refatoração do documento | Shermam Tácia da Costa Lima |
 
 ### Sumário
 1. Introdução
@@ -163,6 +164,8 @@ A tabela abaixo define os intervalos para o peso de cada risco listado.
 <br>
 <br>
 Com base na Matriz elaborada é possível definir a faixa de peso para as prioridades.
+
+
 
 | Prioridade | Peso |
 |-----|-----|
