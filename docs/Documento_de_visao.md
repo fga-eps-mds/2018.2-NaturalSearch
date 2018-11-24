@@ -19,7 +19,7 @@ layout: default
 | 30/08/2018         |           0.9             | Itens atualizados 8, 9.1, 9.2  |  Mikhaelle Bueno |
 | 04/09/2018         |           1.0             | Itens atualizados 1.1, 1.2, 1.5, 2.1, 4.1  |  Mikhaelle Bueno |
 | 04/09/2018         |           1.1             | Revisão do documento  |  Gustavo Duarte Moreira |
-| 24/11/2018         |           1.1             | Refatoração do documento com adequação aos novos requisitos. |  Michel Martins de Camargo |
+| 24/11/2018         |           1.2             | Refatoração do documento com adequação aos novos requisitos. |  Michel Martins de Camargo |
 
 # Sumário
 1. [Introdução](#1)
