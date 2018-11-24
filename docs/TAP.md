@@ -70,7 +70,7 @@ O cronograma do projeto é baseado nas datas pré-determinadas nas disciplinas d
 |:----:|:----:|:----:|
 | Início do Projeto | 14/07/2018 | Começo do Projeto |
 | Release 01 | 03/10/2018 | Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação. |
-| Release 02 | 27/11/2018 |Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil. |
+| Release 02 | 29/11/2018 |Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil. |
 
 ## 9. Custo Estimado
 
