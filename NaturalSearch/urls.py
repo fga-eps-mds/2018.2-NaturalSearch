@@ -31,6 +31,7 @@ urlpatterns = [
     path('',home,name='home'),
     path('api-RedeCultural', include('rest_framework.urls')),
     path('doc/', schema_view),
+    path('api-auth/', include ('rest_framework.urls', namespace ='rest_framework'))
 ]
 
 urlpatterns += router.urls

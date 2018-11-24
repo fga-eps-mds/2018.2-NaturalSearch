@@ -8,6 +8,7 @@ from rest_framework import viewsets
 # Local DjangoRest and API Swagger doc imports
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
+from rest_framework.permissions import IsAuthenticated
 
 #Links para coleta de dados de proponentes e projetos da api
 proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
@@ -127,6 +128,7 @@ def db_table_exists(table_name):
 class ProjectViewSet(viewsets.ModelViewSet):
     project_exists = db_table_exists('natural_search_project')
     queryset = Project.objects.all()
+    permission_classes = (IsAuthenticated,)
     if project_exists is True:
         if not queryset:
             search_projects(projects_current_link)
@@ -137,6 +139,7 @@ class ProjectViewSet(viewsets.ModelViewSet):
 class ProponentViewSet(viewsets.ModelViewSet):
     proponent_exists = db_table_exists('natural_search_proponent')
     queryset = Proponent.objects.all()
+    permission_classes = (IsAuthenticated,)
     if proponent_exists is True:
         if not queryset:
             search_proponents(proponent_current_link)
