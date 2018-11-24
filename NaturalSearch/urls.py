@@ -18,18 +18,19 @@ from django.urls import path, include
 from natural_search.views import home
 from rest_framework import routers
 from natural_search.views import ProjectViewSet, ProponentViewSet
-#from rest_framework_swagger.views import get_swagger_view
+from rest_framework_swagger.views import get_swagger_view
 
 router = routers.DefaultRouter()
 router.register('projeto', ProjectViewSet)
 router.register('proponente', ProponentViewSet)
-#schema_view = get_swagger_view(title='NaturalSearch API')
+schema_view = get_swagger_view(title='NaturalSearch API')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
     path('api-RedeCultural', include('rest_framework.urls')),
-    #path('doc/', schema_view),
+    path('doc/', schema_view),
 ]
 
 urlpatterns += router.urls

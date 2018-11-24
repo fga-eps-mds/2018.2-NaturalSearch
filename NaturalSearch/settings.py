@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'natural_search',
     'rest_framework',
-    #'rest_framework_swagger',
+    'rest_framework_swagger',
     
 ]
 
@@ -83,6 +83,19 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+#API DOCUMENTATION
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'basic': {
+            'type': 'basic'
+        }
+    },
+    'api_path': '/doc',
+    'is_authenticated': True,
+    'is_superuser': True,
+    'permission_denied_handler': 'django.contrib.auth.views.login',
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

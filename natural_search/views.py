@@ -5,7 +5,7 @@ from django.shortcuts import render, HttpResponse, redirect
 import requests,json
 from rest_framework import viewsets
 
-# Local DjangoRest imports
+# Local DjangoRest and API Swagger doc imports
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
 
@@ -123,7 +123,7 @@ def get_projects_labels(embedded, count):
 def db_table_exists(table_name):
     return table_name in connection.introspection.table_names()
     
-# ViewSets define the view behavior.
+# ViewSets from API define the view behavior.
 class ProjectViewSet(viewsets.ModelViewSet):
     project_exists = db_table_exists('natural_search_project')
     queryset = Project.objects.all()
@@ -132,7 +132,8 @@ class ProjectViewSet(viewsets.ModelViewSet):
             search_projects(projects_current_link)
     serializer_class = ProjectSerializer
 
-# ViewSets define the view behavior.
+
+# ViewSets from API define the view behavior.
 class ProponentViewSet(viewsets.ModelViewSet):
     proponent_exists = db_table_exists('natural_search_proponent')
     queryset = Proponent.objects.all()
@@ -140,3 +141,4 @@ class ProponentViewSet(viewsets.ModelViewSet):
         if not queryset:
             search_proponents(proponent_current_link)
     serializer_class = ProponentSerializer
+
