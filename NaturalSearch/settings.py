@@ -96,6 +96,10 @@ SWAGGER_SETTINGS = {
     'permission_denied_handler': 'django.contrib.auth.views.login',
 }
 
+LOGIN_URL = 'rest_framework:login'
+
+LOGOUT_URL = 'rest_framework:logout'
+
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
