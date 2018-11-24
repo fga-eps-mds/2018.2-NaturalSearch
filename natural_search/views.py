@@ -10,10 +10,12 @@ from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
 
 # Links para coleta de dados de proponentes e projetos da api
-# proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
-projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-# projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
-proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+#http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92900&format=json&
+#projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92900&format=json&"
+#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
 #Render the homepage
