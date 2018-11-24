@@ -10,7 +10,7 @@ info:
   title: "NaturalSearch API"
   contact:
     email: "equipe.naturalsearch@gmail.com"
-host: "0.0.0.0:8000"
+host: "68.183.107.229:8000"
 basePath: "/"
 
 tags:
@@ -21,8 +21,6 @@ schemes:
 
 produces:
   - application/json
-  - application/xml
-  - text/csv
 
 paths:
   /projeto/:
@@ -167,7 +165,6 @@ paths:
           required: false
           type: number
           format: double
-          
         - in: query
           name: sort
           description: 'Ordenar a busca por um dos campos : PRONAC, ano_projeto, data_inicio, data_termino, valor_solicitado, outras_fontes, valor_captado, valor_proposta, valor_aprovado, valor_projeto. Formato: sort=CAMPO ou sort=CAMPO:asc ou ainda sort=CAMPO:desc. Padrão : ano_projeto:desc'
@@ -177,10 +174,8 @@ paths:
         - in: query
           name: format
           description: Formato de retorno
-           enum:
+          enum:
             - json
-            - xml
-            - csv
           required: false
           type: string
           
@@ -191,26 +186,6 @@ paths:
             type: array
             items:
               $ref: '#/definitions/Projeto'
-              
-            X-Rate-Limit-Limit:
-              description: Número de requisições permitidas no período
-              type: integer
-              
-            X-Rate-Limit-Remaining:
-              description: Número de requisições restantes na janela de limite atual
-              type: integer
-              
-            X-Rate-Limit-Reset:
-              description: Tempo para que a janela de limite resete em segundos UTC epoch
-              type: integer
-              
-            Retry-After:
-              description: Segundos para tentar novamente ou a data http quando a janela de limite será resetada
-              type: integer
-              
-            X-Total-Count:
-              description: Número total de objetos que atendem seu critério de busca
-              type: integer
               
         '404':
           description: Projetos com esses parâmetros não encontrados
@@ -305,8 +280,6 @@ paths:
           description: Formato de retorno
           enum:
             - json
-            - xml
-            - csv
           required: false
           type: string
           
@@ -374,8 +347,6 @@ paths:
           description: Formato de retorno
           enum:
             - json
-            - xml
-            - csv
           required: false
           type: string
           
