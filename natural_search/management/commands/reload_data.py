@@ -6,22 +6,37 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         ## atualizaçãod e projetos
         project_salic_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-        url_salic = project_salic_link
-        response_salic = requests.get(url_salic)
-        data_salic = json.loads(response_salic.text)
-        total_salic = data_salic['total'] #já é um int
+        url_proj_salic = project_salic_link
+        response_proj_salic = requests.get(url_proj_salic)
+        data_proj_salic = json.loads(response_proj_salic.text)
+        total_proj_salic = data_proj_salic['total'] #já é um int
 
         project_api_link = "http://68.183.107.229:8000/projeto/"
-        url_api = project_api_link
-        response_api = requests.get(url_api)
-        data_api = json.loads(response_api.text)
-        total_api = data_api['count'] #já é um int
+        url_proj_api = project_api_link
+        response_proj_api = requests.get(url_proj_api)
+        data_proj_api = json.loads(response_proj_api.text)
+        total_proj_api = data_proj_api['count'] #já é um int
 
-        if total_api < total_salic:
+        if total_proj_api < total_proj_salic:
             print("total de projetos desatualizado")
         
         ##atualização de proponentes
-        proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+        proponent_salic_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
+        url_prop_salic = proponent_salic_link
+        response_prop_salic = requests.get(url_prop_salic)
+        data_prop_salic = json.loads(response_prop_salic.text)
+        total_prop_salic = data_prop_salic['total'] #é um dicionário
+        #print(total_prop_salic)
+
+        proponent_api_link = "http://68.183.107.229:8000/proponente/"
+        url_prop_api = proponent_api_link
+        response_prop_api = requests.get(url_prop_api)
+        data_prop_api = json.loads(response_prop_api.text)
+        total_prop_api = data_prop_api['count'] #é um dicionário
+        #print(total_prop_api)
+
+        if(total_prop_api < total_prop_salic):
+            print("total de proponentes desatualizado")
 
 
         
