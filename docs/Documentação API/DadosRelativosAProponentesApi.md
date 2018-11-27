@@ -1,4 +1,4 @@
-# Proponentes Dados Relativos A Proponentes Api
+# Dados Relativos A Proponentes Api
 
 All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 

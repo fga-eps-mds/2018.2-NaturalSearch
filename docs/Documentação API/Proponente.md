@@ -11,3 +11,6 @@ Nome| Tipo | Descrição | Notas
 **municipio** | **str** |  | Cidade 
 **total_captado** | **float** |  | 
 
+![proponente_API](/docs/images/proponente_API.png)
+
+[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/proponente_API.png)

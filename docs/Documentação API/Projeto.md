@@ -24,3 +24,7 @@ Nome | Tipo |..... | Descrição
 
 
 
+
+![projeto_API](/docs/images/projeto_API.png)
+
+[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/projeto_API.png)

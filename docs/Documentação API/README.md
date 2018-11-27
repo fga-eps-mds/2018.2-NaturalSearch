@@ -10,7 +10,7 @@ Essa é a documentação da API do NaturalSearch.  NaturalSearch é um sistema q
 
 Python 2.7 and 3.4+, Docker, docker-compose.
 
-## Installation & Usage
+## Instalação e Uso
 
 1- Crie um fork ou clone o repositório.
 
@@ -51,7 +51,7 @@ root@cf461053cf90:/code# python manage.py createsuperuser
 docker-compose up
 ```
 
-9- O servidor estará ativo e poderá ser acessado na porta 
+9- O servidor estará ativo e poderá ser acessado na porta: 
 
 0.0.0.0:8000
 
@@ -61,20 +61,20 @@ Para acessar o db da API acesse essas portas e use o login e senha criados anter
 
 0.0.0.0:8000/proposta
 
-Para acessar a documentação execute esse link
+Para acessar a documentação execute esse link:
 
 0.0.0.0:8000/doc
 
 ### Setuptools
 
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+Instalação via [Setuptools](http://pypi.python.org/pypi/setuptools).
 
 ```sh
 python setup.py install --user
 ```
-(or `sudo python setup.py install` to install the package for all users)
+(ou `sudo python setup.py install` para instalar o pacote para todos os usuários)
 
-Then import the package:
+Então importe o package:
 ```python
 import swagger_client
 ```
@@ -115,6 +115,14 @@ Classe | Métodos | HTTP request | Descrição
 *ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido
 
 
+<br>
+
+
+![swaggerAPI](/docs/images/swaggerAPI.png)
+
+[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/swaggerAPI.png)
+
+<br>
 
 
 ## Documentação para as Models

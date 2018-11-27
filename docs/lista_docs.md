@@ -10,6 +10,7 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 * [Contribuição](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CONTRIBUTING.html)
 * [Código de Conduta](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CODE_OF_CONDUCT.html)
+* [Documentação API DjangoRestFramework](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/README.md)
 
 ## Abertura do Projeto
 * [Termo de Abertura do Projeto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/TAP.html)
@@ -23,6 +24,13 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 * [Roadmap do Arquiteto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Roadmap_do_arquiteto.html)
 * [Roadmap do DevOps](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/roadmap_devops.html)
 
+## Especificações
+
+* [Documento de Visão](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_visao.html)
+* [Documento de Arquitetura](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_Arquitetura.html)
+* [Protótipo de Baixa Fidelidade](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Prototipo_de_baixa_Fidelidade.html)
+* [Protótipo de Alta Fidelidade](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Prototipo_alta_fidelidade.html)
+
 
 ## Viabilidade Técnica
 * [Definição de Pronto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Definição_de_Pronto.html)
@@ -35,13 +43,6 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 ## Pipeline 
 * [DevOps](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/pipeline_devops.html)
 
-
-## Especificações
-
-* [Documento de Visão](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_visao.html)
-* [Documento de Arquitetura](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documento_de_Arquitetura.html)
-* [Protótipo de Baixa Fidelidade](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Prototipo_de_baixa_Fidelidade.html)
-* [Protótipo de Alta Fidelidade](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Prototipo_alta_fidelidade.html)
 
 ## _Sprints_
 
