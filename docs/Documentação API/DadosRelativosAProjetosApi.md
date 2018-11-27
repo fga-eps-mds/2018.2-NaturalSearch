@@ -4,7 +4,7 @@ All URIs are relative to *http://68.183.107.229:8000* or 0.0.0.0:8000
 
 Método | HTTP request | Descrição
 ------------- | ------------- | -------------
-[**projeto_list**](ProjetosDadosRelativosAProjetosApi.md#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
+[**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProjetosApi.md#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
 
 
 # **projeto_list**
@@ -42,7 +42,7 @@ Nome | Tipo | Descrição  | Notas
 
 ### Return type
 
-[**list[Projeto]**](Projeto.md)
+[** Classe Projeto**](Projeto.md)
 
 ### Autorização
 
