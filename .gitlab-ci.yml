@@ -3,7 +3,7 @@ stages:
   - Publish
   - Deploy
 
-.test:
+test:
   image: python:latest
   stage: Test
   services:

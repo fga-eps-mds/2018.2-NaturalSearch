@@ -125,18 +125,18 @@ def db_table_exists(table_name):
     
 # ViewSets define the view behavior.
 class ProjectViewSet(viewsets.ModelViewSet):
-    project_exists = db_table_exists('natural_search_project')
+    # project_exists = db_table_exists('natural_search_project')
     queryset = Project.objects.all()
-    if project_exists is True:
-        if not queryset:
-            search_projects(projects_current_link)
+    # if project_exists is True:
+    #    if not queryset:
+    #        search_projects(projects_current_link)
     serializer_class = ProjectSerializer
 
 # ViewSets define the view behavior.
 class ProponentViewSet(viewsets.ModelViewSet):
-    proponent_exists = db_table_exists('natural_search_proponent')
+    # proponent_exists = db_table_exists('natural_search_proponent')
     queryset = Proponent.objects.all()
-    if proponent_exists is True:
-        if not queryset:
-            search_proponents(proponent_current_link)
+    # if proponent_exists is True:
+    #    if not queryset:
+    #        search_proponents(proponent_current_link)
     serializer_class = ProponentSerializer
