@@ -22,6 +22,7 @@ layout: default
 | 01/10/2018 | 1.1 | Adição das seções 5 e 6. Desrição da Arquitetura de Microserviços | [Filipe Barcelos](https://github.com/FilipeKN4) |
 | 02/10/2018 | 1.2 | Atualização do item 2.4 e Adição e descrição do item 4.2.| [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv) |
 | 23/11/2018 | 1.3 | Refatoração do documento para adequar as alterações da arquitetura. | [Michel Martins de Camargo](https://github.com/micheldcamargo) |
+| 26/11/2018 | 1.4 | Incluindo diagramas de pacotes do projeto. | [Michel Martins de Camargo](https://github.com/micheldcamargo) |
 
 
 ## Sumário
@@ -164,9 +165,11 @@ O projeto **NaturalSearch** possui as seguintes metas:
 
 ## <a name="4"></a>4. Visão Lógica    
 
-Pacotes de Design Significativos do Ponto de Vista da Arquitetura  
+Pacotes de Design Significativos do Ponto de Vista da Arquitetura.
 
 ### <a name="4.1"></a>4.1. Pacotes Natural Search(API) 
+
+![Pacotes significativos da API](images/pacotes_natural_search.png)
 
 #### <a name="4.1.1"></a>4.1.1. View
 A View será responsável por gerenciar os comportamentos da aplicação e os dados.
@@ -182,6 +185,8 @@ Os testes utilizados serão o de unidade e integração para garantir a qualidad
 Serialização é o processo de conversão de um objeto em um fluxo de bytes para armazenar o objeto ou fluxo na memória, em um banco de dados, ou em um arquivo, ou transmití-lo por uma conexão de rede, seja em forma binária ou em formato de texto como o JSON. Sua finalidade principal é salvar o estado de um objeto para ser capaz de recriá-lo quando necessário. Logo é um método simples e robusto para tornar objetos persistentes.
 
 ### <a name="4.2"></a>4.2. Pacotes Natural Search Visualization
+
+![Pacotes significativos Natural Search Visualization](images/pacotes_natural_search_visualization.png)
 
 #### <a name="4.2.1"></a>4.2.1. View
 A View é a camada responsável pelos arquivos responsáveis por gerar o layout do sistema. Tem como objetivo processar a lógica da interface do sistema.
