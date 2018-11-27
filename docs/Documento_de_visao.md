@@ -67,9 +67,9 @@ layout: default
 O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, por meio dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) visa encontar documentos correlacionados e facilitar a investigação dos dados dos projetos. Quando uma pesquisa é realizada o resultado dos projetos e propostas similares serão retornando em forma de grafos.
 
 ### <a name="1.2"></a> 1.2 Escopo
-Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. <!-- A diferença está nos detalhes.Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”. -->
-Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada.
-Entretanto com o **NaturalSearch**, que é o projeto a ser desenvolvido, haverá um sistema de visualização de conteúdos similares. Os dados serão consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), por meio de sua API, para que eles sejam tratados <!-- com LN  -->e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e retornados, através de grafos, tornando a pesquisa mais interessante e eficiente. O grafo irá permitir uma visualização mais intuitiva das correlações entre os dados.
+Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura.
+Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém a maior quantidade de palavras pesquisadas.
+Entretanto com o **NaturalSearch**, que é o projeto a ser desenvolvido, haverá um sistema de visualização de conteúdos similares. Os dados serão consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), por meio de sua API, para que eles sejam tratados e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e retornados, através de grafos, tornando a pesquisa mais interessante e eficiente. O grafo irá permitir uma visualização mais intuitiva das correlações entre os dados.
 
 ### <a name="1.3"></a> 1.3 Definições, acrônimos e abreviações
 
@@ -78,8 +78,6 @@ Entretanto com o **NaturalSearch**, que é o projeto a ser desenvolvido, haverá
 |  SALIC    |   Sistema de Apoio às Leis de Incentivo à Cultura    |
 |  MDS   |   Métodos de Desenvolvimento de Software |
 |  EPS   | Engenharia de Produto de Software |
-
-<!-- |  LN    |     Linguagem Natural     | -->
 
 ### <a name="1.4"></a> 1.4 Referências
 
@@ -96,9 +94,7 @@ Está organizado em: posicionamento, descrição da parte interessada e do usuá
 --------------
 
 ### <a name="2.1"></a> 2.1 Oportunidade de Negócios
-O **NaturalSearch** facilitará a pesquisa de projetos e propostas da Lei Rouanet entregando uma visualização de forma mais clara dos projetos que se relacionam, proporcionando uma melhor experiência na navegação da plataforma por dispor as informações mais relevantes de forma inteligente. \
-sfssss
-<!-- Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestões inteligentes ao usuário, mas não há registro de aplicações que funcionem para diversas APIs em sites de busca. -->
+O **NaturalSearch** facilitará a pesquisa de projetos e propostas da Lei Rouanet entregando uma visualização de forma mais clara dos projetos que se relacionam, proporcionando uma melhor experiência na navegação da plataforma por dispor as informações mais relevantes de forma inteligente.
 
 ### <a name="2.2"></a> 2.2 Instrução do Problema
 
@@ -146,7 +142,7 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 #### <a name="3.4.1"></a> 3.4.1 Usuário do Serviço
 
 |||  
-|----------|----------|          
+|----------|----------|
 |**Representantes** | Jornalistas, Produtores culturais e Público da [Lei Rouanet](http://rouanet.cultura.gov.br/). |
 |**Descrição** | Cidadão que deseja pesquisar sobre os projetos e suas informações.  |
 |**Tipo** | Usuário informal. |
