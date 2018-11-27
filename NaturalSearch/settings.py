@@ -25,7 +25,7 @@ SECRET_KEY = 'bxa1fqj^f7inealzip9e!+ce#==t*53kswebxe8(4zsm)wc1q8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','68.183.107.229']
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','68.183.107.229','localhost']
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'natural_search',
     'rest_framework',
     'rest_framework_swagger',
-    
+ 
 ]
 
 MIDDLEWARE = [

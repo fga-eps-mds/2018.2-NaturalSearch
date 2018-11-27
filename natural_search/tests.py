@@ -8,7 +8,7 @@ class TestHomepage(TestCase):
     def test_home(self):
         resp = views.home('/')
 
-        self.assertEqual(resp.url, '/projeto/')
+        self.assertEqual(resp.url, '/doc/')
 
 
 class TestProponent(TestCase):
