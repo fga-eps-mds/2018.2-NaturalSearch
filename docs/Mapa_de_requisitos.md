@@ -11,6 +11,8 @@ layout: default
 | 09/09/2018         |           0.1                | Versão inicial do Mapa de Requisitos | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4), [Igor Araújo de Sousa](https://github.com/zero101010) |
 | 23/09/2018 | 0.2 | Mundança de épico e adição de features | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
 | 08/10/2018 | 0.3 | Mundança de escopo do projeto | [Filipe Coelho Hilário Barcelos](https://github.com/FilipeKN4) |
+| 22/11/2018 | 0.4 | Refatoração  | [Shermam Tácia da Costa lima ](https://github.com/tacia68) |
+
 
 ## Épicos
 
@@ -18,7 +20,7 @@ layout: default
 
 | | |
 |:--:|:--:|
-| **Para** | Cidadãos, incentivadores e fornecedores  |
+| **Para** | Cidadãos |
 | **que** | desejam visualizar de forma mais clara informações disponíveis no Salic |
 | **o** | Natural Search |
 | **é uma** | aplicação Web |
@@ -43,7 +45,7 @@ layout: default
 
 | | |
 |:--:|:--:|
-| **Para** | cidadãos, incentivadores e fornecedores  |
+| **Para** | cidadãos|
 | **que** | desejam visualizar de forma mais clara informações disponíveis no Salic |
 | **o** | Natural Search |
 | **é uma** | aplicação Web |

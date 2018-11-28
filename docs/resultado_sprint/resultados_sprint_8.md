@@ -99,9 +99,9 @@ O velocity desta semana é apresentado a seguir:
 
 <br>
 
-![velocity_Sprint_8](/docs/images/velocity_sprint8.jpg)
+![velocity_Sprint_8](/docs/images/velocity_sprint8.png)
 
-[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/velocity_sprint8.jpg)
+[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/velocity_sprint8.png)
 
 <br>
 
@@ -109,9 +109,9 @@ O velocity desta semana é apresentado a seguir:
 
 O burndown desta semana é apresentado a seguir:
 
-![velocity_Sprint_8](/docs/images/burndown_sprint8.jpg)
+![velocity_Sprint_8](/docs/images/burndown_sprint8.png)
 
-[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint8.jpg)
+[ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint8.png)
 
 ## Análise do Scrum Master
 Nesta sprint o grupo encontrou problemas para finalizar as histórias da semana. Ocasionando um pequeno atraso em sua conclusão. A implementação do deploy encontrou dificuldade na contratação do servidor Digital Ocean. A dificuldade com o deploy foi sanada.  

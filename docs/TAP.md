@@ -3,6 +3,8 @@
 |09/09/2018|1.0.0|Abertura do Documento| Shermam Tácia da Costa Lima|
 |13/09/2018|1.0.1|Ajustes na Formatação|Shermam Tácia da Costa Lima|
 |27/09/2018|1.0.2|Revisão e atualização dos riscos e Referências|Shermam Tácia da Costa Lima|
+|20/11/2018|1.0.3|Alteração descrição do projeto|Shermam Tácia da Costa Lima|
+
 
 
 
@@ -15,11 +17,11 @@ Este documento tem como objetivo apresentar uma visão inicial do projeto Natura
 
 ## 2. Descrição do Projeto
 
-O projeto NaturalSearch, busca auxiliar o sistema Versalic, consumindo assim os dados da API Salic(Projetos, Propostas), tratando esses dados por meio das técnicas de  Machine Learning e depositando no banco de dados do NaturalSearch, de forma que o usuário que acessar o sistema e procurar por qualquer palavra desejada, possa ter como retorno os projetos e propostas culturais que englobam o(s) termo(s) pesquisado(s) visualizados por meio de grafos que representam relação de semelhança, por características como nome, resumo, custos, proponente, entre outras.
+O projeto NaturalSearch, busca auxiliar o sistema Versalic, consumindo assim os dados da API Salic(Projetos, Proponentes), tratando esses dados e depositando no banco de dados do NaturalSearch, de forma que o usuário que acessar o sistema e procurar por projetos e/ou proponentes, possa ter como retorno as informações de projetosculturais que englobam o(s) termo(s) pesquisado(s) visualizados por meio de grafos que representam relação de semelhança.
 
 ## 3. Justifiativa
 
-Com a lei de acesso a informação, a sociedade busca saber, com que o dinheiro público está sendo investido, como é o caso da cultura. É essencial que as pessoas que procurarem sobre os projetos existentes  relacionado a cultura, consiga visualiza-los de uma forma de fácil acesso. Levando em consideração que já existe um sistema que realiza essa função, que é o Versalic. Porém, ele não permite uma boa visualização dos dados, por esse motivo este projeto busca melhorar a visualização dessas informações por meio da técnicas utilizadas por marchine learning , tornando mas prazerosa a visualização, utilizando também a engenharia cognitiva, tentando busca traços, para com que o usuário visualize melhor os dados, e também os projetos quem tem maiores semelhanças.
+Com a lei de acesso a informação, a sociedade busca saber, com que o dinheiro público está sendo investido, como é o caso da cultura. É essencial que as pessoas que procurarem sobre os projetos existentes  relacionado a cultura, consiga visualiza-los de uma forma de fácil acesso. Levando em consideração que já existe um sistema que realiza essa função, que é o Versalic. Porém, ele não permite uma boa visualização dos dados, por esse motivo este projeto busca melhorar a visualização dessas informações por meio do armazenamento das informações por meio de grafos, que facilita nas busca dos dados e seus relacionamentos, tornando mas prazerosa a visualização, para com que o usuário visualize melhor os dados, e também os projetos quem tem maiores semelhanças.
 
 ## 4. Objetivo do Projeto
 
@@ -27,8 +29,7 @@ Desenvolver um produto para melhorar a visualização do Sistema Versalic por me
 
 ## 5. Produto do Projeto
 
-Desenvolvimento de um sistema de visualização de dados, para auxiliar o sistema Versalic, que tem como proposito mostrar os dados de projetos relacionados a cultura, ulizando tecnicas da egenharia cognitiva, e o Recurso de Marchine Learning, permitindo a visualização de dados de uma forma mais inteligente.
-
+Desenvolvimento de um sistema de visualização de dados, para auxiliar o sistema Versalic, que tem como proposito mostrar os dados de projetos relacionados a cultura, ulizando o armazenamento dos dados por meio de grafos, que facilita as buscar dos dados, por se tratar de grandes informações, o grafo permite uma busca rapida, e uma melhor visualização.
 ## 6. Restrições
 
 A proposta desse projeto envolve a utilização de certos recursos:
@@ -69,7 +70,7 @@ O cronograma do projeto é baseado nas datas pré-determinadas nas disciplinas d
 |:----:|:----:|:----:|
 | Início do Projeto | 14/07/2018 | Começo do Projeto |
 | Release 01 | 03/10/2018 | Entrega da primeira versão funcional do sistema com algumas funcionalidades implementadas e testadas, além de sua documentação. |
-| Release 02 | 27/11/2018 |Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil. |
+| Release 02 | 29/11/2018 |Entrega do versão final do projeto com as funcionalidades restantes do escopo previamente definido com a utilização da abordagem ágil. |
 
 ## 9. Custo Estimado
 

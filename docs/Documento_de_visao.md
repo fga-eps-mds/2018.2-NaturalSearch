@@ -19,6 +19,7 @@ layout: default
 | 30/08/2018         |           0.9             | Itens atualizados 8, 9.1, 9.2  |  Mikhaelle Bueno |
 | 04/09/2018         |           1.0             | Itens atualizados 1.1, 1.2, 1.5, 2.1, 4.1  |  Mikhaelle Bueno |
 | 04/09/2018         |           1.1             | Revisão do documento  |  Gustavo Duarte Moreira |
+| 24/11/2018         |           1.2             | Refatoração do documento com adequação aos novos requisitos. |  Michel Martins de Camargo |
 
 # Sumário
 1. [Introdução](#1)
@@ -63,19 +64,17 @@ layout: default
 -------------------
 
 ### <a name="1.1"></a> 1.1 Propósito
-O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, por meio dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) e utilizando linguagem natural(LN), visa encontar documentos correlacionados. Quando uma pesquisa é realizada o resultado dos projetos e propostas similares serão retornando em forma de grafos.
+O **NaturalSearch** é uma ferramenta para navegação e pesquisa que, por meio dos projetos culturais registrados no site [**VerSalic**](http://versalic.cultura.gov.br/#/home) visa encontar documentos correlacionados e facilitar a investigação dos dados dos projetos. Quando uma pesquisa é realizada o resultado dos projetos e propostas similares serão retornando em forma de grafos.
 
 ### <a name="1.2"></a> 1.2 Escopo
-Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura. A diferença está nos detalhes.
-Por exemplo: que página deve aparecer primeiro? Se você digitar algo como “São Paulo”, o site de buscas não sabe se você está atrás de informações sobre a maior cidade brasileira ou sobre o santo. Mas ele tem que dar um jeito de “saber o que você está pensando”.
-Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém mais palavras igual a palavra pesquisada.
-Entretanto com o **NaturalSearch**, que é o projeto a ser desenvolvido, haverá um sistema de visualização de conteúdos similares. Os dados serão consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), por meio de sua API, para que eles sejam tratados com LN e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e retornados, através de grafos, tornando a pesquisa mais interessante e eficiente. O grafo irá permitir uma visualização mais intuitiva das correlações entre os dados.
+Na essência, todos os sites de busca e pesquisa funcionam da mesma forma: montam um banco de dados com diversos textos com milhões de linhas e mostram os resultados/textos que têm a ver com a palavra/dados que você digitou na tela de procura.
+Cada site usa fórmulas específicas para ordenar os resultados de uma pesquisa. O jeito mais comum,é colocar no topo da lista as páginas que contém a maior quantidade de palavras pesquisadas.
+Entretanto com o **NaturalSearch**, que é o projeto a ser desenvolvido, haverá um sistema de visualização de conteúdos similares. Os dados serão consultados na base do ___Sistema de Apoio às Leis de Incentivo à Cultura___ – [SALIC](http://www.cultura.gov.br/documents/10883/1339972/Apresenta%C3%A7%C3%A3o+SalicNet.pdf/2f7b8065-eca4-41d6-860e-425d111e2ee7), por meio de sua API, para que eles sejam tratados e passados para o banco de dados da aplicação. Os dados disponibilizados pela API são atualizados e retornados, através de grafos, tornando a pesquisa mais interessante e eficiente. O grafo irá permitir uma visualização mais intuitiva das correlações entre os dados.
 
 ### <a name="1.3"></a> 1.3 Definições, acrônimos e abreviações
 
 |           Abreviação        |           Definição           |
 |:---------------------------:|:-----------------------------:|
-|  LN    |     Linguagem Natural     |
 |  SALIC    |   Sistema de Apoio às Leis de Incentivo à Cultura    |
 |  MDS   |   Métodos de Desenvolvimento de Software |
 |  EPS   | Engenharia de Produto de Software |
@@ -95,28 +94,27 @@ Está organizado em: posicionamento, descrição da parte interessada e do usuá
 --------------
 
 ### <a name="2.1"></a> 2.1 Oportunidade de Negócios
-O **NaturalSearch** facilitará a pesquisa de projetos e propostas da Lei Rouanet entregando uma visualização de forma mais clara dos projetos que se assemelham, proporcionando uma melhor experiência na navegação da plataforma por dispor as informações mais relevantes de forma inteligente.
-Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestões inteligentes ao usuário, mas não há registro de aplicações que funcionem para diversas APIs em sites de busca.
+O **NaturalSearch** facilitará a pesquisa de projetos e propostas da Lei Rouanet entregando uma visualização de forma mais clara dos projetos que se relacionam, proporcionando uma melhor experiência na navegação da plataforma por dispor as informações mais relevantes de forma inteligente.
 
 ### <a name="2.2"></a> 2.2 Instrução do Problema
 
 |||  
 |----------|----------|          
-|**Problema** |As pesquisas por palavra chave se tornam limitadas e frequentemente ineficientes. |
-|**Funçoes Afetadas** | A entrega de um resultado de pesquisa não esperado e irrelevante.     |
+|**Problema** | Os resultados de pesquisa em formato de lista são pouco intuitivos e a visualização dos dados não é eficiente. |
+|**Funçoes Afetadas** | Desperdício de tempo para conseguir relacionar os dados coletados na pesquisa. |
 |**Efeito** | O usuário encontra dificuldade em visualizar as informações relevantes. |
-|**Solução** |Utilizar os princípios da LN para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados  mais relevantes e correlacionados. |
+|**Solução** | Utilizar a exibição em grafos para filtrar de maneira mais eficiente os dados e oferecer ao usuário uma visualização mais intuitiva dos resultados  mais relevantes e correlacionados. |
 
 
 ### <a name="2.3"></a> 2.3 Instrução de Posição do Produto
 
 |||  
 |----------|----------|          
-|**Público Alvo** |Usuários do site de busca. |
-|**Carências** | Resultados relevantes.    |
+|**Público Alvo** | Usuários do site de busca da API Salic interessados em coletar informações correlacionadas de projetos e proponentes. |
+|**Carências** | Resultados relevantes e exibição intuitiva. |
 |**Solução** | **NaturalSearch**. |
-|**Descrição da Solução** |Através dos princípios da LN e de grafos a aplicação será capaz de entregar um resultado de busca mais eficiente e intuitivo. Possibilitando interação de forma fácil. |
-|**Diferenciais** | Metodos de buscas mais inteligentes utilizando LN e retorno de resultados correlacionados em forma de grafo. |
+|**Descrição da Solução** |Através da visualização em grafos a aplicação será capaz de entregar um resultado de busca mais eficiente e intuitivo. Possibilitando interação de forma fácil. |
+|**Diferenciais** | Metodos de buscas mais inteligentes com retorno de resultados correlacionados em forma de grafo. |
    
 
 ## <a name="3"></a> 3: Descrição da Parte Interessada e do Usuário
@@ -133,7 +131,7 @@ Atualmente sites como o *spotify* e o *netflix* utilizam do recurso de sugestõe
 
 | Nome  | Descrição | Parte interessada |
 | ------ | ------------- | ------------ |
-| Cidadão  | Pessoa interessada em visualizar informações de forma intuitiva e simples por meio de grafos              | Usuário             |
+| Cidadão  | Pessoa interessada em visualizar informações de forma intuitiva e simples por meio de grafos.  | Usuário |
 
 ### <a name="3.3"></a> 3.3 Ambiente do Usuário
 
@@ -144,11 +142,11 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 #### <a name="3.4.1"></a> 3.4.1 Usuário do Serviço
 
 |||  
-|----------|----------|          
+|----------|----------|
 |**Representantes** | Jornalistas, Produtores culturais e Público da [Lei Rouanet](http://rouanet.cultura.gov.br/). |
 |**Descrição** | Cidadão que deseja pesquisar sobre os projetos e suas informações.  |
 |**Tipo** | Usuário informal. |
-|**Responsabilidades** |Utilizar a aplicação e obter dados. Disponibilizados em forma de grafos. |
+|**Responsabilidades** |Utilizar a aplicação e obter dados disponibilizados em forma de grafos. |
 |**Critérios de Sucesso** |Quando o usuário achar informações relevantes a sua pesquisa. |
 |**Envolvimento** | Baixo - O usuário não está envolvido diretamente na execução do projeto. |
 |**Comentários ou Problemas**|A aplicação depende de divulgação. Os usuários não serão atendidos se não houver divulgação da plataforma.|
@@ -174,15 +172,14 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 |**Tipo** | Grupo de Estudadntes da Faculdade do Gama (FGA), matriculados na disciplina EPS |
 |**Responsabilidades** | Gerenciar, supervisionar e manter a equipe de desenvolvimento a fim de que as metodologias ágeis sejam aplicadas e o produto seja entregue ao cliente no final.|
 |**Critérios de Sucesso** | Aplicar metodologias ágeis ao longo do processo e obter um produto que satisfaça a necessidade do cliente.|
-|**Envolvimento** | Alto                 ||||
-| ------------- | ------------- |
+|**Envolvimento** | Alto |
 
 ### <a name="3.5"></a> 3.5 Perfis dos Usuários
 
 |||
 | ------------- | ------------- |
 | **Representantes** |      Usuário           |
-| **Descrição**   |      Cidadão que deseja alguma informação sobre os projetos da Lei Rouanet        |
+| **Descrição**   |      Cidadão que deseja pesquisar informações sobre os projetos da Lei Rouanet        |
 | **Tipo**  |      Usuário informal        |
 |**Responsabilidade** |         Utilizar a aplicação e obter dados da Lei Rouanet         |
 |**Critério de sucesso**|     Quando o usuário achar informações relevantes a sua pesquisa     |
@@ -193,19 +190,18 @@ O acesso aos serviços da aplicação poderá ser feito por navegadores de inter
 
 |           Necessidade     |        Prioridade        |       Interesse     |         Solução Atual     |      Solução Proposta     |
 |:----------------------:|:------------------------:|:---------------------:|:--------------:|:---------------:|
-| Realizar busca inteligente com resultados relevantes | Alta | Facilitar a busca de dados mais relevantes | Mecanismos de busca tradicional que buscam tags ou palavras-chave específicas | Utilizar os princípios da LN para realizar pesquisas relevantes |
 | Exibir resultados de pesquisa por relevância de forma intuitiva através de grafos | Alta | Facilitar a vizualização dos dados | Exibição dos resultados de forma linear | Através de grafos relacionar os resultados de forma a evidenciar os mais relevantes para a pesquisa |
-| Exibir nos resultados de pesquisa resultados semelhantes ao tema pesquisado | Alta | Linkar resultados da pesquisa de acordo com o tema pesquisado exibindo resultados correlatos | Resultados de pesquisa somente sobreo que foi pesquisado | Sistema de pesquisa resultados baseado em conteúdo |
+| Exibir nos resultados de pesquisa resultados semelhantes ao tema pesquisado | Alta | Linkar resultados da pesquisa de acordo com o tema pesquisado exibindo resultados correlatos | Resultados de pesquisa somente sobreo que foi pesquisado | Sistema de pesquisa de resultados baseado em conteúdo |
 
 ### <a name="3.7"></a> 3.7 Alternativas e Concorrência
 
-Não foram encontradas aplicações que realizem pesquisas por meio de LN e mostrem resultados por meio de grafos.
+Não foram encontradas aplicações que realizem pesquisas e mostrem resultados por meio de grafos.
 
 ## <a name="4"></a> 4: Visão Geral do Produto
 -------------
 
 ### <a name="4.1"></a> 4.1 Perspectiva do produto
-O sistema **NaturalSearch** tem a finalidade de retornar os resultados mais relevantes, com resultados que se assemelham, a pesquisa feita pelo usuário sobre projetos da [Lei Rouanet](http://rouanet.cultura.gov.br). Para o cumprimento do propósito do sistema, ele deverá acessar os dados da API do site [Versalic](http://versalic.cultura.gov.br/#/home) obtendo os dados que contém informações como, tipo, valor solicitado, valor aprovado, municípo, ano, situação do projeto, além dos detalhes das etapas, objetivos, sinopse, entre outras informações sobre o projeto, que possibilitará o processamento de LN e retornar recomendações, em forma de grafo, que se assemelham ao que foi pesquisado.
+O sistema **NaturalSearch** tem a finalidade de retornar os resultados mais relevantes, com resultados que se assemelham, a pesquisa feita pelo usuário sobre projetos da [Lei Rouanet](http://rouanet.cultura.gov.br). Para o cumprimento do propósito do sistema, ele deverá acessar os dados da API do site [Versalic](http://versalic.cultura.gov.br/#/home) obtendo os dados que contém informações como, tipo, valor solicitado, valor aprovado, municípo, ano, situação do projeto, além dos detalhes das etapas, objetivos, sinopse, entre outras informações sobre o projeto, que possibilitará o processamento e retornar recomendações, em forma de grafo, que se relacionem com o resultado do que foi pesquisado.
 
 ### <a name="4.2"></a> 4.2 Resumo das Capacidades
 
@@ -225,8 +221,6 @@ A distribuição do software esta submetida a licença do [MIT](https://mit-lice
 
 O **NaturalSearch** deve consultar os dados apresentados na API do SALIC, passando para o próprio banco de dados orientado a grafos para então ser mostrado, de forma que os usuários possam efetuar suas pesquisas com rapidez e eficácia através da aplicação. Sendo, ainda, de fácil acesso e uso para todos os tipos de usuário.  
 
-
-
 ## <a name="6"></a> 6: Restrições
 -------------
 
@@ -237,9 +231,10 @@ O projeto faz parte de uma disciplina com vida útil de 4 meses do curso de Enge
 
 ### <a name="6.3"></a> 6.3 Restrições de Uso
 Para a utilização do **NaturalSearch** o usuário deve estar em conexão com a internet, para que o sistema tenha acesso aos dados do banco necessários para a conclusão da pesquisa. Caso o usuário não tenha esse pré-requisito o sistema não será capaz de concluir a consulta.
+Para a obtenção dos dados a API Salic deve estar no ar, de forma que a indisponibilidade da mesma impossibipilita a obtenção e tratamento dos dados.
 
 ### <a name="6.4"></a> 6.4 Restrições de Implementação
-O sistema será desenvolvido utilizando a linguagem Python, HTML, CSS, JavaScript, BootStrap.  
+O sistema será desenvolvido utilizando a linguagem Python, HTML, CSS, JavaScript, BootStrap. A sistema gerenciador de banco de dados utilizado será o Neo4J.
 
 
 ## <a name="7"></a> 7: Faixas de Qualidade
@@ -249,7 +244,7 @@ A aplicação será via web, para maior eficiência, devido a maior parte dos us
 
 ## <a name="8"></a> 8: Precedência e Prioridade
 -------------
-A principal prioridade é utilizar a LN aplicada aos dados da API do [Versalic](http://versalic.cultura.gov.br/#/home) para construir o banco de dados do NaturalSearch o que permitirá um retorno do resultado de pesquisa rápido e na mesma prioridade há o retorno do resultado de pesquisa no site em forma de grafos que além de utilizar as palavras chaves também retornara projeto semelhantes aos pesquisados, em segundo plano fica o design do site que deverá ser bastante intuitivo.
+A principal prioridade é utilizar a estrutura de grafos para organização dos dados da API do [Versalic](http://versalic.cultura.gov.br/#/home) para construir o banco de dados do NaturalSearch o que permitirá um retorno do resultado de pesquisa eficiente e o retorno do resultado de pesquisa no site em forma de grafos que além de utilizar as palavras chaves também retornara projeto correlacionados aos pesquisados, em segundo plano fica o design do site que deverá ser bastante intuitivo.
 
 ## <a name="9"></a> 9: Outros Requisitos do Produto
 --------------

@@ -21,6 +21,8 @@ layout: default
 | 01/10/2018 | 1.0 | Alteração da representação da arquitetura, supressão tópico 2.7. Alteração tópico 3.1 |[Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv), [Michel Martins de Camargo](https://github.com/micheldcamargo), [Filipe Barcelos](https://github.com/FilipeKN4) |
 | 01/10/2018 | 1.1 | Adição das seções 5 e 6. Desrição da Arquitetura de Microserviços | [Filipe Barcelos](https://github.com/FilipeKN4) |
 | 02/10/2018 | 1.2 | Atualização do item 2.4 e Adição e descrição do item 4.2.| [Marcos Vinícius Rodrigues da Conceição](https://github.com/marcos-mv) |
+| 23/11/2018 | 1.3 | Refatoração do documento para adequar as alterações da arquitetura. | [Michel Martins de Camargo](https://github.com/micheldcamargo) |
+| 26/11/2018 | 1.4 | Incluindo diagramas de pacotes do projeto. | [Michel Martins de Camargo](https://github.com/micheldcamargo) |
 
 
 ## Sumário
@@ -34,20 +36,23 @@ layout: default
 2. [Representação da Arquitetura](#2)
     * 2.1 [Django Rest](#2.1)
     * 2.2 [Salic API](#2.2)
-    * 2.3 [TensorFlow](#2.3)
-    * 2.4 [Node.js](#2.4)
-    * 2.5 [Neo4J](#2.5)
-    * 2.6 [D3.js](#2.6)
+    * 2.3 [Node.js](#2.3)
+    * 2.4 [Neo4J](#2.4)
+    * 2.5 [D3.js](#2.5)
 
 3. [Metas e Restrições de Arquitetura](#3)        
     * 3.1 [Ambiente e Ferramentas de Desenvolvimento](#3.1)
 
 4. [Visão Lógica](#4)       
-    * 4.1 [Pacotes de Design Significativos do Ponto de Vista da Arquitetura](#4.1)
+    * 4.1 [Pacotes Natural Search(API)](#4.1)
         * 4.1.1 [View](#4.1.1)
         * 4.1.2 [Model](#4.1.2)
         * 4.1.3 [Test](#4.1.3)
         * 4.1.4 [Serializers](#4.1.4)
+    * 4.2 [Pacotes Natural Search Visualization](#4.1)
+        * 4.2.1 [View](#4.1.1)
+        * 4.2.2 [Routes](#4.1.2)
+        * 4.2.3 [Test](#4.1.3)
 
 5. [Arquitetura dos Serviços e visão de Implementação](#5)
     * 5.1 [Visão Geral](#5.1)
@@ -67,14 +72,13 @@ O objetivo deste documento é fornecer uma visão geral e abrangente arquitetura
 
 ### <a name="1.2"></a>1.2 Escopo   
 
-Este documento foi construído sobre a visão da arquitetura utilizada na implementação do sistema **NaturalSearch**, de forma a explicitar as decisões estabelecidas. Nele serão descritos os padrões arquiteturais adotados, _frameworks_ escolhidos para o desenvolvimento do projeto. Com o objetivo de fornecer novas formas de vizualização das propostas e projetos culturais que recebem incentivos fiscais do Ministério da Cultura por meio da Lei Rouanet.
+Este documento foi construído sobre a visão da arquitetura utilizada na implementação do sistema **NaturalSearch**, de forma a explicitar as decisões estabelecidas. Nele serão descritos os padrões arquiteturais adotados, _frameworks_ escolhidos para o desenvolvimento do projeto. Com o objetivo de fornecer novas formas de vizualização das propostas e projetos culturais que recebem incentivos fiscais do Ministério da Cultura por meio da Lei Rouanet. A finalidade é auxiliar a fiscalização e proporcionar uma maior transparência com os gastos do dinheiro público.
 
 ### <a name="1.3"></a>1.3 Definições, acrônimos e abreviações
 
 * API - Application Programming Interface;
 * MVT - Model-View-Template;
-* MVC - Model-View-Controller;
-* LN - Linguagem Natural;
+* MVC - Model-View-Controller;<!-- * LN - Linguagem Natural; -->
 * SALIC - Sistema de Apoio às Leis de Incentivo à Cultura.
 
 ### <a name="1.4"></a>1.4 Visão Geral
@@ -85,7 +89,7 @@ Este documento traz o detalhamento, a descrição e as principais característic
 
 Para o projeto será adotada a arquitetura baseada em componentes. Nesta abordagem o foco está na decomposição dos sistemas possibilitando a reusabilidade, substituição, encapsulamento, independência. O projeto será dividido em duas partes, a primeira consta em uma API rest desenvolvida com base no framework Django Rest que deve tratar os dados recebidos da API SALIC e armazená-los em uma base de dados orientada a grafos(Neo4j). A segunda parte trata do front-end e da exibição destes dados e utiliza as ferramentas NodeJs e D3 para tratar e exibir os dados recuperados do banco de dados orientado a grafos.
 
-Do Django Rest os dados tratados são enviados para o Node.js e são salvos no Banco de Dados. O segundo serviço contempla o tratamento dos dados do banco de dados gerando arquivos json, de acordo com as pesquisas realizadas, no formato compatível com o D3.js para a visualização em forma de grafos.  
+Os dados são tratados na API e salvos na base de dados do Neo4J. O segundo serviço contempla o tratamento dos dados do banco de dados gerando arquivos json de acordo com as pesquisas realizadas, no formato compatível com o D3.js para a visualização em forma de grafos.  
 
 ### <a name="2.1"></a>2.1. Django REST
 A API NaturalSearch será uma aplicação desenvolvida a partir do framework Django REST, utilizando linguagem python. Um framework já contém um conjunto de componentes que são normalmente utilizados pela maioria dos desenvolvedores o que ajuda a desenvolver uma aplicação de forma mais rápida, eficiente e organizada.
@@ -102,19 +106,21 @@ Fonte: https://tutorialedge.net/general/what-is-a-rest-api/
 </center>
 
 ### <a name="2.2"></a>2.2. Salic API
+
 A API utilizada para popular o nosso banco de dados será a [API Salic](http://api.salic.cultura.gov.br/doc/). Essa API acessa os dados do portal [Salic](http://rouanet.cultura.gov.br/), que é um sistema que reúne dados de propostas e projetos do Ministério da Cultura relacionados a Lei Rouanet. Serão usados os dados de projetos e propostas que serão exportados no formato *HAL+JSON*. Haverá uma integração continua do banco de dados com a API do salic.
 
-### <a name="2.3"></a>2.3. TensorFlow
-O TensorFlow é uma biblioteca open source de _machine learning(ML)_ para pesquisa e produção que será utilizada no projeto para relacionamentos de similaridade e aplicação de Linguagem Natural. Isso será necessário para o tratamento do banco de dados, o que permitirá o retorno das relações entre os projetos e propostas em forma de grafos para o usuário.
+### <a name="2.3"></a>2.3. Node.js
 
-### <a name="2.4"></a>2.4. Node.js
+
+![NodeJs](images/nodejs.png)
+
 O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrome (V8) para facilmente construir aplicações de rede rápidas e escaláveis. Node.js usa um modelo de I/O direcionada a evento não bloqueante que o torna leve e eficiente, ideal para aplicações em tempo real com troca intensa de dados através de dispositivos distribuídos.
 
- Utilizamos o NodeJS como uma plataforma back-end que permite executarmos scripts Javascript no lado do servidor para acessar e trabalhar de maneira extremamente rápida com o grande volume de dados em formato JSON que serão coletados da API SALIC. O fato de não possuir dependências ajuda bastante no processo de desenvolvimento, deploy e integração contínua do código já que com apenas o Node instalado na máquina já se pode desenvolver qualquer aplicação.
+Utilizamos o NodeJS como uma plataforma back-end que permite executarmos scripts Javascript no lado do servidor para acessar e trabalhar de maneira extremamente rápida com o grande volume de dados em formato JSON que serão coletados da API SALIC. O fato de não possuir dependências ajuda bastante no processo de desenvolvimento, deploy e integração contínua do código já que com apenas o Node instalado na máquina já se pode desenvolver qualquer aplicação.
  
-  Levando em conta o tempo disponível para a conclusão da aplicação o NodeJS atendeu todas a nossas demandas economizando o tempo de aprendizado que seria necessário com outras outras linguagens como por exemplo PHP ou RUBY. 
+Levando em conta o tempo disponível para a conclusão da aplicação o NodeJS atendeu todas a nossas demandas economizando o tempo de aprendizado que seria necessário com outras outras linguagens como por exemplo PHP ou RUBY. 
   
-  A forma com que o Node.JS gerencia os requests através de um looping de eventos permite que a aplicação trabalhe em paralelo, de forma assíncrona e como nossa aplicação demanda muita leitura de arquivos e manipulação na base de dados, com IO não-bloqueante do Node.js essas tarefas são facilmente executadas em background e o retorno de sucesso ou falha dessas tarefas ocorrem através de uma função de callback.
+A forma com que o Node.JS gerencia os requests através de um looping de eventos permite que a aplicação trabalhe em paralelo, de forma assíncrona e como nossa aplicação demanda muita leitura de arquivos e manipulação na base de dados, com IO não-bloqueante do Node.js essas tarefas são facilmente executadas em background e o retorno de sucesso ou falha dessas tarefas ocorrem através de uma função de callback.
 
 <img src="https://cdn-images-1.medium.com/max/1600/0*X7Z0k20cwHHi8UOI.png"  class ="responsive-img">
 </center>
@@ -123,12 +129,17 @@ O Node.js é uma plataforma construída sobre o motor JavaScript do Google Chrom
 Fonte: https://blog.rocketseat.com.br/nodejs-vale-a-pena-vantagens/
 </center>
 
-### <a name="2.5"></a>2.5. Neo4J
-O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dados que não utiliza os conceitos estruturados). As informações não são armazenadas em tabelas, mas sim na forma de Grafos e suas estruturas são representadas pelos conceitos matemáticos da Teoria de Grafos. Neste tipo de Banco de Dados, os registros são gravados em vértices (nós) que possuem propriedades definidas conforme a necessidade. Estes vértices por sua vez se relacionam com outros vértices através de arestas (arcos) que se interligam criando caminhos entre os vértices de maneira organizada com relações explícitas. Dessa forma será possível integrar metodologias de pesquisa com linguagem natural utilizando a biblioteca Tensorflow e entregar para o usuário dados com um melhor grau de relacionamento entre si.
+### <a name="2.4"></a>2.4. Neo4J
 
-### <a name="2.6"></a>2.6. D3.js
+![Neo4J](images/neo4j.png)
 
-D3 ou (Data-Drive-Documents) é um biblioteca do javascript com a função de organizar e mostrar dados dinamicamente em forma gráfica. Através dele o usuário poderá visualizar os relacionamentos entre sua pesquisa com outros dados de forma intuitiva com a utilização dos grafos.
+O Neo4j é um banco de dados Open Source baseado no conceito NoSQL (Banco de Dados que não utiliza os conceitos estruturados). As informações não são armazenadas em tabelas, mas sim na forma de Grafos e suas estruturas são representadas pelos conceitos matemáticos da Teoria de Grafos. Neste tipo de Banco de Dados, os registros são gravados em vértices (nós) que possuem propriedades definidas conforme a necessidade. Estes vértices por sua vez se relacionam com outros vértices através de arestas (arcos) que se interligam criando caminhos entre os vértices de maneira organizada com relações explícitas. 
+
+### <a name="2.5"></a>2.5. D3.js
+
+![D3](images/d3js.png)
+
+D3 ou (Data-Drive-Documents) é um biblioteca do javascript com a função de organizar e mostrar dados dinamicamente em forma gráfica. Através dele o usuário poderá visualizar os relacionamentos entre sua pesquisa com outros dados de forma intuitiva com a utilização dos grafos, facilitando a visualização das relações entre os dados.
 
 ## <a name="3"></a>3. Metas e Restrições de Arquitetura       
 O projeto **NaturalSearch** possui as seguintes metas:
@@ -160,7 +171,11 @@ O projeto **NaturalSearch** possui as seguintes metas:
 
 ## <a name="4"></a>4. Visão Lógica    
 
-### <a name="4.2"></a>4.1. Pacotes de Design Significativos do Ponto de Vista da Arquitetura  
+Pacotes de Design Significativos do Ponto de Vista da Arquitetura.
+
+### <a name="4.1"></a>4.1. Pacotes Natural Search(API) 
+
+![Pacotes significativos da API](images/pacotes_natural_search.png)
 
 #### <a name="4.1.1"></a>4.1.1. View
 A View será responsável por gerenciar os comportamentos da aplicação e os dados.
@@ -172,8 +187,21 @@ A Model identifica as entidades a serem utilizadas na aplicação de maneira cor
 Os testes utilizados serão o de unidade e integração para garantir a qualidade do software entregado. 
 
 
-#### <a name="4.1.3"></a>4.1.4. Serializers
+#### <a name="4.1.4"></a>4.1.4. Serializers
 Serialização é o processo de conversão de um objeto em um fluxo de bytes para armazenar o objeto ou fluxo na memória, em um banco de dados, ou em um arquivo, ou transmití-lo por uma conexão de rede, seja em forma binária ou em formato de texto como o JSON. Sua finalidade principal é salvar o estado de um objeto para ser capaz de recriá-lo quando necessário. Logo é um método simples e robusto para tornar objetos persistentes.
+
+### <a name="4.2"></a>4.2. Pacotes Natural Search Visualization
+
+![Pacotes significativos Natural Search Visualization](images/pacotes_natural_search_visualization.png)
+
+#### <a name="4.2.1"></a>4.2.1. View
+A View é a camada responsável pelos arquivos responsáveis por gerar o layout do sistema. Tem como objetivo processar a lógica da interface do sistema.
+
+#### <a name="4.2.2"></a>4.2.2. Routes
+Responsável por endereçar a lógica utilizando uma interface de comunicação baseada no protocolo HTTP. Processo realizado através do roteamento que determina como um aplicativo responde a uma solicitação do cliente, que vem através de um URI (caminho) e um método de solicitação HTTP específico (ex: GET, POST). Uma rota pode ter uma ou mais funções que são executadas quando a solicitação corresponde com o endereçamento da rota.
+
+#### <a name="4.2.3"></a>4.2.3. Test
+Os testes utilizados serão o de unidade e integração para garantir a qualidade do software entregado.
 
 ## <a name="5"></a>5. Arquitetura dos Serviços e visão de Implementação
 
@@ -208,6 +236,8 @@ WIKIPEDIA: Engenharia de software baseada em componentes. Disponível em: <https
 
 DJANGO: DOCUMENTAÇÃO DO DJANGO: <https://docs.djangoproject.com/pt-br/2.1/>. Acesso em: 05 de Setembro de 2018.
 
+Node.js: estruturando suas aplicações. Disponível em:<https://imasters.com.br/front-end/node-js-estruturando-suas-aplicacoes> Acesso em: 23 de novembro de 2018.
+
 PADRÕES ARQUITETURAIS MVC X ARQUITETURA DO DJANGO. GITHUB. Disponível em: <https://github.com/fga-gpp-mds/A-Disciplina/wiki/Padr%C3%B5es-Arquiteturais---MVC-X-Arquitetura-do-Django>. Acesso em: 09 de Setembro de 2018.
 
 DJANGO MODELS. Disponível em: <https://django-portuguese.readthedocs.io/en/1.0/topics/db/models.html>. Acesso em: 09 de Setembro de 2018.
@@ -218,3 +248,4 @@ NODE.JS: DOCUMENTAÇÃO DO NODE: <https://nodejs.org/en/docs/>. Acesso em 29 de 
 
 MEDIUM: What exactly is Node.js?  Disponível em: <https://medium.freecodecamp.org/what-exactly-is-node-js-ae36e97449f5>. Acesso em 30 de Setembro de 2018. 
 
+Express: Basic routing. Disponível em: <http://expressjs.com/en/starter/basic-routing.html> Acesso em: 23 de novembro de 2018.
