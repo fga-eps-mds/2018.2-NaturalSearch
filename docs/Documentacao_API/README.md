@@ -1,5 +1,11 @@
+---
+layout: default
+---
+
 # Documentação da API swagger client.
 Essa é a documentação da API do NaturalSearch.  NaturalSearch é um sistema que reúne dados a respeito de propostas de projetos e proponentes culturais a serem incentivados pelo Ministério da Cultura [MINC](http://www.cultura.gov.br/) por meio da [lei Rouanet](http://rouanet.cultura.gov.br/o-que-e/). Nele é possivel realizar uma pesquisa sobre as informações dos projetos e proponentes e visualizar o resultado em forma de grafo e suas conexões.  Você pode encontrar mais sobre o NaturalSearch em [https://fga-eps-mds.github.io/2018.2-NaturalSearch/](https://fga-eps-mds.github.io/2018.2-NaturalSearch/).
+
+Considerando a necessidade de que precisamos possuir o acesso garantido aos dados públicos da API SALIC e com o problema de que seu serviço fica fora do ar com frequência, decidimos pela a criação dessa API utilizando o framework DjangoRest onde a função é recolher todos os dados públicos relevantes ao nosso produto disponíveis na API SALIC das classes projetos e proponentes, salvá-los em um banco independente onde podemos acessá-los e modificá-los de acordo com nossas necessidades não dependendo de terceiros.
 
 
 - API version: 1.0.0
@@ -17,11 +23,10 @@ Python 2.7 and 3.4+, Docker, docker-compose.
 ```sh
 git clone https://github.com/fga-eps-mds/2018.2-NaturalSearch.git
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
 
 2- Caso queira alterar algo crie uma branch seguindo a política de branchs deste projeto. 
 
-3- Dentro da pasta que contem o Dockerfile execute o comando use (sudo se necessário):
+3- Dentro da pasta que contém o Dockerfile execute o comando use (sudo se necessário):
 ```sh
 docker-compose up --build
 ```
@@ -29,29 +34,38 @@ docker-compose up --build
 
 ```sh
 docker-compose run web bash
-
 ```
-5- Dentro do container execute:
+5- ___ATENÇÃO___ caso você queria baixar todos os dados de projetos e proponentes, no arquivo "views .py" comente a primeira e terceira url, descomente a segunda e quarta url e salve o arquivo. Esse processo se executado irá levar bastante tempo levando em consideração o grande volume de dados (4:30 hrs no nosso caso). Se deseja apenas testar a aplicação com um volume pequeno de dados pule este passo.
+
+```python
+#Links para coleta de dados de proponentes e projetos da api
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
+#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
+```
+6- Dentro do container execute:
 ```sh
 root@cf461053cf90:/code# python manage.py makemigrations
 ```
-6- Em seguida:
+
+7- Em seguida:
 ```sh
 root@cf461053cf90:/code# python manage.py migrate
 
 ```
-7- Crie o um usuário e senha para acessar o db.
+8- Crie o um usuário e senha para acessar o db.
 
 ```sh
 root@cf461053cf90:/code# python manage.py createsuperuser
 ```
 
-8- Em outra instância do terminal fora do container execute:
+9- Em outra instância do terminal fora do container execute:
 ```sh
 docker-compose up
 ```
 
-9- O servidor estará ativo e poderá ser acessado na porta: 
+10- O servidor estará ativo e poderá ser acessado na porta: 
 
 0.0.0.0:8000
 
@@ -81,9 +95,9 @@ import swagger_client
 
 ## Getting Started
 
-Por favor execute o [procedimento de instalação](#installation--usage) :
+Por favor execute o procedimento de instalação :
 
-Example:
+Exemplo:
 
 ```python
 from __future__ import print_function
@@ -109,10 +123,10 @@ except ApiException as e:
 
 All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 
-Classe | Métodos | HTTP request | Descrição
+|Classe | Métodos | HTTP request | Descrição
 ------------ | ------------- | ------------- | -------------
 *ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProjetosApi.md#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
-*ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido
+*ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
 
 
 <br>

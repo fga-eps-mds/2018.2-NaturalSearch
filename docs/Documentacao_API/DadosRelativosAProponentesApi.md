@@ -1,10 +1,16 @@
+---
+layout: default
+---
+
 # Dados Relativos A Proponentes Api
 
 All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 
-Método | HTTP request | Descrição
+|Método | HTTP request | Descrição
 ------------- | ------------- | -------------
-[**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido
+[**proponente_detail**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.html#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
+
+(https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documenta%C3%A7%C3%A3o%20API/README.html)
 
 
 # **proponente_detail**
