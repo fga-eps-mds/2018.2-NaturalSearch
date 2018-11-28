@@ -1,7 +1,6 @@
 from natural_search.models import Project, Proponent
 from rest_framework import serializers
 
-
 # Serializers define the API representation.
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

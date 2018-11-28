@@ -25,7 +25,7 @@ SECRET_KEY = 'bxa1fqj^f7inealzip9e!+ce#==t*53kswebxe8(4zsm)wc1q8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','68.183.107.229']
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','68.183.107.229','localhost']
 
 
 # Application definition
@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'natural_search',
     'rest_framework',
-    
+    'rest_framework_swagger',
+ 
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,23 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+#API DOCUMENTATION
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'basic': {
+            'type': 'basic'
+        }
+    },
+    'api_path': '/doc',
+    'is_authenticated': True,
+    'is_superuser': True,
+    'permission_denied_handler': 'django.contrib.auth.views.login',
+}
+
+LOGIN_URL = 'rest_framework:login'
+
+LOGOUT_URL = 'rest_framework:logout'
+
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
