@@ -149,6 +149,7 @@ O projeto **NaturalSearch** possui as seguintes metas:
 |---|---|---|---|
 |Linguagem| Python | 3.6 | Linguagem de programação de alto nível, orientada a objetos, interpretada e imperativa. |
 |Framework| Django REST | 3.8 | Framework para desenvolvimento de API REST rápido de alto nível escrito em python. |
+|Documentação| Swagger | -- | Ferramenta de software para documentação de API. |
 |Framework| Node.js | 8.12 | Framework para desenvolvimento web de alto nível escrito em python. |
 |Biblioteca| D3.js | 4 | Biblioteca javascript para exibição de dados dinâmicos e interativa. |
 |Plataforma| Web - Navegadores Google Chrome, Safari e Firefox | -- | -- |
@@ -156,7 +157,6 @@ O projeto **NaturalSearch** possui as seguintes metas:
 |Virtualização| Docker-compose | 1.22.0 |  Ferramenta para a criação e execução de múltiplos containers de aplicação da Docker. |
 |Base de dados| API Salic | -- | API aberta para acesso aos dados do portal SALIC. |
 |Base de dados em grafos| Neo4J | 3.0 | Base de dados orientada a grafos |
-|LN| TensorFlow | r1.10 | Biblioteca para aplicação de Linguagem Natural. |
 
 ## <a name="4"></a>4. Visão Lógica    
 
@@ -181,7 +181,7 @@ Essa seção oferece a visão arquitetural dos micro-serviços implementados na 
 
 ### <a name="5.1"></a>5.1. Visão Geral 
 
-![arquitetura](images/arquitetura_natural_search.png)
+![arquitetura](images/arquitetura_final.png)
 
 ### <a name="5."></a>5.2. Microserviços e Camadas
 
@@ -189,11 +189,11 @@ Segue o detalhamento dos microserviços implementados no projeto, bem como as ju
 
 #### <a name="5.2.1"></a>5.2.1 Processamento de Dados da Salic API
 
-Primeiro microserviço do produto que possui arquitetura no padrão MVT, utilizando o _framework_ Django _Rest_. É utilizada com os objetivos de puxar os dados da Salic API e realizar o tratamento de forma a definir as categorias de projetos e propostas e classificá-las, assim, obtendo as relações de semelhança entre todas elas. Para a realização desse processamento de dados é utilizada a biblioteca de _Machine Learning_ _TensorFlow_. Esse serviço possibilita ao produto a realização do processamento de dados de forma independente da visualização.
+Primeiro microserviço do produto que possui arquitetura no padrão MVT, utilizando o _framework_ Django _Rest_. É utilizada com os objetivos de puxar os dados da Salic API e realizar o tratamento para selecionar os atributos mais relevantes para a solução de problema proposta. O objetivo é selecionar os dados entre projetos e proponentes disponíveis, além de realizar uma atualização periódica para manter o banco de dados completamente atualizado. Para disponibilizar esses dados o serviço apresenta a construção de uma API própria do NaturalSearch com documentação criada utilizando o Swagger.
 
 #### <a name="5.2.2"></a>5.2.2 Visualização em Grafos
 
-Segundo microserviço implementado no projeto com a utilização do _framework_ Node.js. Esse serviço recebe os dados processados no Django _Rest_ e popula o banco de dados com o objetivo de gerar arquivos _json_ compatíveis com a biblioteca D3.js, para que, assim, possa gerar a visualização em grafos dos projetos e propostas de acordo com a pesquisa realizada pelo usuário. Além disso, nesse serviço é implementado o front-end do produto por completo.
+Segundo microserviço implementado no projeto com a utilização do _framework_ Node.js. Esse serviço recebe os dados processados no Django _Rest_ através da API do NaturalSearch e popula o banco de dados com o objetivo de gerar dados no formato _json_ compatíveis com a biblioteca D3.js, para que, assim, possa gerar a visualização em grafos dos projetos e proponentes de acordo com a pesquisa realizada pelo usuário. Além disso, nesse serviço é implementado o front-end do produto por completo.
  
 ## <a name="6"></a>6. Visão de Dados
 
