@@ -5,7 +5,7 @@ layout: default
 # Projeto
 
 ## Propriedades
-Nome | Tipo |..... | Descrição
+|Nome | Tipo |..... | Descrição
 ------------ | ------------- | ------------- | -------------
 **pronac** | **str** |  | Número do PRONAC
 **ano_projeto** | **str** |  | Ano em que o projeto foi apresentado em dois dígitos. Formato AA
@@ -24,7 +24,7 @@ Nome | Tipo |..... | Descrição
 **valor_captado** | **float** |  |  
 **valor_proposta** | **float** |  |  
 **valor_solicitado** | **float** |  |  
-**valor_aprovado** | **float** |  |  
+**valor_aprovado** | **float** |  |  |
 
 
 Esse método recebe os atributos da classe projeto presentes na api Salic em formato JSON e insere no DB do DjangoRest:
@@ -62,6 +62,6 @@ def get_projects_labels(embedded, count):
             project_instance = Project.objects.create(PRONAC=PRONAC, ano_projeto=ano_projeto, nome=nome, cgccpf=cgccpf, proponente=proponente, segmento=segmento, area=area, UF=UF, municipio=municipio, data_inicio= data_inicio, data_termino=data_termino, mecanismo=mecanismo, enquadramento=enquadramento, valor_projeto=valor_projeto, valor_captado=valor_captado, valor_proposta = valor_proposta, valor_solicitado=valor_solicitado, valor_aprovado=valor_aprovado)
             project_instance.save()
 ```
-![projeto_API](/docs/images/projeto_API.png)
+![projeto_API](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/projeto_API.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/projeto_API.png)

@@ -6,12 +6,12 @@ layout: default
 
 All URIs are relative to *http://68.183.107.229:8000* or 0.0.0.0:8000
 
-Método | HTTP request | Descrição
+|Método | HTTP request | Descrição
 ------------- | ------------- | -------------
-[**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProjetosApi.md#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
+[**projeto_list**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProjetosApi.html#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id|
 
 
-# **projeto_list**
+### **projeto_list**
 > list[Projeto] projeto_list(projeto_id, format=format)
 
 Busca projetos e todos seus atributos dado um id.
@@ -39,14 +39,14 @@ except ApiException as e:
 
 ### Parâmetros
 
-Nome | Tipo | Descrição  | Notas
+|Nome | Tipo | Descrição  | Notas
 ------------- | ------------- | ------------- | -------------
  **projeto_id** | **str**| id do projeto | 
- **format** | **str**| Formato de retorno | JSON e curl 
+ **format** | **str**| Formato de retorno | JSON e curl |
 
 ### Return type
 
-[** Classe Projeto**](Projeto.md)
+[** Classe Projeto**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/Projeto.html)
 
 ### Autorização
 

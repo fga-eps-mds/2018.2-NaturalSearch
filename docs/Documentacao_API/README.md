@@ -123,16 +123,16 @@ except ApiException as e:
 
 All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 
-|Classe | Métodos | HTTP request | Descrição
------------- | ------------- | ------------- | -------------
-*ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProjetosApi.md#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
+|Classe | Métodos  | HTTP request  | Descrição
+------------ | --------------- | ------------- | -------------
+*ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documentacao_API/DadosRelativosAProjetosApi.html#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
 *ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
 
 
 <br>
 
 
-![swaggerAPI](/docs/images/swaggerAPI.png)
+![swaggerAPI](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/swaggerAPI.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/swaggerAPI.png)
 
@@ -142,9 +142,9 @@ All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 ## Documentação para as Models
 
 
- - [Projeto](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/Projeto.md)
- - [Proponente](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/Proponente.md)
- - [Error](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/Error.md)
+ - [Projeto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/Projeto.html)
+ - [Proponente](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/Proponente.html)
+ - [Error](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/Error.html)
 
 
 ## Autorizações

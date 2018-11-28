@@ -38,6 +38,6 @@ def get_proponents_labels(embedded, count):
                 proponent_instance.save()
 ```
 
-![proponente_API](/docs/images/proponente_API.png)
+![proponente_API](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/proponente_API.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/proponente_API.png)
