@@ -4,6 +4,7 @@
 |13/09/2018|1.0.1|Ajustes na Formatação|Shermam Tácia da Costa Lima|
 |27/09/2018|1.0.2|Revisão e atualização dos riscos e Referências|Shermam Tácia da Costa Lima|
 |20/11/2018|1.0.3|Alteração descrição do projeto|Shermam Tácia da Costa Lima|
+|28/11/2018|1.0.4|Refatoração das Restrições| Shermam Tácia da Costa Lima |
 
 
 
@@ -34,7 +35,7 @@ Desenvolvimento de um sistema de visualização de dados, para auxiliar o sistem
 
 A proposta desse projeto envolve a utilização de certos recursos:
 ·         O usuário deve dispor de internet
-·         O usuário deve dispor de um navegador, podendo ser Chrome, Firefox e entre os demais navegadores similiares.
+·         O usuário deve dispor de um navegador, podendo ser Chrome e Opera Mini.
 
 ## 7. Riscos Iniciais
 
@@ -150,8 +151,8 @@ Os Gerentes do projeto NaturalSearch é definido por 4 discentes da Disciplina d
 |:--------:|:------:|:---------:|:---------:|
 |Filipe Coelho Hilário Barcelos|Arquiteto|filipekn4@gmail.com|@FilipeKN4|
 |Igor Araújo de Sousa|Devops|igotaraujo97@gmail.com|@zero101010|
-|Lucas Midlhey Cardoso Naves|Scrum Master|lucasmidlhey@gmail.com|@lucasmidlhey|
-|Shermam Tácia da Costa Lima|Product Owner|tacia68@gmail.com|@tacia68|
+|Lucas Midlhey Cardoso Naves|Product Owner|lucasmidlhey@gmail.com|@lucasmidlhey|
+|Shermam Tácia da Costa Lima|Scrum Master|tacia68@gmail.com|@tacia68|
 
 Os Desenvolvedores são composto por 6 discentes da disciplina de Metodos e Tecnicas de Escrita Ciêntifica:
 

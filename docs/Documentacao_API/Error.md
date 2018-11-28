@@ -1,11 +1,15 @@
+---
+layout: default
+---
+
 # Error
 
 ## Propriedades
-Nome | Tipo | Descrição |
+|Nome | Tipo | Descrição |
 ------------ | ------------ | -------------
-**message** | **str** |  |  -
+**message** | **str** |  |
 **code** | **str** | Código de erro |  
-**more_info** | **str** |  |  -
+**more_info** | **str** |  |  |
 
 
 
