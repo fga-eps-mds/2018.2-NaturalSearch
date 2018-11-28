@@ -5,19 +5,20 @@ from django.shortcuts import render, HttpResponse, redirect
 import requests,json
 from rest_framework import viewsets
 
-# Local DjangoRest imports
+# Local DjangoRest and API Swagger doc imports
 from natural_search.models import Project, Proponent
 from natural_search.serializers import ProjectSerializer, ProponentSerializer
+from rest_framework.permissions import IsAuthenticated
 
-# Links para coleta de dados de proponentes e projetos da api
-# proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
-projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
-# projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
-proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
+#Links para coleta de dados de proponentes e projetos da api
+proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&offset=44200&format=json&"
+#projects_current_link = "http://api.salic.cultura.gov.br/v1/projetos/?limit=100&format=json&"
+projects_current_link ="http://api.salic.cultura.gov.br/v1/projetos/?limit=100&offset=92400&format=json&"
+#proponent_current_link = "http://api.salic.cultura.gov.br/v1/proponentes/?limit=100&format=json"
 
 def home(request):
 #Render the homepage
-    return redirect('/projeto/')
+    return redirect('/doc/')
 
 def search_proponents(proponent_current_link):
     '''Function responsible for iterate with the api, generating the proponent json,
@@ -123,7 +124,7 @@ def get_projects_labels(embedded, count):
 def db_table_exists(table_name):
     return table_name in connection.introspection.table_names()
     
-# ViewSets define the view behavior.
+# ViewSets from API define the view behavior.
 class ProjectViewSet(viewsets.ModelViewSet):
     # project_exists = db_table_exists('natural_search_project')
     queryset = Project.objects.all()
@@ -132,7 +133,8 @@ class ProjectViewSet(viewsets.ModelViewSet):
     #        search_projects(projects_current_link)
     serializer_class = ProjectSerializer
 
-# ViewSets define the view behavior.
+
+# ViewSets from API define the view behavior.
 class ProponentViewSet(viewsets.ModelViewSet):
     # proponent_exists = db_table_exists('natural_search_proponent')
     queryset = Proponent.objects.all()
@@ -140,3 +142,4 @@ class ProponentViewSet(viewsets.ModelViewSet):
     #    if not queryset:
     #        search_proponents(proponent_current_link)
     serializer_class = ProponentSerializer
+
