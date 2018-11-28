@@ -123,10 +123,10 @@ except ApiException as e:
 
 All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 
-Classe | Métodos | HTTP request | Descrição
+|Classe | Métodos | HTTP request | Descrição
 ------------ | ------------- | ------------- | -------------
 *ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProjetosApi.md#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
-*ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido
+*ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
 
 
 <br>

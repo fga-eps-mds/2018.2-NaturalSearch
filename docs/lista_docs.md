@@ -10,7 +10,11 @@ Segue abaixo a lista de todos os documentos referentes ao NaturalSearch. O repos
 
 * [Contribuição](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CONTRIBUTING.html)
 * [Código de Conduta](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/CODE_OF_CONDUCT.html)
+<<<<<<< HEAD
 * [Documentação API DjangoRestFramework]
+=======
+* [Documentação API DjangoRestFramework](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documenta%C3%A7%C3%A3o%20API/README.html)
+>>>>>>> c9d5231245e7fa20baa61bf043207c161ae51344
 
 ## Abertura do Projeto
 * [Termo de Abertura do Projeto](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/TAP.html)
