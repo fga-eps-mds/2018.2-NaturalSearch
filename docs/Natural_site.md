@@ -22,53 +22,52 @@ Repositório oficial do projeto Natural Search da Universidade de Brasília. Lin
 
 ### Como contribuir
 
-1. Crie um fork ou clone o repositório.
+1- Crie um fork ou clone o repositório.
 
 ```sh
 git clone https://github.com/NaturalSearch/NaturalSearch_visualization.git
 ```
 
-2. Caso queira alterar algo crie uma branch seguindo a política de branchs deste projeto. 
+2- Caso queira alterar algo crie uma branch seguindo a política de branchs deste projeto. 
 
-3. Dentro da pasta NaturalSearch_visualization/NaturalSearch onde contém o Dockerfile execute o comando use (sudo se necessário):
+3- Dentro da pasta NaturalSearch_visualization/NaturalSearch onde contém o Dockerfile execute o comando use (sudo se necessário):
 ```sh
 $ docker-compose run app bash
 ```
-4. Dentro do container execute para a instalação de todos os módulos necessários:
+4- Dentro do container execute para a instalação de todos os módulos necessários:
 
 ```sh
 root@cf461053cf90:/code# npm install
 ```
-5. Abra outra instância do terminal fora do container e execute:
+5- Abra outra instância do terminal fora do container e execute:
 
 ```sh
 $ docker-compose up
 ```
-6. O servidor local deverá estar funcionando e você poderá acessar o Neo4j na porta:
-```
+6- O servidor local deverá estar funcionando e você poderá acessar o Neo4j na porta:
+
 0.0.0.0:7474
 
-```
-7. O username, o password e o link default de acesso ao banco estão dentro da NaturalSearch em arquivos .txt. Com elas você terá acesso ao Banco local.
+7- O username, o password e o link default de acesso ao banco estão dentro da NaturalSearch em arquivos .txt. Com elas você terá acesso ao Banco local.
 
 ![Natural_neo4j](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_neo4j.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_neo4j.png)
 
-8. Para acessar a página, com o servidor local rodando vá até:  **0.0.0.0:3000**
+8- Para acessar a página, com o servidor local rodando vá até:  **0.0.0.0:3000**
 
 ![Natural_index](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_index.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_index.png)
 
 
-9. Visualizar os resultados de uma pesquisa 0.0.0.0:3000/result
+9- Visualizar os resultados de uma pesquisa 0.0.0.0:3000/result
 
 ![Natural_result](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_result.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_result.png)
 
-10. Para visualizar o grafo gerado com as informações de todos os projetos ligados a algum proponente clique no ícone da lupa. 
+10- Para visualizar o grafo gerado com as informações de todos os projetos ligados a algum proponente clique no ícone da lupa. 
 
 ![Natural_graph](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/Natural_graph.png)
 
