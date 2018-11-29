@@ -1,0 +1,267 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Essa é a documentação da API do NaturalSearch. \nNaturalSearch é um sistema que reúne dados a respeito de propostas de projetos e proponentes culturais a serem incentivados pelo Ministério da Cultura [MINC](http://www.cultura.gov.br/) por meio da [lei Rouanet](http://rouanet.cultura.gov.br/o-que-e/).\nNele é possivel realizar uma pesquisa sobre as informações dos projetos e proponentes e visualizar o resultado em forma de grafo e suas conexões.  Você pode encontrar mais sobre o NaturalSearch em [https://fga-eps-mds.github.io/2018.2-NaturalSearch/](https://fga-eps-mds.github.io/2018.2-NaturalSearch/).",
+      "version": "1.0.0",
+      "title": "NaturalSearch API",
+      "contact": {
+        "email": "equipe.naturalsearch@gmail.com"
+      }
+    },
+    "host": "68.183.107.229:8000",
+    "basePath": "/",
+    "tags": [
+      {
+        "name": "projetos : Dados relativos a Projetos"
+      }
+    ],
+    "schemes": [
+      "http"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/projeto/{projeto_id}": {
+        "get": {
+          "tags": [
+            "projetos : Dados relativos a Projetos"
+          ],
+          "summary": "Busca projetos e todos seus atributos dado um id",
+          "operationId": "projeto_list",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "projeto_id",
+              "description": "id do projeto",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "query",
+              "name": "format",
+              "description": "Formato de retorno",
+              "enum": [
+                "json"
+              ],
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operação bem-sucedida",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/Projeto"
+                }
+              }
+            },
+            "404": {
+              "description": "Projetos com esses parâmetros não encontrados",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            },
+            "405": {
+              "description": "Parametros fornecidos invalidos ",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            },
+            "503": {
+              "description": "Erro interno",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      },
+      "/proponente/{proponente_id}": {
+        "get": {
+          "tags": [
+            "proponentes : Dados relativos a Proponentes"
+          ],
+          "summary": "Busca proponentes dado um id fornecido",
+          "operationId": "proponente_detail",
+          "parameters": [
+            {
+              "in": "path",
+              "name": "proponente_id",
+              "description": "id do proponente",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "query",
+              "name": "format",
+              "description": "Formato de retorno",
+              "enum": [
+                "json"
+              ],
+              "required": false,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Operação bem-sucedida",
+              "schema": {
+                "$ref": "#/definitions/Proponente"
+              },
+              "headers": {
+                "X-Rate-Limit-Limit": {
+                  "description": "Número de requisições permitidas no período",
+                  "type": "integer"
+                },
+                "X-Rate-Limit-Remaining": {
+                  "description": "Número de requisições restantes na janela de limite atual",
+                  "type": "integer"
+                },
+                "X-Rate-Limit-Reset": {
+                  "description": "Tempo para que a janela de limite resete em segundos UTC epoch",
+                  "type": "integer"
+                },
+                "Retry-After": {
+                  "description": "Segundos para tentar novamente ou a data http quando a janela de limite será resetada",
+                  "type": "integer"
+                }
+              }
+            },
+            "404": {
+              "description": "Nenhum proponente com id fornecido encontrado",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            },
+            "405": {
+              "description": "Parametros fornecidos inválidos",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            },
+            "503": {
+              "description": "Erro interno",
+              "schema": {
+                "$ref": "#/definitions/Error"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "Projeto": {
+        "type": "object",
+        "properties": {
+          "PRONAC": {
+            "type": "string",
+            "format": "int64"
+          },
+          "ano_projeto": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "cgccpf": {
+            "type": "string",
+            "format": "int64"
+          },
+          "proponente": {
+            "type": "string"
+          },
+          "segmento": {
+            "type": "string"
+          },
+          "area": {
+            "type": "string"
+          },
+          "UF": {
+            "type": "string"
+          },
+          "municipio": {
+            "type": "string"
+          },
+          "data_inicio": {
+            "type": "string",
+            "format": "date"
+          },
+          "data_termino": {
+            "type": "string",
+            "format": "date"
+          },
+          "mecanismo": {
+            "type": "string"
+          },
+          "enquadramento": {
+            "type": "string"
+          },
+          "valor_projeto": {
+            "type": "number",
+            "format": "double"
+          },
+          "valor_captado": {
+            "type": "number",
+            "format": "double"
+          },
+          "valor_proposta": {
+            "type": "number",
+            "format": "double"
+          },
+          "valor_solicitado": {
+            "type": "number",
+            "format": "double"
+          },
+          "valor_aprovado": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Proponente": {
+        "type": "object",
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "cgccpf": {
+            "type": "string",
+            "format": "int64"
+          },
+          "responsavel": {
+            "type": "string"
+          },
+          "tipo_pessoa": {
+            "type": "string"
+          },
+          "UF": {
+            "type": "string"
+          },
+          "municipio": {
+            "type": "string"
+          },
+          "total_captado": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "more_info": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
