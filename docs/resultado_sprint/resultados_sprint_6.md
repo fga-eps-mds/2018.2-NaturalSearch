@@ -26,13 +26,13 @@ layout: default
 
 ### Papéis 
 
-|Papel | Responsável |
-|---|---|
-| Shermam Lima | Arquiteta |
+|    Papel |     Responsável |
+|-----|-----|
+| Shermam Lima | Scrum Master |
 | Filipe Barcelos e Igor Sousa | Product Owner |
-| Filipe Barcelos | Scrum Master |
-| Igor Sousa | Devops |
-| Mikhaelle Bueno, Marcos Conceição, Fabiana Ribas, Gustavo Moreira, Michel Camargo | Desenvolvedores |
+| Igor Sousa | Arquiteto |
+| Filipe Barcelos | Devops |
+| Mikhaelle Bueno, Adrielly Jesus, Marcos Conceição, Fabiana Ribas, Gustavo Moreira, Michel Camargo | Desenvolvedores |
 
 ### Sprint Backlog
 
