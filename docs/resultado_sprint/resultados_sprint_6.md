@@ -26,13 +26,13 @@ layout: default
 
 ### Papéis 
 
-|Papel | Responsável |
-|---|---|
-| Shermam Lima | Arquiteta |
+|    Papel |     Responsável |
+|-----|-----|
+| Shermam Lima | Scrum Master |
 | Filipe Barcelos e Igor Sousa | Product Owner |
-| Filipe Barcelos | Scrum Master |
-| Igor Sousa | Devops |
-| Mikhaelle Bueno, Marcos Conceição, Fabiana Ribas, Gustavo Moreira, Michel Camargo | Desenvolvedores |
+| Igor Sousa | Arquiteto |
+| Filipe Barcelos | Devops |
+| Mikhaelle Bueno, Adrielly Jesus, Marcos Conceição, Fabiana Ribas, Gustavo Moreira, Michel Camargo | Desenvolvedores |
 
 ### Sprint Backlog
 
@@ -90,7 +90,7 @@ O velocity desta semana é apresentado a seguir:
 
 <br>
 
-![velocity_6](image_Sprint7/velocity_6.png)
+![velocity_6](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint7/velocity_6.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint7/velocity_6.png)
 
@@ -101,7 +101,7 @@ O velocity desta semana é apresentado a seguir:
 O burndown desta semana é apresentado a seguir:
 <br>
 
-![burndown_sprint6](images/burndown_sprint6.png)
+![burndown_sprint6](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint6.png)
 
 <br>
 

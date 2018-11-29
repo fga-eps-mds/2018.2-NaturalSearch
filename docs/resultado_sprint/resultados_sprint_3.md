@@ -101,7 +101,7 @@ Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quad
 <br>
 <br>
 
-![Legenda](image_Sprint3/Legenda.png)
+![Legenda](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
@@ -110,7 +110,7 @@ Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quad
 <br>
 
 
-![Habilidade_Sprint_2](image_Sprint3/Habilidade_Sprint_2.png)
+![Habilidade_Sprint_2](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_2.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_2.png)
 
@@ -125,7 +125,7 @@ No final da Sprint, foi realizado as alterações, com base no conhecimento de c
 <br>
 
 
-![Habilidade_Sprint_3](image_Sprint3/Habilidade_Sprint_3.png)
+![Habilidade_Sprint_3](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
@@ -141,7 +141,7 @@ O velocity desta semana é apresentado :
 <br>
 <br>
 
-![velocity_Sprint_3](image_Sprint3/velocity_Sprint_3.png)
+![velocity_Sprint_3](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/velocity_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/velocity_Sprint_3.png)
 
@@ -155,7 +155,7 @@ A imagem mostra a quantidade de pareamentos e com qual membro da equipe:
 <br>
 <br>
 
-![Pareamento_3](image_Sprint3/Pareamento_3.png)
+![Pareamento_3](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Pareamento_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Pareamento_3.png)
 

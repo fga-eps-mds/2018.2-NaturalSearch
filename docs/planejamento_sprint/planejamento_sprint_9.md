@@ -45,7 +45,7 @@ O quadro de conhecimento se inicia com a imagem apresentada abaixo:
 
 <br>
 
-![Habilidade_Sprint_6](image_Sprint6/Habilidade_Sprint_5.png)
+![Habilidade_Sprint_6](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint6/Habilidade_Sprint_5.png)
 
 
 

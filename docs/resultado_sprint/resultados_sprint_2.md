@@ -33,7 +33,7 @@ Melhor gerenciamento das daily meetings.
 ## 3. Quadro de Conhecimento
 
 ### Quadro de conhecimento:
-![Habilidade_Sprint_2](image_Sprint3/Habilidade_Sprint_2.png)
+![Habilidade_Sprint_2](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_2.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_2.png)
 

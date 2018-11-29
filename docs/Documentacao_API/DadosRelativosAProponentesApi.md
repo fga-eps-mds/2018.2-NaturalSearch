@@ -11,7 +11,7 @@ All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 [**proponente_detail**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProponentesApi.html#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
 
 
-# **proponente_detail**
+## **proponente_detail**
 > Proponente proponente_detail(proponente_id, format=format)
 
 Busca proponentes dado um id fornecido

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# Documentação da API swagger client.
+# DjangoRestFramework API NaturalSearch.
 Essa é a documentação da API do NaturalSearch.  NaturalSearch é um sistema que reúne dados a respeito de propostas de projetos e proponentes culturais a serem incentivados pelo Ministério da Cultura [MINC](http://www.cultura.gov.br/) por meio da [lei Rouanet](http://rouanet.cultura.gov.br/o-que-e/). Nele é possivel realizar uma pesquisa sobre as informações dos projetos e proponentes e visualizar o resultado em forma de grafo e suas conexões.  Você pode encontrar mais sobre o NaturalSearch em [https://fga-eps-mds.github.io/2018.2-NaturalSearch/](https://fga-eps-mds.github.io/2018.2-NaturalSearch/).
 
 Considerando a necessidade de que precisamos possuir o acesso garantido aos dados públicos da API SALIC e com o problema de que seu serviço fica fora do ar com frequência, decidimos pela a criação dessa API utilizando o framework DjangoRest onde a função é recolher todos os dados públicos relevantes ao nosso produto disponíveis na API SALIC das classes projetos e proponentes, salvá-los em um banco independente onde podemos acessá-los e modificá-los de acordo com nossas necessidades não dependendo de terceiros.
@@ -125,8 +125,8 @@ All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 
 |Classe | Métodos  | HTTP request  | Descrição
 ------------ | --------------- | ------------- | -------------
-*ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documentacao_API/DadosRelativosAProjetosApi.html#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
-*ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://github.com/fga-eps-mds/2018.2-NaturalSearch/blob/gh-pages/docs/Documenta%C3%A7%C3%A3o%20API/DadosRelativosAProponentesApi.md#proponente_detail) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
+*ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProjetosApi.html) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
+*ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProponentesApi.html) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
 
 
 <br>

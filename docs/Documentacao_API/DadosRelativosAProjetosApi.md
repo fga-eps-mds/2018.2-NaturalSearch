@@ -2,13 +2,13 @@
 layout: default
 ---
 
-# Projetos Dados Relativos A Projetos Api
+# Dados Relativos A Projetos Api
 
 All URIs are relative to *http://68.183.107.229:8000* or 0.0.0.0:8000
 
 |Método | HTTP request | Descrição
 ------------- | ------------- | -------------
-[**projeto_list**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProjetosApi.html#projeto_list) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id|
+[**projeto_list**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProjetosApi.html) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id|
 
 
 ### **projeto_list**
