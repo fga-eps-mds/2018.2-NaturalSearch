@@ -125,7 +125,7 @@ All URIs are relative to *http://68.183.107.229:8000* or *0.0.0.0:8000*
 
 |Classe | Métodos  | HTTP request  | Descrição
 ------------ | --------------- | ------------- | -------------
-*ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/Projetos.html) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
+*ProjetosDadosRelativosAProjetosApi* | [**projeto_list**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProjetosApi.html) | **GET** /projeto/{projeto_id} | Busca projetos e todos seus atributos dado um id
 *ProponentesDadosRelativosAProponentesApi* | [**proponente_detail**](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/Documentacao_API/DadosRelativosAProponentesApi.html) | **GET** /proponente/{proponente_id} | Busca proponentes dado um id fornecido|
 
 

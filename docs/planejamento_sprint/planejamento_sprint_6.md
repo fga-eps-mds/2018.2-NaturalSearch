@@ -39,13 +39,13 @@ O quadro de conhecimento inicia com a imagem apresentada abaixo:
 <br>
 
 
-![Legenda](image_Sprint3/Legenda.png)
+![Legenda](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
 <br>
 
-![Habilidade_Sprint_5](image_Sprint6/Habilidade_Sprint_5.png)
+![Habilidade_Sprint_5](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint6/Habilidade_Sprint_5.png)
 
 
 

@@ -22,7 +22,7 @@ Conforme pode ser observado acima,nem todos os resultados planejados foram entre
 
 ## 3. Quadro de Conhecimento
 
-![imagem do quadro de conhecimentos]()
+![imagem do quadro de conhecimentos](images_resultado/habilidades_semana1.png)
 
 Não houve mudanças significativas após a primeira semana,pois como ainda não definimos o projeto fica difícil setar o que é necessário que estudem,no entanto,pedimos que estudassem python e django,pois possivelmente utilizaremos na execução do projeto.
 
