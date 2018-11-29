@@ -98,7 +98,7 @@ O velocity desta semana é apresentado a seguir:
 
 <br>
 
-![velocity_Sprint_7](/docs/images/velocity_sprint7.jpg)
+![velocity_Sprint_7](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/velocity_sprint7.jpg)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/velocity_sprint7.jpg)
 
@@ -108,7 +108,7 @@ O velocity desta semana é apresentado a seguir:
 
 O burndown desta semana é apresentado a seguir:
 
-![velocity_Sprint_7](/docs/images/burndown_sprint7.jpg)
+![velocity_Sprint_7](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint7.jpg)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint7.jpg)
 

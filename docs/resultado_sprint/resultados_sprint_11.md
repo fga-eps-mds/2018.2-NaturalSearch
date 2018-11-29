@@ -9,7 +9,7 @@ layout: default
 
 | Sprint | Início | Término | Duração | Pontuação Total | Pontuação concluída |
 |---|---|---|---|---|---|
-| 11 | 18/11/2018 | 25/11/2018 | 7 dias | 52 | 31 |
+| 11 | 18/11/2018 | 25/11/2018 | 7 dias | 62 | 31 |
 
 ### Presença na Sprint Review e Retroscpective
 
@@ -38,11 +38,11 @@ layout: default
 
 | Issue | Descrição | Pontos | Status | Motivo |
 |---|---|---|---|---|
-|[TS09](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/150)|TS09-Eu, como desenvolvedor, desejo realizar a integração dos serviços de processamento de dados e visualização em grafos.|8|80%|Dificuldade com as tecnologias de deploy.|
+|[TS09](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/150)|TS09-Eu, como desenvolvedor, desejo realizar a integração dos serviços de processamento de dados e visualização em grafos.|13|80%|Dificuldade com as tecnologias de deploy.|
 |[RD-MDS](https://github.com/fga-eps-mds/2018.*2-NaturalSearch/issues/159)| Refatorar documentos de MDS. | 5 |80%| Revisão dos documentos e alterações finais no diagrama de blocos. |
 |[RD-EPS](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/158)| Refatorar documentos de EPS. | 5 |100%|--|
 |[TS11](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/157)|TS11-Eu, como desenvolvedor, desejo realizar a conversão dos dados do proponente e os respectivos projetos selecionados para o formato de json suportado pelo D3.js.| 13 | 100% | -- |
-|[US20](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/146)|US20-Eu, como desenvolvedor, desejo documentar a API criada para fornecer detalhes das informações disponibilizadas de projetos e proponentes.| 8 |100%|--|
+|[US20](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/146)|US20-Eu, como desenvolvedor, desejo documentar a API criada para fornecer detalhes das informações disponibilizadas de projetos e proponentes.| 13 |100%|--|
 |[US21](https://github.com/fga-eps-mds/2018.2-NaturalSearch/issues/156)|US21-Eu, como desenvolvedor, desejo verificar se houveram mudanças nos dados da API Salic e atualizá-las, caso existam, na aplicação Natural Search.| 13 | 50% | Falta de tempo pois tiveram que resolver questões mais importantes para a finalização do projeto. |
 
 ## Pareamento 
@@ -95,7 +95,7 @@ O velocity desta semana é apresentado a seguir:
 
 <br>
 
-![velocity_Sprint_11](/docs/images/velocity_sprint11.png)
+![velocity_Sprint_11](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/velocity_sprint11.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/velocity_sprint11.png)
 
@@ -105,7 +105,7 @@ O velocity desta semana é apresentado a seguir:
 
 O burndown desta semana é apresentado a seguir:
 
-![Burndown_Sprint_11](/docs/images/burndown_sprint11.png)
+![Burndown_Sprint_11](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint11.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/images/burndown_sprint11.png)
 

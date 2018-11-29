@@ -95,7 +95,7 @@ Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quad
 <br>
 <br>
 
-![Legenda](image_Sprint3/Legenda.png)
+![Legenda](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Legenda.png)
 
@@ -104,7 +104,7 @@ Nessa Sprint apresenta-se o quadro de conhecimento, a sprint começou com o quad
 <br>
 
 
-![Habilidade_Sprint_3](image_Sprint3/Habilidade_Sprint_3.png)
+![Habilidade_Sprint_3](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint3/Habilidade_Sprint_3.png)
 
@@ -119,7 +119,7 @@ O velocity desta semana é apresentado :
 
 <br>
 
-![velocity_Sprint_4](image_Sprint4/velocity_Sprint_4.png)
+![velocity_Sprint_4](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint4/velocity_Sprint_4.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint4/velocity_Sprint_4.png)
 
@@ -131,7 +131,7 @@ A imagem mostra a quantidade de pareamentos e com qual membro da equipe:
 <br>
 
 
-![Pareamento_4](image_Sprint4/Pareamento_4.png)
+![Pareamento_4](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint4/Pareamento_4.png)
 
 [ver imagem em tamanho original](https://fga-eps-mds.github.io/2018.2-NaturalSearch/docs/resultado_sprint/image_Sprint4/Pareamento_4.png)
 

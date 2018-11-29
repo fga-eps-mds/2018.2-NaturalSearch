@@ -18,12 +18,12 @@ layout: default
 **municipio** | **str**   | Cidade |
 **data_inicio** | **date**   | Data de início no formato aaaa-mm-dd |
 **data_termino** | **date**   | Data de finalização no formato aaaa-mm-dd |
-**mecanismo** | **str**   |  
-**enquadramento** | **str**   |  
-**valor_projeto** | **float**  |  
-**valor_captado** | **float**   |  
-**valor_proposta** | **float**   |  
-**valor_solicitado** | **float**   |  
+**mecanismo** | **str**   |
+**enquadramento** | **str**   |
+**valor_projeto** | **float**  |
+**valor_captado** | **float**   |
+**valor_proposta** | **float**   |
+**valor_solicitado** | **float**   |
 **valor_aprovado** | **float** | |
 
 
